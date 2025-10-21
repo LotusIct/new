@@ -1,6 +1,6 @@
 import React from "react";
 import "./About.css";
-import IAImage from "../assets/ia.png"; // substitua pelo seu arquivo
+import IAImage from "../assets/iafato.png"; // substitua pelo seu arquivo
 
 const About: React.FC = () => {
   return (

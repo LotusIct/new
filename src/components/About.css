@@ -1,6 +1,6 @@
 .ia-intro-section {
-  padding: 100px 20px;
-  background: var(--neutral);
+  padding: 80px 20px;
+  background: #FBF7EB;
   color: #333;
 }
 
@@ -8,7 +8,7 @@
   display: flex;
   max-width: 1200px;
   margin: 0 auto;
-  gap: 50px;
+  gap: 10px;
 }
 
 /* Lado esquerdo */
@@ -17,8 +17,7 @@
 }
 
 .ia-image {
-  width: 100%;
-  border-radius: 15px;
+  width: 70%;
   object-fit: cover;
 }
 
@@ -28,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 20px;
+  gap: 10px;
 }
 
 .ia-title {

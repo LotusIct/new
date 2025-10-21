@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "./CasosDeEstudo.css";
 
@@ -16,7 +16,7 @@ interface Caso {
   img: string;
 }
 
-export const casos: Caso[] = [
+const casos: Caso[] = [
   {
     title: "Otimização Logística com IA Preditiva",
     problema:

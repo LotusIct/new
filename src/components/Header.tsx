@@ -2,25 +2,21 @@ import { useState, useEffect, useRef } from "react";
 import "./Header.css";
 
 export default function Header() {
-  const [openMenu, setOpenMenu] = useState(null);
-  const menuRef = useRef(null);
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const toggleMenu = (menu) => {
+  const toggleMenu = (menu: string) => {
     setOpenMenu(openMenu === menu ? null : menu);
   };
 
-  // 🔹 Fecha o menu ao clicar fora
   useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (menuRef.current && !menuRef.current.contains(event.target as Node)) {
         setOpenMenu(null);
       }
     };
 
-    // Adiciona o evento de clique global
     document.addEventListener("mousedown", handleClickOutside);
-
-    // Remove o evento quando o componente desmontar
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };

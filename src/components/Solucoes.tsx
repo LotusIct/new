@@ -21,7 +21,7 @@ interface Solucao {
 }
 
 // Exemplo de soluções
-export const solucoes: Solucao[] = [
+const solucoes: Solucao[] = [
   {
     nome: "ERP Integrado",
     descricao:

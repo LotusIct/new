@@ -1,0 +1,89 @@
+:root {
+  --primary: #F0A411;
+  --secondary: #78349B;
+  --terceira: #387054;
+  --neutral: #FFFFFF;
+  --complementary1: #707070;
+}
+
+.contato-carreiras {
+  background-color: var(--neutral);
+  padding: 6rem 2rem;
+  font-family: 'Poppins', sans-serif;
+}
+
+.boxes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.box {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  padding: 2.5rem 2rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  transition: all 0.5s ease;
+  color: var(--neutral);
+}
+
+.box .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.836); /* normal transparente */
+  z-index: 0;
+  transition: all 0.5s ease;
+}
+
+.box:hover .overlay {
+  background: linear-gradient(135deg, #f0a611ef, #79349be8); /* degrade colorido */
+}
+
+.box > * {
+  position: relative;
+  z-index: 1; /* garante que o texto fique acima */
+}
+
+.box-title, .box-desc, .box-btn {
+  transition: all 0.5s ease;
+}
+
+.box:hover .box-title,
+.box:hover .box-desc,
+.box:hover .box-btn {
+  color: var(--neutral); /* destaca o texto sobre o degradê */
+}
+
+.box-title {
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--terceira);
+  margin-bottom: 1rem;
+ font-family: 'Shadows Into Light', cursive;
+ letter-spacing: 1px;
+}
+
+.box-desc {
+  font-size: 1.1rem;
+  color: var(--complementary2);
+  line-height: 1.5;
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.box-btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary);
+  color: var(--neutral);
+  font-weight: 700;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+

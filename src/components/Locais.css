@@ -1,0 +1,127 @@
+.locais-section {
+  position: relative;
+  padding: 60px 40px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  overflow: hidden;
+  color: #000; /* cor do texto */
+}
+
+/* Fundo leve animado */
+.locais-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../assets/locais2.png");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.1;
+  z-index: 0;
+  animation: fundoMover 18s ease-in-out infinite alternate;
+}
+
+/* Overlay leve opcional */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0); /* leve contraste */
+  z-index: 1;
+}
+
+/* Conteúdo principal */
+.locais-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Títulos e textos */
+.locais-title {
+  font-size:3rem;
+  font-weight: 700;
+   font-family: 'Shadows Into Light', cursive;
+  margin-bottom: 25px;
+  color:#78349B ;
+}
+
+.locais-intro {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Grid dos cards */
+.locais-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin-top: 40px;
+  position: relative; /* garante que os cards fiquem acima do fundo */
+  z-index: 2;
+}
+
+/* Cards */
+.pais-card {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: all 0.4s ease;
+  position: relative;
+  animation: cardFadeUp 1.2s ease forwards;
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+.pais-card:nth-child(1) { animation-delay: 0.4s; }
+.pais-card:nth-child(2) { animation-delay: 0.6s; }
+.pais-card:nth-child(3) { animation-delay: 0.8s; }
+.pais-card:nth-child(4) { animation-delay: 1s; }
+
+.pais-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+/* Títulos e textos dentro dos cards */
+.pais-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+   font-family: 'Shadows Into Light', cursive;
+     color:#F0A411 ;
+}
+
+.pais-card p {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* Animações */
+@keyframes fundoMover {
+  0% { transform: scale(1); background-position: center bottom; opacity: 0.2; }
+  100% { transform: scale(1.05); background-position: center top; opacity: 0.25; }
+}
+
+@keyframes cardFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .locais-section {
+    padding: 60px 20px;
+  }
+
+  .locais-title {
+    font-size: 2rem;
+  }
+
+  .locais-grid {
+    grid-template-columns: 1fr;
+  }
+}

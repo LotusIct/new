@@ -1,0 +1,50 @@
+.ia-intro-section {
+  padding: 100px 20px;
+  background: var(--neutral);
+  color: #333;
+}
+
+.ia-intro-container {
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 50px;
+}
+
+/* Lado esquerdo */
+.ia-intro-left {
+  flex: 1;
+}
+
+.ia-image {
+  width: 100%;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Lado direito */
+.ia-intro-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ia-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.ia-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.learn-more {
+  color: var(--secondary);
+  font-weight: bold;
+  text-decoration: none;
+  border-bottom: 2px solid var(--secondary);
+  width: fit-content;
+}

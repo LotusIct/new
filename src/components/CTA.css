@@ -1,0 +1,63 @@
+.cta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 20px;
+  background: #387054; /* verde principal */
+  color: #fff;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ceo-quote {
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+  font-style: italic;
+  position: relative;
+  padding: 40px 20px;
+}
+.fala{
+   font-family: 'Shadows Into Light', cursive;
+   letter-spacing: 1.5px;
+   font-size: 2rem;
+}
+/* Aspas grandes modernas atrás do texto */
+.ceo-quote::before,
+.ceo-quote::after {
+  content: '“';
+  position: absolute;
+  font-size: 8rem;
+  color: rgba(248, 255, 255, 0.15); /* aspas translúcidas em contraste suave */
+  top: -20px;
+  left: -10px;
+  z-index: 0;
+  font-family: 'Georgia', serif;
+}
+
+.ceo-quote::after {
+  content: '”';
+  right: -10px;
+  left: auto;
+  bottom: -20px;
+  top: auto;
+}
+
+/* Texto por cima das aspas */
+.ceo-quote > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Nome do CEO ou outro cargo */
+.ceo-name {
+  display: block;
+  margin-top: 20px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #f0f0f0;
+  font-family: 'Poppins', serif;
+}

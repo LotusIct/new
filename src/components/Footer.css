@@ -1,0 +1,152 @@
+:root {
+  --primary: #F0A411;
+  --secondary: #78349B;
+  --terceira: #387054;
+  --neutral: #FFFFFF;
+  --complementary1: #707070;
+}
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+.footer-section {
+  background-color: var(--terceira);
+  color: var(--neutral);
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem 4rem;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.footer-left {
+  display: flex;
+  gap: 40px; /* espaço entre logo e colunas */
+  align-items: flex-start;
+}
+
+.footer-logo {
+  width: 80px;
+  height: auto;
+  object-fit: contain;
+}
+
+
+.footer-links-columns {
+  display: flex;
+  gap: 60px;
+}
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 8px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: var(--neutral);
+  font-size: 0.8rem;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: var(--primary);
+}
+
+.footer-right {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.footer-right .social {
+  color: var(--neutral);
+  font-size: 1.2rem;
+  transition: color 0.3s;
+}
+
+.footer-right .social:hover {
+  color: var(--primary);
+}
+
+/* Rodapé inferior */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,255,255,0.3);
+  padding-top: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-frase {
+  font-size: 1rem; /* ajuste o tamanho como preferir */
+  font-family: 'Shadows Into Light', cursive;
+  flex: 1;
+  letter-spacing: 1px;
+  font-style: normal; /* a fonte já é manuscrita, não precisa itálico */
+}
+
+.footer-copy {
+  text-align: center;
+  flex: 1;
+  font-size: 0.7rem;
+}
+
+.footer-termos {
+  display: flex;
+  gap: 0.5rem;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.footer-termos .terms {
+  color: var(--neutral);
+  text-decoration: none;
+  font-size: 0.7rem;
+}
+
+.footer-termos a:hover {
+  color: var(--primary);
+}
+
+.scroll-top {
+  margin-left: 10px;
+  cursor: pointer;
+  font-weight: bold;
+   color: var(--neutral);
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border: 2px solid rgb(255, 255, 255);
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .footer-top {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .footer-left, .footer-right {
+    justify-content: center;
+    text-align: center;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+  .footer-termos {
+    justify-content: center;
+  }
+}

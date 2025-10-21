@@ -1,0 +1,26 @@
+.hero {
+  background-color: white;
+  color: var(--complementary1);
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3rem;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-family: 'Lora', serif;
+  font-size: 1.25rem;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  background-color: var(--accent1);
+  color: var(--neutral);
+  padding: 12px 30px;
+  border-radius: 6px;
+  font-weight: 600;
+}

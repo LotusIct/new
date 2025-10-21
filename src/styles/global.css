@@ -1,0 +1,41 @@
+/* Fonte Poppins para títulos e Lora para textos */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+  --primary: #F0A411;        /* Branco gelo */
+  --terceira: #387054;
+  --secondary: #78349B;      /* Azul petróleo claro */
+  --complementary1: #707070; /* Cinza escuro leve */
+  --complementary2: #755521; /* Cinza médio */
+  --accent1: #A000F0;        /* Magenta vibrante */
+  --accent2: #00EF5C;        /* Laranja suave */
+  --neutral: #FFFFFF;        /* Branco puro */
+}
+
+/* Exemplo de aplicação */
+body {
+  background-color: white;
+  color: var(--complementary1);
+  font-family: 'Poppins', serif;
+  margin: 0 auto;
+}
+
+h1, h2, h3, .title {
+  font-family: 'Poppins', sans-serif;
+}
+
+
+button.primary {
+  background-color: var(--terceira);
+  color: var(--neutral);
+}
+
+button.secondary {
+  background-color: var(--accent2);
+  color: var(--neutral);
+}
+
+.section-alt {
+  background-color: var(--complementary2);
+  color: var(--neutral);
+}

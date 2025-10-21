@@ -1,0 +1,84 @@
+.casos-section {
+  padding: 50px 20px;
+  background-color: var(--neutral);
+}
+
+.section-title {
+  text-align: left;
+  font-size: 3rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  margin-left: 60px;
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.carousel {
+  display: flex;
+  gap: 0; /* cards grudados */
+  transition: transform 0.3s ease-in-out;
+}
+
+.card {
+  min-width: 33.3333%; /* 3 cards visíveis */
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+.card-overlay {
+  position: absolute;
+  inset: 0; /* top:0; bottom:0; left:0; right:0 */
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.473);
+  color: #fff;
+  box-sizing: border-box;
+}
+.card-overlay h3 {
+  font-size: 1.3rem; /* mantém o título maior que o texto */
+  margin-bottom: 5px;
+}
+
+.card-overlay p {
+  font-size: 0.95rem; /* tamanho menor para problema, solução, resultado */
+  margin: 2px 0;     /* deixa mais compacto verticalmente */
+}
+
+.slidecaso {
+    display: flex;
+    flex-direction: column;
+    position: relative; /* adicione isto */
+}
+.arrow {
+  position: absolute;
+  top: 50%; /* centraliza verticalmente */
+  transform: translateY(-50%);
+  background: #f0a611a4;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.arrow.left {
+  right: 110px; /* ou ajuste para sair um pouco do container */
+}
+
+.arrow.right {
+  right: 60px;
+}
+
+@media (max-width: 768px) {
+  .card {
+    min-width: 100%; /* 1 card visível no mobile */
+  }
+}

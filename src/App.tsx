@@ -1,13 +1,19 @@
-import React from "react";
-import './styles/global.css';
-import Home from './pages/Home.js';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import Carreiras from "./pages/Carreiras";
+import Contato from "./pages/Contato";
+import IA from "./pages/Ia"; // ✅ importar a nova página
+import "./styles/global.css";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/carreiras" element={<Carreiras />} />
+        <Route path="/contato" element={<Contato />} />
+        <Route path="/ia" element={<IA />} /> {/* ✅ adicionar rota da IA */}
+      </Routes>
+    </Router>
   );
 }
-
-export default App;

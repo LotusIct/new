@@ -1,0 +1,93 @@
+.contato-page {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* formulário à esquerda */
+}
+
+.contato-overlay {
+  width: 100%;
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.fomulario{
+    margin-left: 10%;
+    max-width: 400px;
+}
+/* Formulário sobre o fundo */
+.contato-form-container {
+  width: 60%; /* metade da tela */
+   background: linear-gradient(
+    to right, 
+   #faf9f6c0 40%, 
+    rgba(0, 0, 0, 0) 100%
+  );
+  color: #000000;
+  padding: 40px 40px 100px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contato-form-container h1 {
+  margin-bottom: 10px;
+  font-size: 32px;
+  font-size: 3.5rem;
+
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.contato-form-container p {
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+
+.contato-form select {
+  width: 108%;
+  margin-bottom: 20px;
+  padding: 15px;
+   border: 1px solid #78349B;
+  border-radius: 8px;
+  font-size: 14px;
+}
+.contato-form input,
+.contato-form textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  border: 1px solid #78349B;
+  
+}
+.contato-form textarea {
+  resize: none;
+}
+
+.contato-form button {
+  padding: 15px 30px;
+  background-color: #78349B;
+  border: 2px solid ;
+  color: #fff;
+  border: none;
+  width: 108%;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .contato-form-container {
+    width: 100%;
+    padding: 40px 20px;
+  }
+}

@@ -43,7 +43,10 @@
 .learn-more {
   color: var(--secondary);
   font-weight: bold;
+  border: 1px solid #78349B;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #FBF7EB;
   text-decoration: none;
-  border-bottom: 2px solid var(--secondary);
   width: fit-content;
 }

@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom"; // ✅ usar Link
 import "../components/ContatoCarreiras.css";
 
 import sketchContact from "../assets/c1.png";
@@ -9,28 +10,27 @@ export default function ContatoCarreiras() {
     {
       title: "Carreiras",
       desc: "Junte-se ao nosso time e participe de projetos inovadores. Descubra oportunidades e envie seu currículo.",
-      link: "#carreiras",
+      link: "/carreiras", // 👈 rota da página Carreiras
       btnText: "Ver Vagas",
-      bgImg: sketchCareers, // imagem importada
+      bgImg: sketchCareers,
     },
     {
       title: "Fale Conosco",
       desc: "Entre em contato e tire suas dúvidas ou solicite um orçamento personalizado. Estamos prontos para te atender!",
-      link: "#contato",
+      link: "/contato", // 👈 rota da página Contato
       btnText: "Enviar Mensagem",
-      bgImg: sketchContact, // imagem importada
+      bgImg: sketchContact,
     },
-    
   ];
 
   return (
-    <section className="contato-carreiras" id="contato-carreiras">
+    <section className="contato-carreiras">
       <div className="boxes-container">
         {boxes.map((box, index) => (
           <motion.div
             key={index}
             className="box"
-            style={{ backgroundImage: `url(${box.bgImg})` }} // aplica imagem de fundo
+            style={{ backgroundImage: `url(${box.bgImg})` }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1, duration: 0.5 }}
@@ -39,7 +39,11 @@ export default function ContatoCarreiras() {
             <div className="overlay"></div>
             <h3 className="box-title">{box.title}</h3>
             <p className="box-desc">{box.desc}</p>
-            <a href={box.link} className="box-btn">{box.btnText}</a>
+
+            {/* Link para a página separada */}
+            <Link to={box.link} className="box-btn">
+              {box.btnText}
+            </Link>
           </motion.div>
         ))}
       </div>

@@ -21,10 +21,10 @@ const Home = () => {
       <PorqueNosEscolher />
       <Services />
       <Portfolio />
-       <Industrias />     {/* 👈 nova seção — indústrias */}
-      <CasosDeEstudo /> {/* 👈 seção de estudos */}
-      <Solucoes />       {/* 👈 seção de soluções de software */}
-      <Locais />         {/* 👈 nova seção — onde atuamos */}
+       <Industrias />  
+      <CasosDeEstudo /> 
+      <Solucoes />      
+      <Locais />       
       <About />
       <CTA />
       <ContatoCarreiras />

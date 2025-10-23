@@ -1,0 +1,143 @@
+/* Reset global */
+
+
+/* Seção introdutória full width */
+.ia-intro-section {
+  background-color: #FAF8EB;
+  padding: 0;
+}
+
+.ia-intro-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.ia-intro-text {
+  flex: 1;
+  padding: 0 60px;
+  text-align: left;
+}
+
+.ia-intro-text h1 {
+  font-family: 'Shadows Into Light', cursive;
+  color: #78349B;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+  max-width: 500px;
+}
+
+.ia-intro-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+.ia-intro-img {
+  flex: 1;
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+/* Seções internas modernas */
+.ia-section {
+  padding: 80px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 15px;
+}
+
+/* Fundo alternado para cada seção */
+.ia-section:nth-of-type(even) {
+  background: linear-gradient(135deg, #FAF8EB 0%, #EDE0F7 100%);
+}
+
+.ia-section:nth-of-type(odd) {
+  background: linear-gradient(135deg, #EDE0F7 0%, #FAF8EB 100%);
+}
+
+.ia-section h2 {
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2.8rem;
+  color: #78349B;
+  margin-bottom: 20px;
+}
+
+.ia-section p, .ia-section li {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.ia-section ul {
+  list-style: disc;
+  padding-left: 40px;
+}
+
+.ia-section-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+}
+
+.ia-section-text {
+  flex: 1;
+}
+
+.ia-section-img {
+  flex: 1;
+  width: 20%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 15px;
+}
+
+/* CTA */
+.ia-cta-section {
+  text-align: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #FAF8EB 0%, #EDE0F7 100%);
+}
+
+.ia-cta-btn {
+  padding: 15px 30px;
+  background-color: #78349B;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.ia-cta-btn:hover {
+  transform: scale(1.05);
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+  .ia-section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ia-section-text {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .ia-section h2 {
+    font-size: 2rem;
+  }
+
+  .ia-section p, .ia-section li {
+    font-size: 1.1rem;
+  }
+}

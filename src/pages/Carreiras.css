@@ -1,0 +1,142 @@
+/* Topo */
+.carreiras-top {
+  position: relative;
+  background-size: cover;
+  background-position: right top;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  padding: 0 5%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* gradiente linear transparente */
+  background: linear-gradient(135deg, #ffffff 20%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1; /* atrás do conteúdo */
+}
+
+.carreiras-top-content {
+  position: relative;
+  color: #000000;
+  max-width: 600px;
+  margin-top: -200px;
+  z-index: 2; /* acima do overlay */
+}
+
+.carreiras-top-content h1 {
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.carreiras-top-content p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.carreiras-btn {
+  padding: 10px 30px;
+  border: 2px solid #78349B;
+  color: #78349B;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+
+/* Seções alternadas */
+.carreiras-section-alternada {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 5%;
+  flex-wrap: wrap;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.carreiras-img {
+  flex: 1;
+  max-width: 400px;
+}
+
+.carreiras-img img {
+  width: 100%;
+  border-radius: 15px;
+}
+
+.carreiras-text {
+  flex: 1;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.carreiras-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color:#387054 ;
+  font-family: 'Shadows Into Light', cursive;
+}
+
+.carreiras-text p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Inverter ordem para alternado direita/esquerda */
+.carreiras-text.right {
+  order: 2;
+}
+
+.carreiras-section-alternada .carreiras-img.left {
+  order: 1;
+}
+
+.carreiras-section-alternada .carreiras-img.right {
+  order: 2;
+}
+
+/* Upload Currículo */
+.carreiras-section-upload {
+  text-align: center;
+  padding: 0px 10px 40px 10px;
+  
+}
+.carreiras-section-upload h2{
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 2rem;
+  color: #387054;
+  
+}
+.upload-curriculo {
+  padding: 15px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #78349B;
+  cursor: pointer;
+  
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .carreiras-section-alternada {
+    flex-direction: column;
+  }
+
+  .carreiras-text.right {
+    order: 0;
+  }
+
+  .carreiras-img.left,
+  .carreiras-img.right {
+    order: 0;
+  }
+
+  .carreiras-top-content {
+    max-width: 100%;
+  }
+}

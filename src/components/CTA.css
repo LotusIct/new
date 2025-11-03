@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: center;
   padding: 80px 20px;
-  background: #387054; /* verde principal */
+  background: #4E756E; /* verde principal */
   color: #fff;
   text-align: center;
   position: relative;
@@ -21,9 +21,9 @@
   padding: 40px 20px;
 }
 .fala{
-   font-family: 'Shadows Into Light', cursive;
+  font-family: 'Orbitron', sans-serif;
    letter-spacing: 1.5px;
-   font-size: 2rem;
+   font-size: 1.5rem;
 }
 /* Aspas grandes modernas atrás do texto */
 .ceo-quote::before,

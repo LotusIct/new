@@ -1,10 +1,3 @@
-:root {
-  --primary: #F0A411;
-  --secondary: #78349B;
-  --terceira: #387054;
-  --neutral: #FFFFFF;
-  --complementary1: #707070;
-}
 
 .contato-carreiras {
   background-color: var(--neutral);
@@ -35,13 +28,13 @@
 .box .overlay {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.836); /* normal transparente */
+  background: rgba(255, 255, 255, 0.842); /* normal transparente */
   z-index: 0;
   transition: all 0.5s ease;
 }
 
 .box:hover .overlay {
-  background: linear-gradient(135deg, #f0a611ef, #79349be8); /* degrade colorido */
+  background: linear-gradient(135deg, #273b37c5, #629289b6); /* degrade colorido */
 }
 
 .box > * {
@@ -60,11 +53,11 @@
 }
 
 .box-title {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 900;
   color: var(--terceira);
   margin-bottom: 1rem;
- font-family: 'Shadows Into Light', cursive;
+font-family: 'Orbitron', sans-serif;
  letter-spacing: 1px;
 }
 
@@ -74,6 +67,7 @@
   line-height: 1.5;
   font-weight: 500;
   margin-bottom: 2rem;
+  height: 70px;
 }
 
 .box-btn {

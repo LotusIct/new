@@ -2,8 +2,8 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom"; // ✅ usar Link
 import "../components/ContatoCarreiras.css";
 
-import sketchContact from "../assets/c1.png";
-import sketchCareers from "../assets/c2.png";
+import sketchContact from "../assets/c22.png";
+import sketchCareers from "../assets/c11.png";
 
 export default function ContatoCarreiras() {
   const boxes = [

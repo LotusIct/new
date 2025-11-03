@@ -1,11 +1,7 @@
-:root {
-  --primary: #F0A411;
-  --secondary: #78349B;
-  --terceira: #387054;
-  --neutral: #FFFFFF;
-  --complementary1: #707070;
-}
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap');
+
+
 .footer-section {
   background-color: var(--terceira);
   color: var(--neutral);
@@ -88,8 +84,10 @@
 }
 
 .footer-frase {
-  font-size: 1rem; /* ajuste o tamanho como preferir */
-  font-family: 'Shadows Into Light', cursive;
+  font-size:0.7rem; /* ajuste o tamanho como preferir */
+font-family: 'Orbitron', sans-serif;
+
+
   flex: 1;
   letter-spacing: 1px;
   font-style: normal; /* a fonte já é manuscrita, não precisa itálico */

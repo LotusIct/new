@@ -3,7 +3,7 @@ import "./Locais.css";
 export default function Locais() {
   return (
     <section className="locais-section">
-      <div className="overlay"></div>
+      <div className="overlays"></div>
 
       <div className="locais-content">
         <h2 className="locais-title">Onde Atuamos</h2>

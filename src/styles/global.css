@@ -2,13 +2,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
 
 :root {
-  --primary: #F0A411;        /* Branco gelo */
-  --terceira: #387054;
-  --secondary: #78349B;      /* Azul petróleo claro */
-  --complementary1: #707070; /* Cinza escuro leve */
-  --complementary2: #755521; /* Cinza médio */
-  --accent1: #A000F0;        /* Magenta vibrante */
-  --accent2: #00EF5C;        /* Laranja suave */
+  --primary: #629289;        /* Branco gelo */
+  --terceira: #4E756E;
+  --secondary: #273B37;      /* Azul petróleo claro */
+  --complementary1: #141E1C; /* Cinza escuro leve */
+  --complementary2: #75AFA5; /* Cinza médio */
+  --accent1: #89CCC0;        /* Magenta vibrante */
+  --accent2: #3B5852;        /* Laranja suave */
   --neutral: #FFFFFF;        /* Branco puro */
 }
 

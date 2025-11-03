@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./About.css";
-import IAImage from "../assets/iafato.png"; // imagem inicial
+import IAImage from "../assets/ai4.png"; // imagem inicial
 
 const About: React.FC = () => {
   const navigate = useNavigate();
@@ -12,21 +12,26 @@ const About: React.FC = () => {
 
   return (
     <section className="ia-intro-section">
-      <div className="ia-intro-container">
-        <div className="ia-intro-left">
-          <img src={IAImage} alt="IA Visual" className="ia-image" />
-        </div>
-        <div className="ia-intro-right">
-          <h2 className="ia-title">NewAI</h2>
-          <p className="ia-description">
-            Nossa inteligência artificial transforma dados em decisões estratégicas,
-            automatiza processos e cria soluções inteligentes para o seu negócio.
-          </p>
-          <button className="learn-more" onClick={handleLearnMore}>
-            Saiba Mais →
-          </button>
-        </div>
-      </div>
+<div className="ia-intro-container">
+  {/* Texto à esquerda */}
+  <div className="ia-intro-left">
+    <h2 className="ia-title">NewAI</h2>
+    <p className="ia-description">
+      Nossa inteligência artificial transforma dados em decisões estratégicas,
+      automatiza processos e cria soluções inteligentes para o seu negócio.
+    </p>
+    <button className="learn-more" onClick={handleLearnMore}>
+      Saiba Mais →
+    </button>
+  </div>
+
+  {/* Imagem à direita */}
+  <div className="ia-intro-right">
+    <img src={IAImage} alt="IA Visual" className="ia-image" />
+  </div>
+</div>
+
+
     </section>
   );
 };

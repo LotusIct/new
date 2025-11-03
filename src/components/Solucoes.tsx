@@ -3,14 +3,14 @@ import { motion } from "framer-motion";
 import "./Solucoes.css";
 
 // Importando imagens
-import ss1 from "../assets/ss1.png";
-import ss2 from "../assets/ss2.png";
-import ss3 from "../assets/ss3.png";
-import ss4 from "../assets/ss4.png";
-import ss5 from "../assets/ss5.png";
-import ss6 from "../assets/ss6.png";
-import ss7 from "../assets/ss7.png";
-import ss8 from "../assets/ss8.png";
+import ss1 from "../assets/ss66.png";
+import ss2 from "../assets/ss44.png";
+import ss3 from "../assets/ss66.png";
+import ss4 from "../assets/ss44.png";
+import ss5 from "../assets/ss66.png";
+import ss6 from "../assets/ss44.png";
+import ss7 from "../assets/ss66.png";
+import ss8 from "../assets/ss44.png";
 
 // Tipagem das soluções
 interface Solucao {
@@ -101,7 +101,7 @@ export default function Solucoes() {
 
   return (
   <section className="solucoes-section">
-  <h2 className="section-title">Soluções de Software</h2>
+  <h2 className="section-titles">Soluções de Software</h2>
 
   <div className="carousel-wrapper">
     <button className="arrows left" onClick={prevSlide}>‹</button>

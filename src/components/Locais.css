@@ -1,12 +1,13 @@
 .locais-section {
   position: relative;
-  padding: 60px 40px;
+  padding: 80px 0px 160px 0px;
   text-align: center;
   font-family: "Poppins", sans-serif;
   overflow: hidden;
-  color: #000; /* cor do texto */
+  color: #141E1C; /* cor do texto */
 }
 
+/* Fundo leve animado */
 /* Fundo leve animado */
 .locais-section::before {
   content: "";
@@ -15,19 +16,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("../assets/locais2.png");
+  background-image: url("../assets/locais5.png");
   background-size: cover;
   background-position: center;
-  opacity: 0.1;
   z-index: 0;
-  animation: fundoMover 18s ease-in-out infinite alternate;
+  animation: fundoZoom 18s ease-in-out infinite alternate;
 }
 
 /* Overlay leve opcional */
-.overlay {
+.overlays {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0); /* leve contraste */
+  background: rgba(255, 255, 255, 0.048); /* leve contraste */
   z-index: 1;
 }
 
@@ -35,17 +35,18 @@
 .locais-content {
   position: relative;
   z-index: 2;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 /* Títulos e textos */
 .locais-title {
-  font-size:3rem;
+  font-size:2.5rem;
   font-weight: 700;
-   font-family: 'Shadows Into Light', cursive;
+ font-family: 'Orbitron', sans-serif;
   margin-bottom: 25px;
-  color:#78349B ;
+  color:#4E756E ;
+  padding: 20px 0px;
 }
 
 .locais-intro {
@@ -59,17 +60,29 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 20px;
-  margin-top: 40px;
+  
+  margin-top: 60px;
   position: relative; /* garante que os cards fiquem acima do fundo */
   z-index: 2;
 }
 
 /* Cards */
 .pais-card {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.03); /* leve transparência */
   padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  border-radius: 18px; /* 🔹 arredondamento suave */
+  border: 2px solid transparent;
+
+  /* 🔹 Borda com degradê */
+  background: 
+    linear-gradient(var(--neutral), var(--neutral)) padding-box,
+    linear-gradient(120deg, var(--terceira), var(--accent1)) border-box;
+
+  /* 🔹 Glow sutil */
+  box-shadow:
+    0 0 10px rgba(117, 175, 165, 0.25),
+    0 0 25px rgba(98, 146, 137, 0.15);
+
   transition: all 0.4s ease;
   position: relative;
   animation: cardFadeUp 1.2s ease forwards;
@@ -77,35 +90,47 @@
   transform: translateY(40px);
 }
 
+/* 💥 Efeito hover: brilho mais forte e leve movimento */
+.pais-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow:
+    0 0 15px rgba(137, 204, 192, 0.35),
+    0 0 35px rgba(75, 161, 147, 0.25);
+}
+
+
 .pais-card:nth-child(1) { animation-delay: 0.4s; }
 .pais-card:nth-child(2) { animation-delay: 0.6s; }
 .pais-card:nth-child(3) { animation-delay: 0.8s; }
 .pais-card:nth-child(4) { animation-delay: 1s; }
 
-.pais-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  background: rgba(255, 255, 255, 0.95);
-}
 
 /* Títulos e textos dentro dos cards */
 .pais-card h3 {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
-   font-family: 'Shadows Into Light', cursive;
-     color:#F0A411 ;
+   font-family: 'Orbitron', sans-serif;
+     color:#75AFA5 ;
 }
 
 .pais-card p {
   font-size: 0.95rem;
   line-height: 1.4;
 }
-
-/* Animações */
-@keyframes fundoMover {
-  0% { transform: scale(1); background-position: center bottom; opacity: 0.2; }
-  100% { transform: scale(1.05); background-position: center top; opacity: 0.25; }
+strong{
+     font-family: 'Orbitron', sans-serif;
 }
-
+/* Animações */
+@keyframes fundoZoom {
+  0% {
+    transform: scale(1);
+    opacity: 0.18;
+  }
+  100% {
+    transform: scale(1.08);
+    opacity: 0.25;
+  }
+}
 @keyframes cardFadeUp {
   from { opacity: 0; transform: translateY(40px); }
   to { opacity: 1; transform: translateY(0); }

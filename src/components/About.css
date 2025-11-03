@@ -1,38 +1,44 @@
 .ia-intro-section {
   padding: 80px 20px;
-  background: #FBF7EB;
-  color: #333;
+  background: linear-gradient(to right,#0C1B1D, #2C4947);
+
+  color: #FFFFFF;
 }
 
 .ia-intro-container {
   display: flex;
-  max-width: 1200px;
-  margin: 0 auto;
-  gap: 10px;
+  margin: 0;
+  padding: 0 0px; /* um pouco de espaçamento lateral */
+  align-items: center;
+  justify-content: space-between; /* mantém a imagem à direita */
+  gap: 20px;
 }
 
-/* Lado esquerdo */
+/* Texto à esquerda, mas mais para o meio */
 .ia-intro-left {
   flex: 1;
+  max-width: 50%; /* controla a largura do texto */
+  margin-left: 10%; /* empurra o texto para o meio da tela */
 }
 
-.ia-image {
-  width: 70%;
-  object-fit: cover;
-}
-
-/* Lado direito */
+/* Imagem à direita */
 .ia-intro-right {
   flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
+  justify-content: flex-end; /* encosta a imagem na borda direita */
 }
+
+.ia-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
 
 .ia-title {
   font-size: 2.5rem;
   font-weight: bold;
+  font-family: 'Orbitron', sans-serif;
 }
 
 .ia-description {
@@ -43,10 +49,13 @@
 .learn-more {
   color: var(--secondary);
   font-weight: bold;
-  border: 1px solid #78349B;
-  padding: 10px 20px;
+  border: 1px solid #0F2021;
+  padding: 20px 0px;
   font-size: 16px;
-  background-color: #FBF7EB;
+  color:#FFFFFF ;
+  border-radius: 8px;
+  background-color: #0F2021;
   text-decoration: none;
   width: fit-content;
+  font-family: 'Orbitron', sans-serif;
 }

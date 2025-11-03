@@ -2,11 +2,11 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "./CasosDeEstudo.css";
 
-import cu1 from "../assets/cu1.png";
-import cu2 from "../assets/cu2.png";
-import cu3 from "../assets/cu3.png";
-import cu4 from "../assets/cu4.png";
-import cu5 from "../assets/cu5.png";
+import cu1 from "../assets/cu333.png";
+import cu2 from "../assets/cu555.png";
+import cu3 from "../assets/cu333.png";
+import cu4 from "../assets/cu555.png";
+import cu5 from "../assets/cu333.png";
 
 interface Caso {
   title: string;

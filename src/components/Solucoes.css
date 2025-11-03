@@ -2,16 +2,18 @@
   padding: 50px 20px;
   position: relative;
   /* Fundo diagonal com corte arredondado */
-  background: linear-gradient(180deg, var(--neutral) 60%, var(--secondary) 40%);
+  background: linear-gradient(180deg, var(--neutral) 60%, var(--complementary2) 40%);
   overflow: hidden;
   color: #fff;
 }
 
-.section-title {
+.section-titles {
   text-align: center;
-  font-size: 3rem;
+  font-size: 2.5rem;
   margin-bottom: 30px;
   letter-spacing: 1px;
+  color: var(--accent1);
+  font-family: 'Orbitron', sans-serif;
 }
 
 /* Container do carrossel */
@@ -49,10 +51,10 @@
   padding: 15px;
  background: linear-gradient(
   180deg,
-  rgba(0, 0, 0, 0.35) 0%,   /* topo mais transparente */
-  rgb(0, 0, 0) 100%   /* base mais escura */
+  rgba(0, 0, 0, 0) 0%,   /* topo mais transparente */
+  rgba(255, 255, 255, 0.89) 100%   /* base mais escura */
 );
-  color: #ffffff;
+  color: #141E1C;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -62,14 +64,16 @@
 
 /* Título sempre visível */
 .card-overlay h3 {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 5px;
   opacity: 1; /* visível sempre */
+  font-family: 'Orbitron', sans-serif;
+  color: var(--accent1) !important;
 }
 
 /* Texto adicional só aparece no hover */
 .card-overlay p {
-  font-size: 0.85rem;
+  font-size: 1rem;
   margin: 2px 0;
   opacity: 0;
   transition: opacity 0.3s;

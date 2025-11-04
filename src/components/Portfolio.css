@@ -56,7 +56,7 @@
   filter: grayscale(0%);
 }
 
-.card-overlay {
+.card-overlays {
   position: absolute;
   inset: 0;
   background-color: rgba(0, 0, 0, 0.671);
@@ -70,7 +70,7 @@
   text-align: center;
 }
 
-.card:hover .card-overlay {
+.card:hover .card-overlays {
   opacity: 1;
 }
 

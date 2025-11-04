@@ -1,55 +1,79 @@
 import React from "react";
 import "./Footer.css";
-import Logo from "../assets/ia.png";
+import Logo from "../assets/logo (5).png";
 
-// Importando ícones do React Icons
+// Ícones do React Icons
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const FooterSection: React.FC = () => {
   return (
     <footer className="footer-section">
+      {/* ===== TOPO ===== */}
       <div className="footer-top">
-        {/* Logo e Links */}
-        <div className="footer-left">
-          <img src={Logo} alt="Logo" className="footer-logo" />
-          <div className="footer-links-columns">
+        
+        {/* ===== LOGO ===== */}
+        <div className="footer-logo-area">
+          <img src={Logo} alt="IMBAS Logo" className="footer-logo" />
+        </div>
+
+        {/* ===== LINKS ===== */}
+        <div className="footer-links-center">
+          <div className="footer-links-group">
+            <h4 className="footer-title">Links Principais</h4>
             <ul className="footer-links">
+              <li><a href="#">Home</a></li>
               <li><a href="#">Sobre</a></li>
+              <li><a href="#">Serviços</a></li>
               <li><a href="#">Contato</a></li>
-              <li><a href="#">Suporte</a></li>
             </ul>
+          </div>
+
+          <div className="footer-links-group">
+            <h4 className="footer-title">Políticas</h4>
             <ul className="footer-links">
-              <li><a href="#">Blog</a></li>
-              <li><a href="#">Carreiras</a></li>
-              <li><a href="#">Política de Privacidade</a></li>
+              <li><a href="#">Termos de Uso</a></li>
+              <li><a href="#">Privacidade</a></li>
+              <li><a href="#">Cookies</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-links-group">
+            <h4 className="footer-title">Recursos</h4>
+            <ul className="footer-links">
+              <li><a href="#">Documentação</a></li>
+              <li><a href="#">API</a></li>
+              <li><a href="#">Tutoriais</a></li>
+              <li><a href="#">Parcerias</a></li>
+            </ul>
+          </div>
+
+          <div className="footer-links-group">
+            <h4 className="footer-title">Suporte</h4>
+            <ul className="footer-links">
+              <li><a href="#">Central de Ajuda</a></li>
+              <li><a href="#">Status</a></li>
+              <li><a href="#">Feedback</a></li>
             </ul>
           </div>
         </div>
-
-        {/* Redes sociais com ícones */}
-        <div className="footer-right">
-          <a href="#" className="social"><FaFacebookF /></a>
-          <a href="#" className="social"><FaTwitter /></a>
-          <a href="#" className="social"><FaLinkedinIn /></a>
-          <a href="#" className="social"><FaYoutube /></a>
-          <a href="#" className="social"><FaInstagram /></a>
-        </div>
       </div>
 
-      {/* Rodapé inferior */}
-     <div className="footer-bottom">
-        <p className="footer-frase">"Construindo o futuro com inovação e propósito."</p>
-        <p className="footer-copy">© 2025 Minha Empresa. Todos os direitos reservados.</p>
-        <div className="footer-termos">
-          <a className="terms" href="#">Termos de Uso</a>
-          <span>•</span>
-          <a className="terms" href="#">Privacidade</a>
-          <span>•</span>
-          <a className="terms" href="#">Cookie</a>
-          <a href="#" className="scroll-top">↑</a>
+      {/* ===== BASE ===== */}
+      <div className="footer-bottom">
+        <div className="rodape">
+          <p className="footer-frase">“Predict. Create. Evolve.”</p>
+          <p className="footer-copy">© 2025 IMBAS. Todos os direitos reservados.</p>
+
+          {/* ===== REDES SOCIAIS AGORA AQUI ===== */}
+          <div className="footer-social-bottom">
+            <a href="#" className="social"><FaFacebookF /></a>
+            <a href="#" className="social"><FaTwitter /></a>
+            <a href="#" className="social"><FaLinkedinIn /></a>
+            <a href="#" className="social"><FaYoutube /></a>
+            <a href="#" className="social"><FaInstagram /></a>
+          </div>
         </div>
       </div>
-      
     </footer>
   );
 };

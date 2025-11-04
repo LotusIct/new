@@ -1,108 +1,224 @@
 .solucoes-section {
   padding: 50px 20px;
-  position: relative;
-  /* Fundo diagonal com corte arredondado */
-  background: linear-gradient(180deg, var(--neutral) 60%, var(--complementary2) 40%);
-  overflow: hidden;
+  background: linear-gradient(180deg, #ffffff 60%, #CFC7FF 40%);
   color: #fff;
 }
-
-.section-titles {
+.section-solutions{
+  max-width: 1400px;
+  margin: 0 auto;
   text-align: center;
-  font-size: 2.5rem;
+}
+.section-titles {
+  text-align: left;
+  font-size: 4rem;
   margin-bottom: 30px;
   letter-spacing: 1px;
-  color: var(--accent1);
-  font-family: 'Orbitron', sans-serif;
+  margin-left: 60px ;
+  color: var(--primary);
+   font-family: 'Ailerons', sans-serif;
 }
-
-/* Container do carrossel */
+.solutions-title{
+  background-color: #cfc7ff75;
+  margin-left: -60px;
+  width: 850px;
+}
+/* Carrossel */
 .carousel-container {
-  position: relative;
-  overflow: hidden;
-  max-width: 1200px;
+  overflow: visible; /* permite ver parte do próximo */
+  max-width: 1400px;
   margin: 0 auto;
+  position: relative;
 }
 
-/* Carrossel flexível */
 .carousel {
   display: flex;
-  transition: transform 0.3s ease-in-out;
-  gap: 3px; /* separação entre os cards */
+  gap: 20px;
+  transition: transform 0.5s ease-in-out;
 }
 
-/* Cards */
 .card {
-  min-width: 33.3333%;
-  height: 450px;
+  min-width: 30%; /* mostra 3 cards + preview do próximo */
+  height: 550px;
   background-size: cover;
   background-position: center;
-  position: relative;
-  border-radius: 15px;
-  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
   cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
 }
 
-/* Overlay */
+.card:hover {
+  background-size: 120%;
+  background-position: center top;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* Responsivo */
+@media (max-width: 1024px) {
+  .card { min-width: 45%; height: 350px; }
+}
+
+@media (max-width: 768px) {
+  .card { min-width: 80%; height: 300px; }
+}
+
+
+/* Overlay sempre visível */
 .card-overlay {
   position: absolute;
-  bottom: 0;
-  width: 100%;
-  padding: 15px;
- background: linear-gradient(
-  180deg,
-  rgba(0, 0, 0, 0) 0%,   /* topo mais transparente */
-  rgba(255, 255, 255, 0.89) 100%   /* base mais escura */
-);
-  color: #141E1C;
-  box-sizing: border-box;
+  inset: 0; /* cobre todo o card */
+  background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.6) 100%);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  height: 100%;
+  justify-content: flex-end; /* mantém o texto e botão na base */
+  padding: 25px 20px;
+  gap: 8px;
+  text-align: left;
+  border-radius: 8px; /* mantém os cantos arredondados */
+  transition: background 1.5s ease;
 }
 
-/* Título sempre visível */
+.card:hover .card-overlay {
+  background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.7) 100%);
+
+}
+.solucoes-section {
+  padding: 50px 20px;
+  background: linear-gradient(180deg, #ffffff 60%, #CFC7FF 40%);
+  color: #fff;
+}
+.section-solutions{
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.section-titles {
+  text-align: left;
+  font-size: 4rem;
+  margin-bottom: 30px;
+  letter-spacing: 1px;
+  margin-left: 60px ;
+  color: var(--primary);
+   font-family: 'Ailerons', sans-serif;
+}
+.solutions-title{
+  background-color: #cfc7ff75;
+  margin-left: -60px;
+  width: 850px;}
+/* ========== HEADER ========== */
+.solutions-header {
+  display: flex;
+  justify-content: space-between; /* título à esquerda, setas à direita */
+  align-items: center;
+  max-width: 1400px;
+  margin: 0 auto 30px auto;
+}
+
+.arrows-header {
+  display: flex;
+  margin-top: 40px;
+  gap: 10px; /* sem espaço entre elas */
+}
+.arrows-header .arrows {
+  width: 60px;
+  height: 60px;
+  font-size: 3rem;
+  line-height: 1; /* adiciona */
+  background: #cfc7ffc0;
+  color: #000;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.arrows-header .arrows {
+  transform: translateY(-4px); /* ou -2px até ficar perfeito */
+}
+
+.arrows-header .arrows + .arrows {
+  margin-left: -5px; /* coladas, mas ligeiro espaçamento pra não grudarem visualmente */
+}
+
+/* ========== CARROSSEL ========== */
+.carousel-container {
+  overflow: hidden;
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.carousel {
+  display: flex;
+  gap: 15px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  min-width: 30%;
+  height: 550px;
+  background-size: cover;
+  background-position: center;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background-size 2s cubic-bezier(0.25, 0.8, 0.25, 1),
+              background-position 2s cubic-bezier(0.25, 0.8, 0.25, 1),
+              box-shadow 1.5s ease;
+}
+
+.card:hover {
+  background-size: 120%;
+  background-position: center top;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+}
+
+/* ========== OVERLAY ========== */
+.card-overlay {
+  position: absolute;
+  inset: 0; /* cobre todo o card */
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 50%, rgb(0, 0, 0) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* textos na base */
+  padding: 25px 20px;
+  gap: 8px;
+  border-radius: 8px;
+  transition: background 1.5s ease;
+}
+
+.card:hover .card-overlay {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%,rgba(0, 0, 0, 0) 30%, rgba(0,0,0,1) 100%);
+}
+
 .card-overlay h3 {
-  font-size: 1.5rem;
-  margin-bottom: 5px;
-  opacity: 1; /* visível sempre */
-  font-family: 'Orbitron', sans-serif;
-  color: var(--accent1) !important;
+  font-size: 2rem;
+  margin: 0;
+  color: var(--accent1);
+  font-family: 'Ailerons', sans-serif;
 }
 
-/* Texto adicional só aparece no hover */
 .card-overlay p {
   font-size: 1rem;
-  margin: 2px 0;
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.card:hover .card-overlay p {
-  opacity: 1;
-}
-
-/* Setas */
-.arrows {
-  position: absolute;
-  top: 55%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
+  margin: 0;
   color: #fff;
+}
+
+.read-more {
+  display: inline-flex;
+  background: transparent;
   border: none;
-  font-size: 2rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
   cursor: pointer;
-  z-index: 10;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+  width: fit-content;
+  text-align: left;
 }
 
-.arrows.left { left: 10px; }
-.arrows.right { right: 10px; }
-
-/* Mobile */
-@media (max-width: 768px) {
-  .card { min-width: 100%; }
-}

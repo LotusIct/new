@@ -2,15 +2,15 @@ import { useState } from "react";
 import "./Industrias.css";
 
 // Importando imagens
-import i1 from "../assets/i1.png";
-import i2 from "../assets/i2.png";
-import i3 from "../assets/i3.png";
-import i4 from "../assets/i4.png";
-import i5 from "../assets/i5.png";
-import i6 from "../assets/i6.png";
-import i7 from "../assets/i7.png";
-import i8 from "../assets/i8.png";
-
+import i1 from "../assets/in1.png";
+import i2 from "../assets/in2.png";
+import i3 from "../assets/in3.png";
+import i4 from "../assets/in4.png";
+import i5 from "../assets/in5.png";
+import i6 from "../assets/in6.png";
+import i7 from "../assets/in7.png";
+import i8 from "../assets/in8.png";
+import i9 from "../assets/in9.png";
 // Tipagem
 interface Industria {
   nome: string;
@@ -46,7 +46,14 @@ const industrias: Industria[] = [
     link: "#",
   },
   {
-    nome: "E-commerce / Software",
+  nome: "Software",
+  descricao: "Soluções digitais inteligentes com IA.",
+  imagem: i9,
+  link: "#",
+},
+
+  {
+    nome: "E-commerce",
     descricao: "Plataformas completas para vendas online e gestão de produtos.",
     imagem: i5,
     link: "#",
@@ -58,7 +65,7 @@ const industrias: Industria[] = [
     link: "#",
   },
   {
-    nome: "Educação / Professional Service",
+    nome: "Educação ",
     descricao: "Softwares educacionais e ferramentas para treinamentos corporativos.",
     imagem: i7,
     link: "#",

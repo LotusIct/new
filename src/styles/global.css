@@ -1,41 +1,77 @@
-/* Fonte Poppins para títulos e Lora para textos */
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Poppins:wght@400;600;700&display=swap');
+/* Importando fonte complementar (Rubik) */
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700&display=swap');
 
+/* Fonte principal - Ailerons */
+@font-face {
+  font-family: 'Ailerons';
+  src: url('/fonts/ailerons/Ailerons-Typeface.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* 🌌 Paleta IMBAS */
 :root {
-  --primary: #629289;        /* Branco gelo */
-  --terceira: #4E756E;
-  --secondary: #273B37;      /* Azul petróleo claro */
-  --complementary1: #141E1C; /* Cinza escuro leve */
-  --complementary2: #75AFA5; /* Cinza médio */
-  --accent1: #89CCC0;        /* Magenta vibrante */
-  --accent2: #3B5852;        /* Laranja suave */
-  --neutral: #FFFFFF;        /* Branco puro */
+  --primary: #2B1B52;        /* Azul violeta profundo - sabedoria e mistério */
+  --secondary: #3E2C74;      /* Roxo cósmico - equilíbrio e tecnologia */
+  --terceira: #0C0A14;       /* Preto azulado - fundo sofisticado */
+  --complementary1: #BCAAF3; /* Lilás prateado - sabedoria e brilho */
+  --complementary2: #7E6BCC; /* Roxo frio - destaque secundário */
+  --accent1: #CFC7FF;        /* Prata lilás clara - destaque sutil */
+  --accent2: #493D8C;        /* Azul elétrico escuro - contraste forte */
+  --neutral: #FFFFFF;        /* Branco puro - legibilidade */
 }
 
-/* Exemplo de aplicação */
+/* Corpo do site */
 body {
-  background-color: white;
-  color: var(--complementary1);
-  font-family: 'Poppins', serif;
-  margin: 0 auto;
-}
-
-h1, h2, h3, .title {
-  font-family: 'Poppins', sans-serif;
-}
-
-
-button.primary {
   background-color: var(--terceira);
-  color: var(--neutral);
+  color: var(--complementary1);
+  font-family: 'Rubik', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-button.secondary {
+/* Títulos e logotipo */
+h1, h2, h3, .logo-text {
+  font-family: 'Ailerons', sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent1);
+}
+
+/* Slogan / Subtítulo */
+.subtitle {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--complementary1);
+  margin-top: -8px;
+  letter-spacing: 1px;
+}
+
+/* Botões */
+button a{
+  font-family: 'Ailerons', sans-serif;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background-color: var(--secondary);
+  color: var(--neutral);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button:hover {
   background-color: var(--accent2);
-  color: var(--neutral);
+  color: var(--accent1);
+  box-shadow: 0 0 10px var(--accent1);
 }
 
-.section-alt {
-  background-color: var(--complementary2);
-  color: var(--neutral);
+/* Fundo cósmico opcional (suave e moderno) */
+body {
+  background: radial-gradient(circle at 20% 20%, #2B1B52, #0C0A14 60%);
+  background-attachment: fixed;
 }

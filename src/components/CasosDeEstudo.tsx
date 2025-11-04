@@ -68,53 +68,51 @@ const casos: Caso[] = [
     img: cu5,
   },
 ];
-
 export default function CasosDeEstudo() {
   const [index, setIndex] = useState(0);
 
   const prevSlide = () => {
-    setIndex((prev) => (prev === 0 ? casos.length - 1 : prev - 1));
+    setIndex(prev => (prev === 0 ? casos.length - 1 : prev - 1));
   };
 
   const nextSlide = () => {
-    setIndex((prev) => (prev === casos.length - 1 ? 0 : prev + 1));
+    setIndex(prev => (prev === casos.length - 1 ? 0 : prev + 1));
   };
 
   return (
     <section className="casos-section">
-     <div className="slidecaso"> <h2 className="section-title">Casos de Estudo</h2>
-      <button className="arrow left" onClick={prevSlide}>
-          ‹
-        </button>
-        <button className="arrow right" onClick={nextSlide}>
-          ›
-        </button></div>
+      <div className="solutions-header">
+        <div className="arrows-header">
+          <button className="arrows" onClick={prevSlide}>‹</button>
+          <button className="arrows" onClick={nextSlide}>›</button>
+        </div>
+       <div className="caso-title">
+         <h2 className="section-titless">Casos de Estudo</h2>
+       </div>
+        
+      </div>
 
       <div className="carousel-container">
-        
-
-        <div className="carousel">
-          {casos.slice(index, index + 3).map((caso, i) => (
+        <div
+          className="carousel"
+          style={{ transform: `translateX(-${index * (30 + 2)}%)` }} // 30% largura + 2% gap aproximado
+        >
+          {casos.map((caso, i) => (
             <motion.div
               key={i}
               className="card"
+              style={{ backgroundImage: `url(${caso.img})` }}
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: -50 }}
               transition={{ duration: 0.3 }}
-              style={{ backgroundImage: `url(${caso.img})` }}
             >
-              <div className="card-overlay">
+              <div className="card-overlays">
                 <h3>{caso.title}</h3>
-                <p>
-                  <strong>Problema:</strong> {caso.problema}
-                </p>
-                <p>
-                  <strong>Solução:</strong> {caso.solucao}
-                </p>
-                <p>
-                  <strong>Resultado:</strong> {caso.resultado}
-                </p>
+                <p><strong>Problema:</strong> {caso.problema}</p>
+                <p><strong>Solução:</strong> {caso.solucao}</p>
+                <p><strong>Resultado:</strong> {caso.resultado}</p>
+                <button className="read-more">Saiba mais</button>
               </div>
             </motion.div>
           ))}

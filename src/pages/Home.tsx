@@ -23,11 +23,11 @@ const Home = () => {
       <Portfolio />
        <Industrias />  
       <CasosDeEstudo /> 
-      <Solucoes />      
+      <Solucoes />    
+      <CTA />  
       <Locais />       
-      <About />
-      <CTA />
       <ContatoCarreiras />
+      <About />
       <Footer />
     </div>
   );

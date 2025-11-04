@@ -1,33 +1,71 @@
+/* Flex principal */
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Coluna esquerda (textos fixos) */
+.locais-left {
+  flex: 1;
+  max-width: 800px;
+}
+
+/* Coluna direita (lista de países + descrição) */
+/* Coluna direita (lista de países + descrição) */
+.locais-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centraliza verticalmente */
+  height: 100%; /* ocupa toda a altura da seção */
+  gap: 20px;
+  margin-top: 40px;
+}
+
+/* Lista de países */
+.paises-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+
+/* Descrição do país */
+.descricao-pais {
+  margin-top: 10px;
+  transition: opacity 0.6s ease;
+  background-color:transparent; 
+  width: 600px;
+  padding: 5px;
+  margin-left: 20px;
+  border-radius: 8px;
+  text-align: center;
+  margin-top:0px;
+}
 .locais-section {
   position: relative;
-  padding: 80px 0px 160px 0px;
-  text-align: center;
-  font-family: "Poppins", sans-serif;
+  padding: 40px 0 100px 0;
+  text-align: left;
+  font-family: "Rubik", sans-serif;
   overflow: hidden;
-  color: #141E1C; /* cor do texto */
-}
-
-/* Fundo leve animado */
-/* Fundo leve animado */
-.locais-section::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url("../assets/locais5.png");
+  color: var(--complementary1);
+  transition: background 0.8s ease-in-out;
+  background-color: #ffffff;
   background-size: cover;
   background-position: center;
-  z-index: 0;
-  animation: fundoZoom 18s ease-in-out infinite alternate;
+  display: flex;           /* ADICIONADO */
+  align-items: stretch;    /* ADICIONADO */
 }
 
-/* Overlay leve opcional */
+
+/* Overlay leve */
 .overlays {
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.048); /* leve contraste */
   z-index: 1;
 }
 
@@ -35,118 +73,95 @@
 .locais-content {
   position: relative;
   z-index: 2;
-  max-width: 1200px;
-  margin: 0 auto;
+  max-width: 1400px;
 }
 
-/* Títulos e textos */
+/* Textos */
 .locais-title {
-  font-size:2.5rem;
-  font-weight: 700;
- font-family: 'Orbitron', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  font-family: 'Ailerons', sans-serif;
   margin-bottom: 25px;
-  color:#4E756E ;
+  color: var(--accent1);
   padding: 20px 0px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .locais-intro {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   line-height: 1.6;
   margin-bottom: 25px;
+  font-family: 'Rubik', sans-serif;
+  color: var(--complementary1);
 }
 
-/* Grid dos cards */
-.locais-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-  gap: 20px;
-  
-  margin-top: 60px;
-  position: relative; /* garante que os cards fiquem acima do fundo */
-  z-index: 2;
-}
-
-/* Cards */
-.pais-card {
-  background: rgba(255, 255, 255, 0.03); /* leve transparência */
-  padding: 20px;
-  border-radius: 18px; /* 🔹 arredondamento suave */
-  border: 2px solid transparent;
-
-  /* 🔹 Borda com degradê */
-  background: 
-    linear-gradient(var(--neutral), var(--neutral)) padding-box,
-    linear-gradient(120deg, var(--terceira), var(--accent1)) border-box;
-
-  /* 🔹 Glow sutil */
-  box-shadow:
-    0 0 10px rgba(117, 175, 165, 0.25),
-    0 0 25px rgba(98, 146, 137, 0.15);
-
-  transition: all 0.4s ease;
-  position: relative;
-  animation: cardFadeUp 1.2s ease forwards;
-  opacity: 0;
-  transform: translateY(40px);
-}
-
-/* 💥 Efeito hover: brilho mais forte e leve movimento */
-.pais-card:hover {
-  transform: translateY(-4px) scale(1.02);
-  box-shadow:
-    0 0 15px rgba(137, 204, 192, 0.35),
-    0 0 35px rgba(75, 161, 147, 0.25);
+/* Texto do país ativo */
+.ativo-pais {
+  font-weight: 200;
+  color: var(--primary);
+  padding: 2px;
+  font-size: 1.5rem;
+  transition: opacity 0.6s ease; 
+    font-family: 'Ailerons', sans-serif;
 }
 
 
-.pais-card:nth-child(1) { animation-delay: 0.4s; }
-.pais-card:nth-child(2) { animation-delay: 0.6s; }
-.pais-card:nth-child(3) { animation-delay: 0.8s; }
-.pais-card:nth-child(4) { animation-delay: 1s; }
-
-
-/* Títulos e textos dentro dos cards */
-.pais-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-   font-family: 'Orbitron', sans-serif;
-     color:#75AFA5 ;
+.pais-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Ailerons', sans-serif;
+  font-size: 1.5rem;
+  color: var(--accent1);
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 12px;
+  transition: all 0.4s ease; /* transição mais suave */
+  background: rgba(202, 202, 202, 0.13);
 }
 
-.pais-card p {
-  font-size: 0.95rem;
-  line-height: 1.4;
+.pais-item:hover,
+.pais-item.ativo {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateX(5px);
 }
-strong{
-     font-family: 'Orbitron', sans-serif;
+
+.emoji {
+  font-size: 2rem;
 }
-/* Animações */
-@keyframes fundoZoom {
-  0% {
-    transform: scale(1);
-    opacity: 0.18;
-  }
-  100% {
-    transform: scale(1.08);
-    opacity: 0.25;
-  }
+/* Cores normais (padrão) */
+.locais-left, .descricao-pais, .pais-item span {
+  color: var(--complementary1);
 }
-@keyframes cardFadeUp {
-  from { opacity: 0; transform: translateY(40px); }
-  to { opacity: 1; transform: translateY(0); }
+
+/* Quando ativo/hover, textos ficam pretos */
+.texto-hover, .descricao-hover {
+  color: black !important;
 }
 
 /* Responsivo */
+@media (max-width: 1024px) {
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .locais-left, .locais-right {
+    max-width: 100%;
+  }
+  .paises-lista {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .pais-item {
+    transform: none !important;
+    padding: 8px 16px;
+  }
+}
+
 @media (max-width: 768px) {
-  .locais-section {
-    padding: 60px 20px;
-  }
-
-  .locais-title {
-    font-size: 2rem;
-  }
-
-  .locais-grid {
-    grid-template-columns: 1fr;
-  }
+  .locais-section { padding: 60px 20px; }
+  .locais-title { font-size: 2rem; }
 }

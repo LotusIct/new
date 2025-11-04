@@ -26,26 +26,23 @@ export default function ContatoCarreiras() {
   return (
     <section className="contato-carreiras">
       <div className="boxes-container">
-        {boxes.map((box, index) => (
-          <motion.div
-            key={index}
-            className="box"
-            style={{ backgroundImage: `url(${box.bgImg})` }}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1, duration: 0.5 }}
-            viewport={{ once: true }}
-          >
-            <div className="overlay"></div>
-            <h3 className="box-title">{box.title}</h3>
-            <p className="box-desc">{box.desc}</p>
+       {boxes.map((box, index) => (
+  <motion.div
+    key={index}
+    className="box"
+    initial={{ opacity: 0, y: 30 }}
+    whileInView={{ opacity: 1, y: 0 }}
+    transition={{ delay: index * 0.1, duration: 0.5 }}
+    viewport={{ once: true }}
+  >
+    <h3 className="box-title">{box.title}</h3>
+    <p className="box-desc">{box.desc}</p>
+    <Link to={box.link} className="box-btn">
+      {box.btnText}
+    </Link>
+  </motion.div>
+))}
 
-            {/* Link para a página separada */}
-            <Link to={box.link} className="box-btn">
-              {box.btnText}
-            </Link>
-          </motion.div>
-        ))}
       </div>
     </section>
   );

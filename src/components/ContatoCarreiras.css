@@ -1,83 +1,151 @@
-
+/* ===================== CONTATO / CARREIRAS ===================== */
 .contato-carreiras {
-  background-color: var(--neutral);
-  padding: 6rem 2rem;
-  font-family: 'Poppins', sans-serif;
-}
-
-.boxes-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.box {
-  background-size: cover;
-  background-position: center;
+  background: linear-gradient(135deg, var(--terceira) 50%, var(--primary) 50%);
+  min-height: 70vh;
+  color: var(--neutral);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 0;
   position: relative;
   overflow: hidden;
-  border-radius: 1rem;
-  padding: 2.5rem 2rem;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.08);
-  transition: all 0.5s ease;
-  color: var(--neutral);
 }
 
-.box .overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.842); /* normal transparente */
-  z-index: 0;
-  transition: all 0.5s ease;
-}
-
-.box:hover .overlay {
-  background: linear-gradient(135deg, #273b37c5, #629289b6); /* degrade colorido */
-}
-
-.box > * {
+/* ===== CONTAINER ===== */
+.boxes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  max-width: 1300px;
+  margin: 0 auto;
   position: relative;
-  z-index: 1; /* garante que o texto fique acima */
+  z-index: 1;
 }
 
-.box-title, .box-desc, .box-btn {
+/* ===== BOX ===== */
+.box {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 3rem;
+  border-radius: 1rem;
   transition: all 0.5s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.box:hover .box-title,
-.box:hover .box-desc,
-.box:hover .box-btn {
-  color: var(--neutral); /* destaca o texto sobre o degradê */
+.box:first-child {
+  align-items: flex-start;
+  text-align: left;
 }
 
+.box:last-child {
+  align-items: flex-end;
+  text-align: right;
+}
+
+.box:hover {
+  transform: translateY(-5px);
+}
+
+/* ===== TEXTO ===== */
 .box-title {
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: var(--terceira);
-  margin-bottom: 1rem;
-font-family: 'Orbitron', sans-serif;
- letter-spacing: 1px;
+  font-size: 2rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--accent1);
+  margin-bottom: 0.8rem;
+  font-family: 'Ailerons', sans-serif;
 }
 
 .box-desc {
   font-size: 1.1rem;
+  line-height: 1.6;
   color: var(--complementary2);
-  line-height: 1.5;
-  font-weight: 500;
   margin-bottom: 2rem;
-  height: 70px;
+  max-width: 500px;
+  height:60px;
 }
 
+.box:hover .box-title,
+.box:hover .box-desc {
+  color: var(--neutral);
+  transform: translateY(-3px);
+  transition: all 0.4s ease;
+}
+
+/* ===== BOTÕES ===== */
 .box-btn {
   display: inline-block;
-  padding: 0.75rem 1.5rem;
-  background-color: var(--primary);
-  color: var(--neutral);
+  padding: 0.8rem 2rem;
   font-weight: 700;
-  border-radius: 0.5rem;
   text-decoration: none;
-  transition: background 0.3s ease;
+  border-radius: 0.5rem;
+  text-align: center;
+  width: 150px;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  font-family: 'Rubik', sans-serif;
+  border: 2px solid transparent;
 }
 
+/* ——— Botão do lado esquerdo (escuro): só borda */
+.box:first-child .box-btn {
+  border: 2px solid var(--neutral);
+  color: var(--neutral);
+  background: transparent;
+}
+
+.box:first-child .box-btn:hover {
+  background: var(--neutral);
+  color: var(--terceira);
+  transform: translateY(-3px);
+}
+
+/* ——— Botão do lado direito (claro): preenchido */
+.box:last-child .box-btn {
+  background: transparent;
+  color: var(--neutral);
+    border: 2px solid var(--neutral);
+}
+
+.box:last-child .box-btn:hover {
+  background: var(--neutral);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(179, 157, 214, 0.3);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 768px) {
+  .boxes-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .box {
+    align-items: center !important;
+    text-align: center !important;
+    padding: 3rem 1.5rem;
+  }
+
+  .box-title {
+    font-size: 1.6rem;
+  }
+
+  .box-desc {
+    font-size: 0.95rem;
+  }
+
+  .box-btn {
+    border-color: var(--neutral);
+    color: var(--neutral);
+    background: transparent;
+  }
+
+  .box-btn:hover {
+    background: var(--neutral);
+    color: var(--terceira);
+  }
+}

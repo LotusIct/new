@@ -1,61 +1,141 @@
+/* ===================== SEÇÃO INTRO IA ===================== */
 .ia-intro-section {
-  padding: 80px 20px;
-  background: linear-gradient(to right,#0C1B1D, #2C4947);
-
-  color: #FFFFFF;
+  position: relative;
+  color: var(--neutral);
+  overflow: hidden;
 }
 
+/* ===== FUNDO DISCRETO ===== */
+.ia-intro-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/cu11.png"); /* sua imagem de fundo */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.25; /* bem discreto */
+  z-index: 0;
+  filter: blur(1px) saturate(120%) brightness(1.05);
+  transform: scale(1.05); /* dá profundidade */
+}
+
+/* ===== CAMADA ESCURA SUAVE ===== */
+.ia-intro-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0)
+  );
+  z-index: 1;
+}
+
+/* ===== CONTAINER ===== */
 .ia-intro-container {
+  position: relative;
+  z-index: 2; /* garante que o conteúdo fique acima do fundo */
   display: flex;
-  margin: 0;
-  padding: 0 0px; /* um pouco de espaçamento lateral */
+  justify-content: flex-start;
   align-items: center;
-  justify-content: space-between; /* mantém a imagem à direita */
-  gap: 20px;
+  gap: 10px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 90px 20px 120px 20px;
 }
 
-/* Texto à esquerda, mas mais para o meio */
+/* ===== TEXTO ===== */
 .ia-intro-left {
   flex: 1;
-  max-width: 50%; /* controla a largura do texto */
-  margin-left: 10%; /* empurra o texto para o meio da tela */
+  max-width: 70%;
+  margin-left: 3%;
 }
-
-/* Imagem à direita */
-.ia-intro-right {
-  flex: 1;
-  display: flex;
-  justify-content: flex-end; /* encosta a imagem na borda direita */
-}
-
-.ia-image {
-  max-width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-
 
 .ia-title {
+  font-size: 15rem;
+  font-weight: 600;
+  margin-top: -10px;
+  color: var(--accent1);
+  font-family: 'Ailerons', sans-serif;
+  margin-bottom: 1rem;
+  letter-spacing: 1.2px;
+}
+.complementar{
   font-size: 2.5rem;
-  font-weight: bold;
-  font-family: 'Orbitron', sans-serif;
+  font-weight: 400;
+  color: var(--complementary2);
+  font-family: 'Rubik', sans-serif;
+  margin-left: 10px;
 }
-
 .ia-description {
-  font-size: 1.1rem;
-  line-height: 1.6;
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: var(--complementary2);
+  margin-bottom: 2rem;
+  max-width: 800px;
+  margin-left: 30px;
+  font-family: 'Rubik', sans-serif;
 }
 
+/* ===== BOTÃO ===== */
 .learn-more {
-  color: var(--secondary);
-  font-weight: bold;
-  border: 1px solid #0F2021;
-  padding: 20px 0px;
-  font-size: 16px;
-  color:#FFFFFF ;
-  border-radius: 8px;
-  background-color: #0F2021;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 0.5rem 2.2rem;
+  border-radius: 0.7rem;
   text-decoration: none;
-  width: fit-content;
-  font-family: 'Orbitron', sans-serif;
+  font-weight: 600;
+  margin-left: 30px;
+  letter-spacing: 0.5px;
+  font-family: 'Rubik', sans-serif;
+  transition: all 0.3s ease;
+  background: transparent;
+  color: var(--accent2);
+  border: 1px solid var(--accent2);
+  position: relative;
+  overflow: hidden;
+}
+
+.learn-more::after {
+  content: "→";
+  font-size: 1.4rem;
+  display: inline-block;
+  transition: transform 0.3s ease;
+  transform-origin: center;
+}
+
+.learn-more:hover {
+  background: transparent;
+  color: var(--accent2);
+  border-color: var(--accent2);
+  box-shadow: 0 0 15px rgba(179, 157, 214, 0.3);
+}
+
+.learn-more:hover::after {
+  transform: translateX(8px) scale(1.1);
+}
+
+/* ===== RESPONSIVO ===== */
+@media (max-width: 900px) {
+  .ia-intro-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ia-intro-left {
+    max-width: 90%;
+    margin-left: 0;
+  }
+
+  .ia-title {
+    font-size: 2.5rem;
+  }
+
+  .ia-description {
+    font-size: 1rem;
+  }
 }

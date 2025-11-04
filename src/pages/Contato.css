@@ -36,9 +36,8 @@
 .contato-form-container h1 {
   margin-bottom: 10px;
   font-size: 32px;
-  font-size: 3.5rem;
+  font-size: 3rem;
 
-  font-family: 'Shadows Into Light', cursive;
 }
 
 .contato-form-container p {
@@ -51,7 +50,7 @@
   width: 108%;
   margin-bottom: 20px;
   padding: 15px;
-   border: 1px solid #78349B;
+   border: 1px solid #004585;
   border-radius: 8px;
   font-size: 14px;
 }
@@ -62,7 +61,7 @@
   padding: 15px;
   border-radius: 8px;
   font-size: 14px;
-  border: 1px solid #78349B;
+  border: 1px solid #004585;
   
 }
 .contato-form textarea {
@@ -71,7 +70,7 @@
 
 .contato-form button {
   padding: 15px 30px;
-  background-color: #78349B;
+  background-color: #004585;
   border: 2px solid ;
   color: #fff;
   border: none;

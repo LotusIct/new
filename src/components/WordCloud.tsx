@@ -22,7 +22,7 @@ const WORDS: WordItem[] = [
   { id:10, word: "Sustentável",left: "25%",  top: "78%", description: "Foco em processos com menor impacto ambiental e custos." },
 ];
 
-export default function WordCloud(): JSX.Element {
+export default function WordCloud(): React.ReactElement {
   // índice do item ativo por clique/touch (null = nenhum)
   const [activeId, setActiveId] = useState<number | null>(null);
 

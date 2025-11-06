@@ -1,5 +1,5 @@
 .hero {
-  background-image: url("../assets/wave2.png");
+  background-image: url("../assets/hero.png");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -8,7 +8,7 @@
   padding: 120px 20px;
   text-align: center;
   height: 40vh;
-  animation: waveMove 20s ease-in-out infinite alternate;
+  animation: waveMove 10s ease-in-out infinite alternate;
 }
 
 @keyframes waveMove {

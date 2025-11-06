@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import "./Carreiras.css";
-import careersBg from "../assets/carreira3.png";
-import aiImg from "../assets/equipe1.png";
-import devImg from "../assets/equipe2.png";
-import gestaoImg from "../assets/equipe3.png";
-import equipesImg from "../assets/equipe4.png";
+import careersBg from "../assets/carreiran.jpg";
+import aiImg from "../assets/can11.png";
+import devImg from "../assets/can2.png";
+import gestaoImg from "../assets/can4.png";
+import equipesImg from "../assets/can3.png";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

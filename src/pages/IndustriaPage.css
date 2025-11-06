@@ -1,0 +1,118 @@
+.industria-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.industria-header h1 {
+  font-size: 4rem;
+  font-family: 'Ailerons', sans-serif;
+}
+.industria-divider {
+  width: 100px;
+  height: 4px;
+  background: var(--primary);
+  margin: 0.5rem auto 2rem auto;
+}
+
+/* Hero */
+.industria-hero {
+  height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-size: cover;
+  background-position: center;
+  padding: 0 5%;
+  color: #fff;
+}
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+.hero-text .impactante {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.hero-text .complementar {
+  font-size: 1.5rem;
+}
+
+/* Blocos */
+.industria-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 4rem 5%;
+}
+.industria-block.right {
+  flex-direction: row-reverse;
+}
+.block-text h3 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+.block-text p {
+  font-size: 1.2rem;
+}
+.block-image img {
+  max-width: 500px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+}
+
+/* Tópicos */
+.industria-topicos {
+  text-align: center;
+  padding: 4rem 5%;
+}
+.topicos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.topico-card {
+  padding: 2rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Citação */
+.industria-citacao {
+  padding: 4rem 5%;
+  font-style: italic;
+  text-align: center;
+  font-size: 1.8rem;
+}
+
+/* Botão contato */
+.industria-contato {
+  text-align: center;
+  margin: 3rem 0;
+}
+.industria-contato button {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.industria-contato button:hover {
+  background: var(--accent2);
+}
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .industria-block {
+    flex-direction: column !important;
+  }
+  .block-image img {
+    max-width: 100%;
+  }
+}

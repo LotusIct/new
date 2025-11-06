@@ -1,149 +1,152 @@
 import React from "react";
 import { motion } from "framer-motion";
-import "./IA.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import introImg from "../assets/iafato.png"; // imagem da seção introdutória
+import "./IA.css";
+import mirai from "../assets/mirai.png";
+const floatingWords = [
+  { word: "imaginação", desc: "Onde ideias nascem e se transformam." },
+  { word: "consciência", desc: "A inteligência que aprende e evolui." },
+  { word: "criação", desc: "O elo entre o humano e o digital." },
+  { word: "dados", desc: "O combustível da inovação contínua." },
+  { word: "futuro", desc: "O destino que começa agora." },
+];
 
-const IA: React.FC = () => {
+const MirAI: React.FC = () => {
   return (
     <>
       <Header />
+<div className="background-words">
+  <span>Inovação</span>
+  <span>Tecnologia</span>
+  <span>Conexões</span>
+  <span>Transformação</span>
+  <span>Inteligência</span>
+  <span>Futuro</span>
+  <span>Integração</span>
+  <span>Estratégia</span>
+  <span>Digital</span>
+</div>
 
-      {/* Seção 1: Introdução full width */}
+      {/* 🌌 HERO */}
+      <section className="mirai-hero">
+        <motion.div
+          className="mirai-hero-content"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1 }}
+        >
+          <h1 className="mirai-title">MirAI</h1>
+          <p className="mirai-subtitle">- onde o agora encontra o futuro</p>
+          <motion.button
+            className="mirai-button"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Descubra o Futuro
+          </motion.button>
+        </motion.div>
+
+      </section>
+
+      {/* 💡 SOBRE A MIRAI */}
       <motion.section
-        className="ia-intro-section bg-light"
-        initial={{ opacity: 0, y: 30 }}
+        className="mirai-section"
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <div className="ia-intro-content">
-          <div className="ia-intro-text">
-            <h1>NewAI – Inteligência Artificial que Potencializa Negócios</h1>
+        <div className="mirai-section-content">
+          <div className="mirai-text">
+            <h2>O que é a MirAI</h2>
             <p>
-              A NewAI transforma dados complexos em insights estratégicos. Combinando
-              aprendizado de máquina, análise preditiva e automação inteligente, ela
-              permite decisões rápidas e precisas.
+              A <strong>MIRAI</strong> é a fusão entre criatividade humana e inteligência
+              artificial. Ela aprende, adapta e cria — transformando ideias em
+              experiências vivas. Mais do que uma tecnologia, é uma extensão da
+              imaginação.
             </p>
           </div>
-
-          <motion.img
-            src={introImg}
-            alt="IA ilustrativa"
-            className="ia-intro-img"
+          <motion.div
+            className="mirai-image"
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
             transition={{ duration: 1 }}
-          />
+          >
+            <img src={mirai} alt="MirAI conceito" />
+
+          </motion.div>
         </div>
       </motion.section>
 
-      {/* Seção 2: Funcionalidades */}
+      {/* ⚙️ BENEFÍCIOS */}
       <motion.section
-        className="ia-section bg-dark"
-        initial={{ opacity: 0, y: 30 }}
+        className="mirai-benefits"
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2>Funcionalidades Principais</h2>
-        <div className="ia-section-content">
-          <div className="ia-section-text">
-            <ul>
-              <li><strong>Análise de Dados:</strong> interpreta grandes volumes de informações em tempo real.</li>
-              <li><strong>Automação Inteligente:</strong> executa tarefas repetitivas com eficiência.</li>
-              <li><strong>Previsões Precisas:</strong> utiliza machine learning para antecipar resultados.</li>
-              <li><strong>Integração Simplificada:</strong> conecta-se facilmente aos sistemas da empresa.</li>
-              <li><strong>Monitoramento Contínuo:</strong> mantém seu negócio atualizado em tempo real.</li>
-            </ul>
+        <h2>Por que MirAI?</h2>
+        <div className="benefits-grid">
+          <div className="benefit-card">
+            <h3>Aprendizado Contínuo</h3>
+            <p>Melhora a cada interação, evoluindo com você.</p>
           </div>
-          <motion.img
-            src={introImg}
-            alt="Funcionalidades IA"
-            className="ia-section-img"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          />
+          <div className="benefit-card">
+            <h3>Automação Inteligente</h3>
+            <p>Reduz tarefas repetitivas e potencializa resultados.</p>
+          </div>
+          <div className="benefit-card">
+            <h3>Criação Imersiva</h3>
+            <p>Gera ideias, imagens e experiências únicas.</p>
+          </div>
+          <div className="benefit-card">
+            <h3>Personalização Real</h3>
+            <p>Adapta-se ao estilo, linguagem e propósito de cada usuário.</p>
+          </div>
         </div>
       </motion.section>
 
-      {/* Seção 3: Benefícios */}
+      {/* 🚀 APLICAÇÕES */}
       <motion.section
-        className="ia-section bg-light"
-        initial={{ opacity: 0, y: 30 }}
+        className="mirai-applications"
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <h2>Benefícios</h2>
-        <div className="ia-section-content">
-          <div className="ia-section-text">
-            <p>
-              Com a NewAI, empresas aumentam produtividade, reduzem erros e tomam decisões mais assertivas.
-              Nossos algoritmos aprendem continuamente, aprimorando resultados.
-            </p>
-            <p>
-              Além disso, a IA permite personalização em grande escala, gerando experiências únicas
-              para cada cliente e aumentando o engajamento com sua marca.
-            </p>
+        <h2>Aplicações Reais</h2>
+        <div className="app-grid">
+          <div className="app-card">
+            <h4>Design e Criação</h4>
+            <p>De conceitos visuais a identidade completa de marca.</p>
           </div>
-          <motion.img
-            src={introImg}
-            alt="Benefícios IA"
-            className="ia-section-img"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          />
+          <div className="app-card">
+            <h4>Dados e Análise</h4>
+            <p>Transforma grandes volumes de informação em decisões rápidas.</p>
+          </div>
+          <div className="app-card">
+            <h4>Automação de Processos</h4>
+            <p>Integra sistemas e simplifica fluxos complexos.</p>
+          </div>
+          <div className="app-card">
+            <h4>Inovação Empresarial</h4>
+            <p>Cria soluções digitais que antecipam o amanhã.</p>
+          </div>
         </div>
       </motion.section>
 
-      {/* Seção 4: Aplicações */}
+      {/* CTA FINAL */}
       <motion.section
-        className="ia-section bg-dark"
-        initial={{ opacity: 0, y: 30 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-      >
-        <h2>Exemplos de Aplicação</h2>
-        <div className="ia-section-content">
-          <div className="ia-section-text">
-            <ul>
-              <li>Antecipação de tendências de vendas com análise preditiva.</li>
-              <li>Automatização de relatórios complexos e repetitivos.</li>
-              <li>Recomendações personalizadas para cada cliente.</li>
-              <li>Otimização de processos internos e fluxos de trabalho.</li>
-              <li>Monitoramento inteligente de métricas e KPIs.</li>
-            </ul>
-          </div>
-          <motion.img
-            src={introImg}
-            alt="Aplicações IA"
-            className="ia-section-img"
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 1 }}
-          />
-        </div>
-      </motion.section>
-
-      {/* CTA */}
-      <motion.section
-        className="ia-cta-section bg-light"
+        className="mirai-cta"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
       >
-        <p>Pronto para transformar seu negócio com inteligência artificial?</p>
-        <a href="/contato" className="ia-cta-btn">Fale Conosco</a>
+        <h2>O futuro começa quando você cria com MirAI.</h2>
+        <a href="/contato" className="mirai-cta-btn">Fale Conosco</a>
       </motion.section>
 
       <Footer />
@@ -151,4 +154,4 @@ const IA: React.FC = () => {
   );
 };
 
-export default IA;
+export default MirAI;

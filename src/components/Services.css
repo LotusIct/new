@@ -6,8 +6,8 @@
 }
 
 .stats-background {
-  background: linear-gradient(135deg, #f0a611e0 0%, #79349be0 100%);
-  padding: 80px 40px  120px 40px;
+  background: linear-gradient(135deg, #BCAAF3 0%, #3E2C74 100%);
+  padding: 20px 40px  100px 40px;
   width: 100%;
   box-shadow: 0 10px 30px rgba(0,0,0,0.05);
   display: flex;
@@ -20,12 +20,11 @@
 }
 
 .stats-intro h2 {
-  font-size: 3rem;
+  font-size: 5rem;
   color: var(--neutral);
   margin-bottom: 10px;
   font-weight: 700;
   letter-spacing: 1px;
-    font-family: 'Shadows Into Light', cursive; 
 }
 
 .stats-intro p {
@@ -64,15 +63,18 @@
 }
 
 .count {
-  font-size: 2rem;
+  font-size: 4rem;
   font-weight: 700;
   display: block;
+  font-family: 'Ailerons', sans-serif;
+  
 }
 
 .label {
   font-size: 0.95rem;
   margin-top: 8px;
   font-weight: 500;
+  
 }
 
 /* Responsividade */

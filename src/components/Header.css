@@ -4,23 +4,33 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 60px;
+  padding: 5px 60px;
 
   /* efeito vidro fosco */
-  background-color: #f6f79d56; /* fundo semi-transparente */
+  background-color: #CFC7FF; /* fundo semi-transparente */
   backdrop-filter: blur(10px); /* desfoque do fundo atrás do header */
   -webkit-backdrop-filter: blur(10px); /* compatibilidade Safari */
-
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* borda suave */
+  border-bottom: 1px solid #CFC7FF; /* borda suave */
+}
+.logo {
+  display: flex;
+  align-items: center;
 }
 
-.logo {
-  font-weight: 700;
-  font-size: 1.4rem;
+.logo img {
+  height: 80px; /* ajuste conforme o visual */
+  width: auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
 }
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
 
 .nav .menu {
   list-style: none;
@@ -36,24 +46,25 @@
   color: var(--terceira);
   font-size: 1rem;
   cursor: pointer;
-  font-weight: 500;
+  font-weight: 300;
   padding: 5px 0;
   transition: color 0.3s;
+   font-family: 'Rubik', sans-serif;
 }
 
 .menu button:hover {
-  color: var(--accent1);
+  color: var(--accent2);
+  background-color: transparent;
 }
 
 /* mega menu que ocupa toda a largura */
 .mega-container {
-  position: absolute; /* ou fixed, se quiser fora do fluxo do layout */
-  top: 75px; /* ou posicione dinamicamente via JS */
+   position: fixed; /* antes estava absolute */
+  top: 75px; /* logo abaixo do header */
   left: 50%;
   transform: translateX(-50%);
   z-index: 999;
- width: 100%; /* ou 100%, se quiser encostar nas bordas */
-  max-width: 1200px; /* 🔹 largura máxima centralizada */
+ width: 100%; 
 
   background-color: #FFFFFF;
   border: 1px solid #eee;
@@ -85,8 +96,8 @@
 }
 
 .link{
-  font-size: 1.6rem;
-  color: var(--terceira) !important;
+  font-size: 2rem;
+  color: var(--secondary) !important;
   margin-bottom: 20px;
 }
 
@@ -102,8 +113,8 @@
 
 .menu-column h4 {
   margin-bottom: 10px;
-  font-size: 1.1rem;
-  color: var(--accent1);
+  font-size: 1.2rem;
+  color: var(--accent2);
   font-style: italic;
 }
 

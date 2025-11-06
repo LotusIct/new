@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import "./Header.css";
+import logo from "../assets/logon.png";
 
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
@@ -25,7 +26,9 @@ export default function Header() {
   return (
     <>
       <header className="header">
-        <div className="logo">MinhaEmpresa</div>
+        <div className="logo">
+  <img src={logo} alt="Logo da empresa" />
+</div>
         <nav className="nav">
           <ul className="menu">
             <li>
@@ -62,33 +65,49 @@ export default function Header() {
                   <a className="link">Juntos Pela Inovação</a>
                 </h2>
                 <div className="mega-columns">
-                  <div className="menu-column">
-                    <h4>Soluções</h4>
-                    <ul>
-                      <li>Transformação Digital</li>
-                      <li>Automação de Processos</li>
-                      <li>Inteligência Artificial & Dados</li>
-                      <li>Análise Preditiva e Dados Estratégicos</li>
-                      <li>Cloud & Infraestrutura</li>
-                      <li>Cibersegurança</li>
-                      <li>Consultoria Estratégica</li>
-                      <li>Marketing Digital & Performance</li>
-                      <li>Experiência do Cliente (CX)</li>
-                    </ul>
-                  </div>
+                <div className="menu-column">
+                  <h4>Soluções</h4>
+                  <ul>
+                    <li>ERP Integrado</li>
+                    <li>CRM Inteligente</li>
+                    <li>Dashboard Analítico</li>
+                    <li>Automação de Processos</li>
+                  </ul>
+                </div>
+<div className="menu-column">
+  <h4>Área de Atuação</h4>
+  <ul>
+    <li>Fábrica de Software</li>
+    <li>Inteligência Artificial</li>
+    <li>Análises de Dados e Modelos Preditivos</li>
+    <li>Marketing Digital</li>
+    <li>Design Gráfico</li>
+    <li>Consultoria em Tecnologia</li>
+    <li>Administração e Processos</li>
+    <li>Migração para Nuvem</li>
+    <li>Logística Inteligente</li>
+    <li>Engenharia e Inovação</li>
+    <li>Soluções Médicas e HealthTech</li>
+    <li>Automação e ESG</li>
+    <li>Formação de Equipes e Treinamentos</li>
+  </ul>
+</div>
 
-                  <div className="menu-column">
-                    <h4>Indústrias</h4>
-                    <ul>
-                      <li>Saúde e Ciências da Vida</li>
-                      <li>Serviços Financeiros</li>
-                      <li>Varejo & Consumo</li>
-                      <li>Energia & Sustentabilidade</li>
-                      <li>Setor Público</li>
-                      <li>Tecnologia & Telecom</li>
-                      <li>Indústria & Manufatura</li>
-                    </ul>
-                  </div>
+                 <div className="menu-column">
+                  <h4>Indústrias</h4>
+                  <ul>
+                    <li>Saúde</li>
+                    <li>Engenharia</li>
+                    <li>Logística</li>
+                    <li>Medicina</li>
+                    <li>Software</li>
+                    <li>E-commerce</li>
+                    <li>Telecom</li>
+                    <li>Educação</li>
+                    <li>Cibersegurança</li>
+                  </ul>
+                </div>
+
                 </div>
               </>
             )}
@@ -150,26 +169,12 @@ export default function Header() {
                       <li>Compromisso ESG</li>
                     </ul>
                   </div>
-
-                  <div className="menu-column">
-                    <h4>Estrutura & Liderança</h4>
+ <div className="menu-column">
+                    <h4>Nosso Legado</h4>
                     <ul>
-                      <li>Equipe Executiva</li>
-                      <li>Estrutura Organizacional</li>
-                      <li>Parcerias Estratégicas</li>
-                      <li>Governança</li>
-                    </ul>
-                  </div>
-
-                  <div className="menu-column">
-                    <h4>Nossos Serviços</h4>
-                    <ul>
-                      <li>Consultoria e Estratégia</li>
-                      <li>Tecnologia e Inovação</li>
-                      <li>Operações e Sustentabilidade</li>
-                      <li>Treinamento e Capacitação</li>
-                      <li>Marketing e Posicionamento de Marca</li>
-                      <li>Gestão de Dados Estratégicos</li>
+                      <li>Ontem</li>
+                      <li>Hoje</li>
+                      <li>Amanhã</li>
                     </ul>
                   </div>
                 </div>
@@ -186,19 +191,19 @@ export default function Header() {
                     <h4>Junte-se a nós</h4>
                     <ul>
                       <li>Vagas abertas</li>
-                      <li>Trabalhe conosco</li>
+                       <li>Planos de carreira</li>
                       <li>Diversidade e inclusão</li>
-                      <li>Histórias de colaboradores</li>
+                      
                     </ul>
                   </div>
 
                   <div className="menu-column">
                     <h4>Desenvolvimento Profissional</h4>
                     <ul>
-                      <li>Planos de carreira</li>
+                       <li>Equipes de Alta Performance</li>
                       <li>Capacitação contínua</li>
-                      <li>Mentoria e liderança</li>
-                      <li>Equilíbrio e bem-estar</li>
+                       <li>Mentoria e liderança</li>
+                        <li>Equilíbrio e bem-estar</li>
                     </ul>
                   </div>
                 </div>

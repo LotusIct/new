@@ -2,7 +2,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Carreiras from "./pages/Carreiras";
 import Contato from "./pages/Contato";
-import IA from "./pages/Ia"; // ✅ importar a nova página
+import IA from "./pages/Ia";
+import IndustriaPage from "./pages/IndustriaPage";
+import { industrias } from "./data/industrias";
 import "./styles/global.css";
 
 export default function App() {
@@ -12,7 +14,16 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/carreiras" element={<Carreiras />} />
         <Route path="/contato" element={<Contato />} />
-        <Route path="/ia" element={<IA />} /> {/* ✅ adicionar rota da IA */}
+        <Route path="/ia" element={<IA />} />
+
+        {/* Rotas dinâmicas das indústrias */}
+        {industrias.map((ind) => (
+          <Route
+            key={ind.id}
+            path={`/industrias/${ind.id}`}
+            element={<IndustriaPage {...ind} />}
+          />
+        ))}
       </Routes>
     </Router>
   );

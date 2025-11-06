@@ -1,143 +1,248 @@
-/* Reset global */
-
-
-/* Seção introdutória full width */
-.ia-intro-section {
-  background-color: #FAF8EB;
-  padding: 0;
-}
-
-.ia-intro-content {
+/* ===================== MIRAI HERO ===================== */
+.mirai-hero {
+  position: relative;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  width: 100%;
+  align-items: left;
+  justify-content: left;
+  background: radial-gradient(circle at 30% 50%, var(--primary), var(--terceira));
+  overflow: hidden;
 }
 
-.ia-intro-text {
-  flex: 1;
-  padding: 0 60px;
+.mirai-hero-content {
   text-align: left;
+  z-index: 2;
 }
 
-.ia-intro-text h1 {
-  font-family: 'Shadows Into Light', cursive;
-  color: #78349B;
-  margin-bottom: 20px;
-  font-size: 2.5rem;
-  max-width: 500px;
+.mirai-title {
+  font-family: "Ailerons", sans-serif;
+  font-size: 22rem;
+  margin-top: 0px;
+  margin-bottom: -20px;
+  color: var(--accent1);
+  text-transform: uppercase;
+  letter-spacing: 5px;
 }
 
-.ia-intro-text p {
+.mirai-subtitle {
+  color: var(--complementary1);
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  margin-bottom: 40px;
+  margin-left: 5%;
+}
+
+.mirai-button {
+  background: transparent;
+  color: var(--neutral);
+  border: none;
+  margin-left: 5%;
+  border: 2px solid var(--neutral);
+  font-size: 1.1rem !important;
+  padding: 14px 40px;
+  border-radius: 8px;
+  font-family: "Ailerons";
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.mirai-button:hover {
+  background: white;
+  box-shadow: 0 0 12px var(--neutral);
+  color: #2B1B52;
+}
+
+/* ===================== ANIMAÇÃO DE PALAVRAS ===================== */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+.background-words {
+  position: fixed;
+  top: 10%;
+  left: -5%;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(0.5px);
+}
+
+.background-words span {
+  position: absolute;
+  font-family: 'Ailerons', sans-serif;
+  text-transform: uppercase;
+  color: #0c0a142c;
+  font-size: calc(1rem + 2vw);
+  letter-spacing: 3px;
+  animation: floatWord 18s ease-in-out infinite;
+  opacity: 0.3;
+}
+
+@keyframes floatWord {
+  0% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+  50% { transform: translateY(-20px) rotate(0deg); opacity: 0.4; }
+  100% { transform: translateY(0px) rotate(0deg); opacity: 0.2; }
+}
+
+.background-words span:nth-child(1) { top: 10%; left: 15%; animation-delay: 0s; }
+.background-words span:nth-child(2) { top: 25%; left: 70%; animation-delay: 3s; }
+.background-words span:nth-child(3) { top: 40%; left: 30%; animation-delay: 6s; }
+.background-words span:nth-child(4) { top: 60%; left: 80%; animation-delay: 9s; }
+.background-words span:nth-child(5) { top: 75%; left: 10%; animation-delay: 12s; }
+.background-words span:nth-child(6) { top: 15%; left: 50%; animation-delay: 15s; }
+.background-words span:nth-child(7) { top: 50%; left: 55%; animation-delay: 18s; }
+.background-words span:nth-child(8) { top: 65%; left: 35%; animation-delay: 21s; }
+.background-words span:nth-child(9) { top: 80%; left: 60%; animation-delay: 24s; }
+
+.background-words span:hover {
+  color: rgba(255,255,255,0.15);
+  filter: blur(0);
+  transition: 0.4s;
+}
+
+/* ===================== IMAGEM MIRAI ===================== */
+.mirai-image img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(188, 170, 243, 0.25);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.mirai-image img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(188, 170, 243, 0.45);
+}
+
+/* ===================== SEÇÕES ===================== */
+.mirai-section, .mirai-benefits, .mirai-applications, .mirai-cta {
+  padding: 20px 10%;
+  text-align: center;
+  background-color: #BCAAF3;
+}
+
+.mirai-section-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+  flex-wrap: wrap;
+  background-color: #BCAAF3;
+}
+
+.mirai-section h2, .mirai-benefits h2, .mirai-applications h2, .mirai-cta h2 {
+  font-family: "Ailerons";
+  color: var(--neutral);
+  font-size: 6rem;
+  margin-bottom: 40px;
+}
+
+.mirai-text {
+  flex: 1;
+  min-width: 300px;
+  max-width: 600px;
+  color: #493D8C;
   font-size: 1.2rem;
   line-height: 1.6;
-  color: #333;
 }
 
-.ia-intro-img {
-  flex: 1;
-  width: 60%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 0;
-}
-
-/* Seções internas modernas */
-.ia-section {
-  padding: 80px 20px;
-  display: flex;
-  flex-direction: column;
+/* ===================== BENEFÍCIOS ===================== */
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 30px;
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
 }
 
-/* Fundo alternado para cada seção */
-.ia-section:nth-of-type(even) {
-  background: linear-gradient(135deg, #FAF8EB 0%, #EDE0F7 100%);
+.benefit-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--accent2);
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-.ia-section:nth-of-type(odd) {
-  background: linear-gradient(135deg, #EDE0F7 0%, #FAF8EB 100%);
+.benefit-card h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
 }
 
-.ia-section h2 {
-  font-family: 'Shadows Into Light', cursive;
-  font-size: 2.8rem;
-  color: #78349B;
-  margin-bottom: 20px;
+.benefit-card p {
+  color: #493D8C;
+  font-size: 1.1rem;
 }
 
-.ia-section p, .ia-section li {
-  font-size: 1.25rem;
-  line-height: 1.8;
-  color: #333;
+.benefit-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 12px var(--accent2);
 }
 
-.ia-section ul {
-  list-style: disc;
-  padding-left: 40px;
+/* ===================== APLICAÇÕES ===================== */
+.app-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  margin-bottom: 80px;
 }
 
-.ia-section-content {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 40px;
+.app-card {
+  background: rgba(20, 15, 40, 0.8);
+  border: 1px solid var(--secondary);
+  padding: 30px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-.ia-section-text {
-  flex: 1;
+.app-card h4 {
+  font-family: 'Ailerons', sans-serif;
+  font-size: 1.5rem;
+  height: 50px;
+  color: var(--neutral);
 }
 
-.ia-section-img {
-  flex: 1;
-  width: 20%;
-  height: auto;
-  object-fit: cover;
-  border-radius: 15px;
+.app-card p {
+  font-size: 1rem;
+  height: 50px;
+  color: var(--accent1);
 }
 
-/* CTA */
-.ia-cta-section {
-  text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #FAF8EB 0%, #EDE0F7 100%);
+.app-card:hover {
+  background: var(--secondary);
+  color: var(--neutral);
+  transform: translateY(-5px);
 }
 
-.ia-cta-btn {
-  padding: 15px 30px;
-  background-color: #78349B;
-  color: #fff;
+/* ===================== CTA ===================== */
+.mirai-cta {
+  background: radial-gradient(circle at 20% 40%, var(--primary), var(--terceira));
+}
+
+.mirai-cta h2 {
+  background: radial-gradient(circle at 20% 40%, var(--primary), var(--terceira));
+  font-size: 5rem;
+}
+
+.mirai-cta-btn {
+  display: inline-block;
+  margin-top: 30px;
+  background: transparent;
+  color: var(--neutral);
+  padding: 15px 40px;
   border-radius: 8px;
+  border: 2px solid var(--neutral);
   text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
+  font-family: "Ailerons";
+  letter-spacing: 2px;
+  transition: 0.3s;
+  font-size: 1.1rem;
+  margin-bottom: 60px;
 }
 
-.ia-cta-btn:hover {
-  transform: scale(1.05);
-}
-
-/* Responsividade */
-@media (max-width: 1024px) {
-  .ia-section-content {
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .ia-section-text {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 768px) {
-  .ia-section h2 {
-    font-size: 2rem;
-  }
-
-  .ia-section p, .ia-section li {
-    font-size: 1.1rem;
-  }
+.mirai-cta-btn:hover {
+  background: var(--accent2);
+  box-shadow: 0 0 10px var(--accent1);
 }

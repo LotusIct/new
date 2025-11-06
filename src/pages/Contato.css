@@ -1,68 +1,48 @@
 .contato-page {
-  background-size: cover;
-  background-position: center;
-  position: relative;
   display: flex;
-  align-items: center;
-  justify-content: flex-start; /* formulário à esquerda */
+  min-height: 100vh;
+  width: 100%;
 }
 
-.contato-overlay {
-  width: 100%;
-  min-height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.fomulario{
-    margin-left: 10%;
-    max-width: 400px;
-}
-/* Formulário sobre o fundo */
+/* ===== Lado esquerdo: formulário ===== */
 .contato-form-container {
-  width: 60%; /* metade da tela */
-   background: linear-gradient(
-    to right, 
-   #faf9f6c0 40%, 
-    rgba(0, 0, 0, 0) 100%
-  );
-  color: #000000;
-  padding: 40px 40px 100px 40px;
+  width: 50%;
+  background: linear-gradient(to right, #faf9f6 70%, rgb(255, 255, 255));
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 40px 10px 80px 120px;
+  color: #000;
+}
+
+.fomulario {
+  max-width: 400px;
 }
 
 .contato-form-container h1 {
   margin-bottom: 10px;
-  font-size: 32px;
-  font-size: 3rem;
-
+  font-size: 3.5rem;
+  color: #0C0A14;
 }
 
 .contato-form-container p {
   margin-bottom: 20px;
-  font-size: 16px;
+  font-size: 1.1rem;
+  color: #3E2C74;
 }
 
-
-.contato-form select {
-  width: 108%;
-  margin-bottom: 20px;
-  padding: 15px;
-   border: 1px solid #004585;
-  border-radius: 8px;
-  font-size: 14px;
-}
 .contato-form input,
+.contato-form select,
 .contato-form textarea {
   width: 100%;
   margin-bottom: 20px;
   padding: 15px;
   border-radius: 8px;
   font-size: 14px;
-  border: 1px solid #004585;
-  
+  border: 1px solid #7E6BCC;
+}
+.contato-form select{
+ width: 108%;
 }
 .contato-form textarea {
   resize: none;
@@ -70,23 +50,44 @@
 
 .contato-form button {
   padding: 15px 30px;
-  background-color: #004585;
-  border: 2px solid ;
+  background-color: #7E6BCC;
   color: #fff;
   border: none;
-  width: 108%;
   border-radius: 8px;
+  width: 108%;
   font-weight: bold;
   cursor: pointer;
   font-size: 16px;
   transition: all 0.3s ease;
 }
 
+.contato-form button:hover {
+  background-color: #5e51b6;
+}
 
-/* Responsivo */
+/* ===== Lado direito: imagem ===== */
+.contato-imagem {
+  width: 60%;
+  background-image: url("../assets/contaton.jpg");
+  background-size: cover;
+  background-position: center right;
+  background-repeat: no-repeat;
+}
+
+/* ===== Responsivo ===== */
 @media (max-width: 900px) {
+  .contato-page {
+    flex-direction: column;
+  }
+
   .contato-form-container {
     width: 100%;
     padding: 40px 20px;
+  }
+
+  .contato-imagem {
+    width: 100%;
+    height: 40vh;
+    background-position: center;
   }
 }

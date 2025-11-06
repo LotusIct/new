@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import "./CasosDeEstudo.css";
-
-import cu1 from "../assets/cu333.png";
-import cu2 from "../assets/cu555.png";
-import cu3 from "../assets/cu333.png";
-import cu4 from "../assets/cu555.png";
-import cu5 from "../assets/cu333.png";
+import { FaArrowRight } from "react-icons/fa";
+import cu1 from "../assets/cun1.jpg";
+import cu2 from "../assets/cun2.jpg";
+import cu3 from "../assets/cun3.jpg";
+import cu4 from "../assets/cun4.jpg";
+import cu5 from "../assets/cun5.jpg";
 
 interface Caso {
   title: string;
@@ -81,43 +81,38 @@ export default function CasosDeEstudo() {
 
   return (
     <section className="casos-section">
-      <div className="solutions-header">
-        <div className="arrows-header">
-          <button className="arrows" onClick={prevSlide}>‹</button>
-          <button className="arrows" onClick={nextSlide}>›</button>
-        </div>
-       <div className="caso-title">
-         <h2 className="section-titless">Casos de Estudo</h2>
-       </div>
-        
-      </div>
+  <div className="casos-header">
+    <div className="casos-arrows-header">
+      <button className="casos-arrows" onClick={prevSlide}>‹</button>
+      <button className="casos-arrows" onClick={nextSlide}>›</button>
+    </div>
+    <div className="casos-title">
+      <h2 className="casos-section-title">Casos de Estudo</h2>
+    </div>
+  </div>
 
-      <div className="carousel-container">
-        <div
-          className="carousel"
-          style={{ transform: `translateX(-${index * (30 + 2)}%)` }} // 30% largura + 2% gap aproximado
+  <div className="casos-carousel-container">
+    <div
+      className="casos-carousel"
+      style={{ transform: `translateX(-${index * (30 + 2)}%)` }}
+    >
+      {casos.map((caso, i) => (
+        <motion.div
+          key={i}
+          className="casos-card"
+          style={{ backgroundImage: `url(${caso.img})` }}
         >
-          {casos.map((caso, i) => (
-            <motion.div
-              key={i}
-              className="card"
-              style={{ backgroundImage: `url(${caso.img})` }}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              exit={{ opacity: 0, x: -50 }}
-              transition={{ duration: 0.3 }}
-            >
-              <div className="card-overlays">
-                <h3>{caso.title}</h3>
-                <p><strong>Problema:</strong> {caso.problema}</p>
-                <p><strong>Solução:</strong> {caso.solucao}</p>
-                <p><strong>Resultado:</strong> {caso.resultado}</p>
-                <button className="read-more">Saiba mais</button>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
+          <div className="casos-card-overlays">
+            <h3>{caso.title}</h3>
+            <p><strong>Problema:</strong> {caso.problema}</p>
+            <p><strong>Solução:</strong> {caso.solucao}</p>
+            <p><strong>Resultado:</strong> {caso.resultado}</p>
+            <button className="casos-read-more">Saiba mais <FaArrowRight style={{ marginLeft: "8px" }} /></button>
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  </div>
+</section>
   );
 }

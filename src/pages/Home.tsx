@@ -12,18 +12,24 @@ import ContatoCarreiras from "../components/ContatoCarreiras";
 import About from "../components/About";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
+import WordCount from "../components/WordCloud";
 
 const Home = () => {
   return (
     <div>
       <Header />
       <Hero />
-      <PorqueNosEscolher />
-      <Services />
       <Portfolio />
        <Industrias />  
-      <CasosDeEstudo /> 
-      <Solucoes />    
+      <PorqueNosEscolher />
+      <Services />
+      
+     
+      
+        <Solucoes />   
+<WordCount/>
+<CasosDeEstudo />
+    
       <CTA />  
       <Locais />       
       <ContatoCarreiras />

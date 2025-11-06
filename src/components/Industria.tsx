@@ -83,7 +83,9 @@ export default function Industrias() {
 
   return (
     <section className="industrias-section">
+       <h1 className="industrias-title">Indústrias</h1>
       <div className="industrias-container">
+       
         {/* Lado esquerdo: lista */}
         <div className="industrias-list">
           {industrias.map((ind, i) => (
@@ -105,7 +107,7 @@ export default function Industrias() {
           <div className="industrias-text">
             <h3>{industrias[activeIndex].nome}</h3>
             <p>{industrias[activeIndex].descricao}</p>
-            <a href={industrias[activeIndex].link}>Saiba Mais →</a>
+            <a href={industrias[activeIndex].link}>Saiba Mais</a>
           </div>
         </div>
       </div>

@@ -13,32 +13,43 @@ interface Feature {
 // Lista de features com ícones do lucide
 const features: Feature[] = [
   {
-    title: "Soluções Personalizadas",
-    icon: <Cpu size={40} color="#F0A411" />,
-    desc: "Desenvolvemos soluções sob medida que transformam suas ideias em resultados reais, usando tecnologia de ponta."
+    title: "Soluções Sob Medida",
+    icon: <Cpu size={40} color="#00BFA6" />,
+    desc: "Integramos tecnologia, design e estratégia para criar soluções únicas que impulsionam o crescimento da sua marca."
   },
   {
-    title: "Equipe Dedicada",
-    icon: <Users size={40} color="#387054" />,
-    desc: "Nossa equipe acompanha cada etapa do projeto, garantindo qualidade, atenção aos detalhes e entrega dentro do prazo."
+    title: "Time Especialista",
+    icon: <Users size={40} color="#00856F" />,
+    desc: "Profissionais experientes, criativos e comprometidos em entregar resultados reais e escaláveis."
   },
   {
-    title: "Flexível e Adaptável",
-    icon: <BarChart3 size={40} color="#78349B" />,
-    desc: "Modelos de parceria ajustáveis ao seu negócio, alinhados a objetivos, orçamento e metas específicas."
+    title: "Performance e Dados",
+    icon: <BarChart3 size={40} color="#5C33F6" />,
+    desc: "Analisamos indicadores e insights para orientar decisões inteligentes e aumentar a eficiência do seu negócio."
   },
   {
-    title: "Entrega Ágil",
-    icon: <Zap size={40} color="#00EF5C" />,
-    desc: "Soluções de alta qualidade entregues rapidamente, centradas no usuário e focadas em gerar satisfação real."
+    title: "Entrega Ágil e Segura",
+    icon: <Zap size={40} color="#F0A411" />,
+    desc: "Metodologias ágeis que garantem qualidade, velocidade e segurança em cada etapa do projeto."
+  },
+  {
+    title: "Inovação Contínua",
+    icon: <Cpu size={40} color="#FF5F6D" />,
+    desc: "Acompanhamos tendências tecnológicas e aplicamos inovações que mantêm sua empresa à frente do mercado."
+  },
+  {
+    title: "Parceria Estratégica",
+    icon: <Users size={40} color="#00C9A7" />,
+    desc: "Mais do que fornecedores, somos parceiros no seu crescimento digital e operacional."
   }
 ];
+
 
 export default function PorqueNosEscolher() {
   return (
     <section className="porque-nos-escolher" id="porque-nos-escolher">
       <div className="conteudo">
-        <h2 className="titulo-secao">Por que escolher a nossa empresa?</h2>
+        <h2 className="titulo-secao">  <span className="letra-fundos">P</span>or que escolher a nossa empresa</h2>
         <p className="subtitulo-secao">
           Atuamos há anos ajudando empresas a crescer e inovar com tecnologia, design e processos eficientes.
         </p>

@@ -6,7 +6,7 @@ const paises = [
   nome: "Itália",
   emoji: "🇮🇹",
   descricao: "Precisão e tradição artesanal — o ponto de partida da nossa essência criativa.",
-  fundo: "linear-gradient(135deg, #ffffffff  0%, #CD212A 50%, #008C45 100%)" // verde, branco e vermelho
+  fundo: "linear-gradient(135deg, #ffffff7c  0%, #cd212aa2 50%, #008c46a9 100%)" // verde, branco e vermelho
 },
 
   {

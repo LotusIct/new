@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import "../components/Portfolio.css";
 
@@ -23,7 +24,6 @@ interface Service {
   link: string;
 }
 
-// Array de serviços com imagens importadas
 const services: Service[] = [
   { title: "Marketing Digital", desc: "Impulsione sua marca com campanhas criativas e estratégias orientadas por dados.", img: pj1, link: "/marketing" },
   { title: "Design Gráfico", desc: "Criação de identidades visuais impactantes e experiências memoráveis.", img: pj2, link: "/design" },
@@ -37,37 +37,51 @@ const services: Service[] = [
   { title: "Soluções Médicas e HealthTech", desc: "Ferramentas digitais e automação para clínicas, hospitais e laboratórios.", img: pj10, link: "/medica" },
   { title: "Formação de Equipes e Treinamentos", desc: "Capacitação de times e líderes para uma cultura de inovação e alta performance.", img: pj11, link: "/treinamentos" },
   { title: "Consultoria em Tecnologia", desc: "Apoio estratégico para acelerar a transformação digital da sua empresa.", img: pj12, link: "/consultoria" },
-  { title: "Automação e Sustentabilidade", desc: "Processos automatizados com foco em eficiência energética e ESG.", img: pj13, link: "/automacao" },
+  { title: "Automação e ESG", desc: "Processos automatizados com foco em eficiência energética e ESG.", img: pj13, link: "/automacao" },
 ];
 
 export default function TransformacaoEmpresarial() {
+  const [visibleCount, setVisibleCount] = useState(6);
+
+  const handleShowMore = () => {
+    setVisibleCount((prev) => Math.min(prev + 6, services.length));
+  };
+
   return (
-    <section className="transformacao" id="transformacao">
-      <div className="transformacao-content">
-        <h2 className="section-title">Como podemos transformar a sua empresa</h2>
-        <p className="section-subtitle">
+    <section className="portfolio-transformacao">
+      <div className="portfolio-content">
+<h2 className="portfolio-title">
+  <span className="letra-fundo">C</span>
+  omo podemos transformar a sua empresa
+</h2>
+
+
+        <p className="portfolio-subtitle">
           Atuamos em diversas frentes para acelerar o crescimento e a inovação de negócios em diferentes setores.
         </p>
 
-        <div className="cards-grid">
-          {services.map((service, index) => (
+        <div className="portfolio-grid">
+          {services.slice(0, visibleCount).map((service, index) => (
             <motion.a
               key={index}
               href={service.link}
-              className="card"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: index * 0.05, duration: 0.4 }}
-              viewport={{ once: true }}
+              className="portfolio-card"
               style={{ backgroundImage: `url(${service.img})` }}
+              whileHover={{ scale: 1.05 }}
             >
-              <div className="card-overlay">
-                <h3 className="card-title">{service.title}</h3>
-                <p className="card-desc">{service.desc}</p>
+              <div className="portfolio-overlay">
+                <h3>{service.title}</h3>
+                <p>{service.desc}</p>
               </div>
             </motion.a>
           ))}
         </div>
+
+        {visibleCount < services.length && (
+          <button className="ver-mais-btn" onClick={handleShowMore}>
+            Veja mais
+          </button>
+        )}
       </div>
     </section>
   );

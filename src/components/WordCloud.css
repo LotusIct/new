@@ -1,0 +1,157 @@
+/* Container geral */
+.wc-section {
+  padding: 4rem 0rem;
+  background: linear-gradient(180deg, #fbfbfe 0%, #f1eaff 100%);
+  color: #111;
+  font-family: 'Poppins', system-ui, sans-serif;
+}
+
+.wc-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.wc-title {
+  font-size: 3.5rem;
+  margin-bottom: 0.25rem;
+  color: #0C0A14;
+  font-weight: 500;
+}
+
+.wc-sub {
+  color: #BCAAF3;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+/* Canvas onde as palavras ficam posicionadas */
+.wc-canvas {
+  position: relative;
+  height: 580px; /* ajuste conforme necessidade */
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 180px;
+}
+
+/* Cada palavra */
+.wc-word {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.18s ease, z-index 0.18s;
+  z-index: 1;
+  outline: none;
+    
+}
+
+/* label - a palavra visível */
+.wc-word-label {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: transparent;
+  color: #4a2fa6;
+  font-weight: 300;
+  font-size: 3rem;
+  letter-spacing: 0.02em;
+   font-family: 'Ailerons', sans-serif;
+  transition: transform 0.18s ease, background 0.18s, color 0.18s;
+}
+
+/* efeito ao hover/focus */
+.wc-word:hover,
+.wc-word:focus,
+.wc-word.active {
+  transform: translate(-50%, -50%) scale(1.08);
+  z-index: 10;
+}
+
+.wc-word:hover .wc-word-label,
+.wc-word:focus .wc-word-label,
+.wc-word.active .wc-word-label {
+  background: rgba(74,47,166,0.08);
+  color: #2a0e72;
+}
+
+/* Tooltip com explicação */
+.wc-tooltip {
+  position: absolute;
+  min-width: 220px;
+  max-width: 320px;
+  background: rgba(14, 8, 46, 0.92);
+  color: #fff;
+  padding: 14px 16px;
+  border-radius: 12px;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, 6px) scale(0.98);
+  opacity: 0;
+  pointer-events: none;
+  box-shadow: 0 10px 30px rgba(20, 10, 60, 0.45);
+  transition: opacity 0.26s ease, transform 0.26s ease;
+  font-size: 0.95rem;
+  line-height: 1.35;
+  text-align: left;
+  z-index: 20;
+}
+
+/* Triângulo (setinha) */
+.wc-tooltip::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 8px;
+  border-style: solid;
+  border-color: transparent transparent rgba(14, 8, 46, 0.61) transparent;
+}
+.wc-tooltip-title{
+       font-family: 'Ailerons', sans-serif;
+       font-size: 2rem;
+}
+/* Mostrar tooltip no hover/focus/active */
+.wc-word:hover .wc-tooltip,
+.wc-word:focus .wc-tooltip,
+.wc-word.active .wc-tooltip {
+  opacity: 1;
+  transform: translate(-50%, 0);
+  pointer-events: auto;
+}
+
+/* Ajuste para tooltips que saem da borda direita/esquerda */
+.wc-word[data-pos="right"] .wc-tooltip { left: 90%; transform: translate(-90%, 6px); }
+.wc-word[data-pos="left"]  .wc-tooltip { left: 10%; transform: translate(-10%, 6px); }
+
+/* Responsividade: transforma em grid simples no mobile */
+@media (max-width: 700px) {
+  .wc-canvas {
+    height: auto;
+    padding: 2rem 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  .wc-word {
+    position: static;
+    transform: none;
+  }
+
+  .wc-tooltip {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    opacity: 1;
+    background: rgba(14,8,46,0.97);
+    pointer-events: auto;
+  }
+
+  .wc-word-label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+}

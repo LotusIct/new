@@ -1,5 +1,7 @@
 import React from "react";
 import "./IndustriaPage.css";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 interface IndustriaPageProps {
   titulo: string;
@@ -27,72 +29,80 @@ const IndustriaPage: React.FC<IndustriaPageProps> = ({
   botaoContato,
 }) => {
   return (
-    <section className="industria-page">
-      {/* Título comum */}
-      <header className="industria-header">
-        <h1>{titulo}</h1>
-        <div className="industria-divider"></div>
-      </header>
+    <>
+      {/* ✅ Header */}
+      <Header />
 
-      {/* Bloco 1 - hero */}
-      <section
-        className="industria-hero"
-        style={{ backgroundImage: `url(${blocos[0].imagem})` }}
-      >
-        <div className="hero-text">
-          <h2>{tema}</h2>
-          <p className="impactante">{fraseImpactante}</p>
-          <p className="complementar">{fraseComplementar}</p>
-        </div>
-      </section>
+      <main className="industria-page">
+        {/* Título comum */}
+        <header className="industria-header">
+          <h1>{titulo}</h1>
+          <div className="industria-divider"></div>
+        </header>
 
-      {/* Blocos seguintes */}
-      {blocos.slice(1).map((bloco, i) => (
+        {/* Bloco 1 - hero */}
         <section
-          key={i}
-          className={`industria-block ${i % 2 === 0 ? "left" : "right"}`}
+          className="industria-hero"
+          style={{ backgroundImage: `url(${blocos[0].imagem})` }}
         >
-          <div className="block-text">
-            <h3>{bloco.titulo}</h3>
-            <p>{bloco.texto}</p>
+          <div className="hero-text">
+            <h2>{tema}</h2>
+            <p className="impactante">{fraseImpactante}</p>
+            <p className="complementar">{fraseComplementar}</p>
           </div>
-          {bloco.imagem && (
-            <div className="block-image">
-              <img src={bloco.imagem} alt={bloco.titulo} />
+        </section>
+
+        {/* Blocos seguintes */}
+        {blocos.slice(1).map((bloco, i) => (
+          <section
+            key={i}
+            className={`industria-block ${i % 2 === 0 ? "left" : "right"}`}
+          >
+            <div className="block-text">
+              <h3>{bloco.titulo}</h3>
+              <p>{bloco.texto}</p>
             </div>
-          )}
-        </section>
-      ))}
-
-      {/* Bloco 4 - tópicos em foco */}
-      {topicos && (
-        <section className="industria-topicos">
-          <h3>Em foco</h3>
-          <div className="topicos-grid">
-            {topicos.map((t, i) => (
-              <div key={i} className="topico-card">
-                <h4>{t.titulo}</h4>
-                <p>{t.texto}</p>
+            {bloco.imagem && (
+              <div className="block-image">
+                <img src={bloco.imagem} alt={bloco.titulo} />
               </div>
-            ))}
-          </div>
-        </section>
-      )}
+            )}
+          </section>
+        ))}
 
-      {/* Bloco citação */}
-      {citacao && (
-        <section className="industria-citacao">
-          <blockquote>{citacao}</blockquote>
-        </section>
-      )}
+        {/* Bloco 4 - tópicos em foco */}
+        {topicos && (
+          <section className="industria-topicos">
+            <h3>Em foco</h3>
+            <div className="topicos-grid">
+              {topicos.map((t, i) => (
+                <div key={i} className="topico-card">
+                  <h4>{t.titulo}</h4>
+                  <p>{t.texto}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
 
-      {/* Botão contato */}
-      {botaoContato && (
-        <section className="industria-contato">
-          <button>Fale Conosco</button>
-        </section>
-      )}
-    </section>
+        {/* Bloco citação */}
+        {citacao && (
+          <section className="industria-citacao">
+            <blockquote>{citacao}</blockquote>
+          </section>
+        )}
+
+        {/* Botão contato */}
+        {botaoContato && (
+          <section className="industria-contato">
+            <button>Fale Conosco</button>
+          </section>
+        )}
+      </main>
+
+      {/* ✅ Footer */}
+      <Footer />
+    </>
   );
 };
 

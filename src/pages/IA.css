@@ -5,18 +5,33 @@
   display: flex;
   align-items: left;
   justify-content: left;
-  background: radial-gradient(circle at 30% 50%, var(--primary), var(--terceira));
+  /* Imagem de fundo */
+  background: url('../assets/miraiback.png') center/cover no-repeat;
   overflow: hidden;
+}
+
+/* Adicionar overlay para melhor contraste do texto */
+.mirai-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0); /* ajuste a opacidade se quiser mais ou menos contraste */
+  z-index: 1;
 }
 
 .mirai-hero-content {
   text-align: left;
-  z-index: 2;
+  z-index: 2; /* importante para ficar acima da overlay */
+  padding-left: 5%;
 }
+
 
 .mirai-title {
   font-family: "Ailerons", sans-serif;
-  font-size: 22rem;
+  font-size: 20rem;
   margin-top: 0px;
   margin-bottom: -20px;
   color: var(--accent1);

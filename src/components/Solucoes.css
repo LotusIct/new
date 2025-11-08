@@ -54,17 +54,6 @@
   background-position: center top;
   box-shadow: 0 15px 40px rgba(0,0,0,0.3);
 }
-
-/* Responsivo */
-@media (max-width: 1024px) {
-  .card { min-width: 45%; height: 350px; }
-}
-
-@media (max-width: 768px) {
-  .card { min-width: 80%; height: 300px; }
-}
-
-
 /* Overlay sempre visível */
 .card-overlay {
   position: absolute;
@@ -220,5 +209,80 @@
   cursor: pointer;
   width: fit-content;
   text-align: left;
+}
+
+
+@media (max-width: 968px) {
+
+  /* Oculta as setas no mobile */
+  .arrows-header {
+    display: none;
+  }
+
+  /* Título centralizado e sem fundo */
+  .solutions-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .solutions-title {
+    width: 100%;
+    margin: 0;
+    
+    margin-left: -40px;
+  }
+
+  .section-titles {
+    font-size: 2rem;
+    text-align: left;
+  }
+
+  /* Container do carrossel com rolagem horizontal */
+  .carousel-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* Firefox */
+    scroll-snap-type: x mandatory;
+    padding: 0 10px;
+  }
+
+  .carousel-container::-webkit-scrollbar {
+    display: none; /* Safari e Chrome */
+  }
+
+  .carousel {
+    display: flex;
+    gap: 15px;
+    transition: none; /* desativa animação desktop */
+  }
+
+  /* === 2 cards por vez === */
+  .card {
+    min-width: 47%;  /* mostra 2 cards (com espaço entre eles) */
+    height: 320px;
+    flex-shrink: 0;
+    scroll-snap-align: center;
+    border-radius: 10px;
+  }
+
+  /* Overlay ajustado para texto menor */
+  .card-overlay {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 20%, rgba(0, 0, 0, 0.8) 100%);
+    padding: 20px;
+  }
+
+  .card-overlay h3 {
+    font-size: 1.4rem;
+  }
+
+  .card-overlay p {
+    font-size: 0.9rem;
+  }
+
+  .read-more {
+    font-size: 0.9rem;
+  }
 }
 

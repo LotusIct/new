@@ -66,9 +66,8 @@ button a{
 }
 
 button:hover {
-  background-color: var(--accent2);
+  background-color: transparent;
   color: var(--accent1);
-  box-shadow: 0 0 10px var(--accent1);
 }
 
 /* Fundo cósmico opcional (suave e moderno) */

@@ -1,8 +1,8 @@
 import React from "react";
 import "./Footer.css";
 import Logo from "../assets/logo (5).png";
+import LogoMobile from "../assets/logonovo.png"; // novo logo mobile
 
-// Ícones do React Icons
 import { FaFacebookF, FaTwitter, FaLinkedinIn, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const FooterSection: React.FC = () => {
@@ -11,15 +11,20 @@ const FooterSection: React.FC = () => {
       {/* ===== TOPO ===== */}
       <div className="footer-top">
         
-        {/* ===== LOGO ===== */}
-        <div className="footer-logo-area">
+        {/* ===== LOGO DESKTOP/TABLET ===== */}
+        <div className="footer-logo-area desktop-logo">
           <img src={Logo} alt="IMBAS Logo" className="footer-logo" />
+        </div>
+
+        {/* ===== LOGO MOBILE ===== */}
+        <div className="footer-logo-area mobile-logo">
+          <img src={LogoMobile} alt="IMBAS Logo Mobile" className="footer-logo-mobile" />
         </div>
 
         {/* ===== LINKS ===== */}
         <div className="footer-links-center">
           <div className="footer-links-group">
-            <h4 className="footer-title">Links Principais</h4>
+            <h4 className="footer-title">Pages</h4>
             <ul className="footer-links">
               <li><a href="#">Home</a></li>
               <li><a href="#">Sobre</a></li>
@@ -64,7 +69,6 @@ const FooterSection: React.FC = () => {
           <p className="footer-frase">“Predict. Create. Evolve.”</p>
           <p className="footer-copy">© 2025 IMBAS. Todos os direitos reservados.</p>
 
-          {/* ===== REDES SOCIAIS AGORA AQUI ===== */}
           <div className="footer-social-bottom">
             <a href="#" className="social"><FaFacebookF /></a>
             <a href="#" className="social"><FaTwitter /></a>

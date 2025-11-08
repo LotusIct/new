@@ -117,7 +117,12 @@
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
+
+  .contato-carreiras {
+  background: linear-gradient(160deg, var(--terceira) 50%, var(--primary) 50%);
+
+}
   .boxes-container {
     grid-template-columns: 1fr;
     gap: 1.5rem;
@@ -134,17 +139,12 @@
   }
 
   .box-desc {
-    font-size: 0.95rem;
+    font-size: 0.90rem;
   }
 
-  .box-btn {
-    border-color: var(--neutral);
-    color: var(--neutral);
-    background: transparent;
-  }
+.box-btn {
+  padding: 0.5rem 0.8rem;
+  font-size: 0.8rem;
+}
 
-  .box-btn:hover {
-    background: var(--neutral);
-    color: var(--terceira);
-  }
 }

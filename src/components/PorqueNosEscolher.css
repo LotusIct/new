@@ -32,6 +32,7 @@
   margin-bottom: 1.2rem;
   letter-spacing: -1px;
   line-height: 1.1;
+  position: relative;
 }
 
 .subtitulo-secao {
@@ -48,19 +49,19 @@
   gap: 5rem;
   justify-items: center;
 }
+
 .letra-fundos {
   position: absolute;
-  top: -175px; /* sobe a letra */
+  top: -175px;
   left: 7%;
   transform: translateX(-50%);
-  font-size: 15rem; /* bem grande */
-  color: rgba(255, 255, 255, 0.07); /* quase transparente, efeito de fundo */
+  font-size: 15rem;
+  color: #BCAAF3;
+  opacity: 0.07;
   z-index: 0;
-  margin-right: 20px;
   pointer-events: none;
   user-select: none;
   font-weight: 800;
-  color: #BCAAF3;
 }
 
 .card-feature {
@@ -96,12 +97,64 @@
   line-height: 1.6;
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .titulo-secao {
-    font-size: 2.4rem;
+/* ============= RESPONSIVO ATÉ 968px ============= */
+@media (max-width: 968px) {
+  .porque-nos-escolher {
+    padding: 6rem 1.5rem;
   }
+
+  .titulo-secao {
+    font-size: 2.2rem;
+  }
+
   .subtitulo-secao {
-    font-size: 1.1rem;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+  }
+
+  .grid-features {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
+    gap: 2rem;
+  }
+
+  .card-feature {
+    padding: 1.5rem 1rem;
+    border-radius: 1rem;
+  }
+
+  .titulo-card {
+    font-size: 1.3rem;
+  }
+
+  .descricao-card {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .icone svg {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+/* ============= CELULARES ATÉ 600px ============= */
+@media (max-width: 600px) {
+  .grid-features {
+    grid-template-columns: 1fr; /* 1 por linha */
+  }
+
+  .titulo-secao {
+    font-size: 1.8rem;
+  }
+
+  .subtitulo-secao {
+    font-size: 0.95rem;
+  }
+
+  .letra-fundos {
+    font-size: 10rem;
+    top: -120px;
+    left: 50%;
+    transform: translateX(-50%);
   }
 }

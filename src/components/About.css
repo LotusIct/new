@@ -123,7 +123,7 @@
 @media (max-width: 900px) {
   .ia-intro-container {
     flex-direction: column;
-    text-align: center;
+    text-align: left;
   }
 
   .ia-intro-left {
@@ -132,10 +132,17 @@
   }
 
   .ia-title {
-    font-size: 2.5rem;
+    font-size: 6rem;
   }
-
+.complementar{
+  font-size: 1.5rem;
+}
   .ia-description {
     font-size: 1rem;
+    margin-left: -0px;
   }
+
+  .learn-more {
+  margin-left: 0px;
+}
 }

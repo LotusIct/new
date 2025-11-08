@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 40px 20px 60px;
+  padding: 40px 20px 60px 20px;
   background: rgba(10, 10, 25, 0.6); /* fundo escuro translúcido */
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
@@ -92,16 +92,23 @@
 }
 
 /* ===== RESPONSIVO ===== */
-@media (max-width: 768px) {
+@media (max-width: 968px) {
   .fala {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
   }
   .cta::after {
     width: 25%;
   }
-  .ceo-quote::before,
-  .ceo-quote::after {
+  .ceo-quote::before {
     font-size: 5rem;
     top: -10px;
   }
+    .ceo-quote::after {
+    font-size: 5rem;
+    top: 110px;
+    margin-right: 10px;
+  }
+  .ceo-name {
+  font-size: 0.85rem;
+}
 }

@@ -23,9 +23,9 @@ export default function Locais() {
     <section className="locais-section interativo" style={{ background: paisAtivo ? paisAtivo.fundo : fundoPadrao, transition: "background 0.5s ease" }}>
       <div className="overlays"></div>
       <div className="locais-content flex-container">
-        <div className="locais-left" style={{ color: paisAtivo ? "black" : "var(--complementary1)" }}>
+        <div className="locais-left" >
           <h2 className="locais-title" style={{ color: paisAtivo ? "white" : "var(--primary)" }}>Nossa Presença Global</h2>
-          <p className="locais-intro" style={{ color: paisAtivo ? "white" : "var(--accent1)" }}>
+          <p className="locais-intro" style={{ color: paisAtivo ? "#ffffff9c" : "#8a86abff" }}>
             Nossa jornada começou na <strong>Itália</strong>, berço da arte e do cuidado artesanal. 
             Passamos pela <strong>Espanha</strong> e <strong>Portugal</strong>, harmonizando tradição e tecnologia.
           </p>
@@ -35,23 +35,48 @@ export default function Locais() {
         </div>
 
         <div className="locais-right">
-          <div className="descricao-pais" style={{ color: paisAtivo ? "white" : "black" }}>
-            <p className="locais-intro ativo-pais">
+          <div className="descricao-pais" >
+            <p className="locais-intro ativo-pais" style={{ color: paisAtivo ? "white" : "var(--primary)" }}>
               {paisAtivo ? `"${paisAtivo.descricao}"` : `"Descubra como a criatividade e a inovação conectam o mundo."`}
             </p>
           </div>
 
           <div className="paises-lista">
-            {paises.map((pais) => (
-              <div key={pais.nome} className={`pais-item ${paisAtivo?.nome === pais.nome ? "ativo" : ""}`} 
-                   style={{ color: paisAtivo ? "white" : "black" }}
-                   onMouseEnter={() => setPaisAtivo(pais)}
-                   onMouseLeave={() => setPaisAtivo(null)}>
-                <span className="emoji" style={{ color: paisAtivo ? "white" : "#BCAAF3" }}>{pais.emoji}</span>
-                <span className="nome" style={{ color: paisAtivo ? "white" : "#BCAAF3" }}>{pais.nome}</span>
-              </div>
-            ))}
-          </div>
+  {paises.map((pais) => (
+    <div
+      key={pais.nome}
+      className={`pais-item ${paisAtivo?.nome === pais.nome ? "ativo" : ""}`}
+      style={{
+        color: paisAtivo?.nome === pais.nome ? "white" : "black",
+      }}
+      onClick={() => setPaisAtivo(pais)} // ✅ Clique no mobile
+      onMouseEnter={() => {
+        if (window.innerWidth > 968) setPaisAtivo(pais); // hover só no desktop
+      }}
+      onMouseLeave={() => {
+        if (window.innerWidth > 968) setPaisAtivo(null); // remove hover só no desktop
+      }}
+    >
+      <span
+        className="emoji"
+        style={{
+          color: paisAtivo?.nome === pais.nome ? "white" : "#BCAAF3",
+        }}
+      >
+        {pais.emoji}
+      </span>
+      <span
+        className="nome"
+        style={{
+          color: paisAtivo?.nome === pais.nome ? "white" : "#BCAAF3",
+        }}
+      >
+        {pais.nome}
+      </span>
+    </div>
+  ))}
+</div>
+
         </div>
       </div>
     </section>

@@ -139,29 +139,89 @@
 .texto-hover, .descricao-hover {
   color: black !important;
 }
-
 /* Responsivo */
-@media (max-width: 1024px) {
+@media (max-width: 968px) {
+  .locais-section {
+    padding: 60px 20px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
   .flex-container {
     flex-direction: column;
     align-items: center;
+    gap: 30px;
   }
-  .locais-left, .locais-right {
+
+  .locais-left,
+  .locais-right {
     max-width: 100%;
+    margin: 0;
   }
+
+  .locais-title {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .locais-intro {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: var(--complementary1);
+    text-align: center;
+  }
+
+  /* ===== Coluna da direita ===== */
+  .locais-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Descrição do país em cima da lista */
+  .descricao-pais {
+    order: 1;                /* aparece primeiro */
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto 20px auto;
+    text-align: center;
+  }
+
+  /* Lista de países logo abaixo */
   .paises-lista {
-    flex-direction: row;
+    order: 2;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 10px;
+    gap: 12px;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
   }
+
   .pais-item {
-    transform: none !important;
-    padding: 8px 16px;
+    flex: 1 1 calc(50% - 12px); /* 2 por linha */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    background: rgba(202, 202, 202, 0.13);
+    transition: all 0.3s ease;
+  }
+
+  .pais-item:hover {
+    background: rgba(255, 255, 255, 0.25);
+    transform: none;
+  }
+
+  .emoji {
+    font-size: 1.6rem;
+    margin-right: 6px;
   }
 }
 
-@media (max-width: 768px) {
-  .locais-section { padding: 60px 20px; }
-  .locais-title { font-size: 2rem; }
-}
+

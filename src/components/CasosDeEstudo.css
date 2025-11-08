@@ -132,3 +132,96 @@
   text-transform: uppercase;
   margin-top: 10px;
 }
+/* ========================
+   MOBILE RESPONSIVO
+======================== */
+@media (max-width: 968px) {
+  .casos-section {
+    padding: 40px 20px;
+    background: #ffffff;
+  }
+
+  /* remove as setas */
+  .casos-arrows-header,
+  .casos-arrows-header-mobile {
+    display: none;
+  }
+
+  /* carrossel scrollável com o dedo */
+  .casos-carousel-container {
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; /* esconde scrollbar */
+  }
+
+  .casos-carousel-container::-webkit-scrollbar {
+    display: none; /* esconde scrollbar no Chrome/Safari */
+  }
+
+  .casos-carousel {
+    display: flex;
+    gap: 16px;
+    padding: 0 16px;
+    transition: none;
+  }
+
+  /* 2 cards por vez */
+  .casos-card {
+    min-width: calc(50% - 8px);
+    height: 420px;
+    scroll-snap-align: start;
+    border-radius: 10px;
+    flex-shrink: 0;
+  }
+
+  /* overlay adaptado */
+  .casos-card-overlays h3 {
+    font-size: 1.2rem;
+  }
+
+  .casos-card-overlays p {
+    font-size: 0.85rem;
+  }
+.casos-read-more {
+  font-size: 0.75rem;
+}
+
+
+.casos-title {
+  background-color: #000;
+  margin-right: -60px;
+}
+
+.casos-section-title {
+  text-align: left;
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-right: 160px;
+  margin-left: 20px;
+  color: var(--accent1) !important;
+  font-family: 'Ailerons', sans-serif;
+}
+  .casos-header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+    /* 🔹 No mobile, overlay sempre visível */
+  .casos-card-overlays {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    background: rgba(0, 0, 0, 0.7); /* um pouco mais transparente */
+  }
+
+  /* Remove o efeito de hover no mobile */
+  .casos-card:hover .casos-card-overlays {
+    opacity: 1;
+    transform: none;
+  }
+
+  .casos-card::after {
+    display: none;
+  }
+
+}

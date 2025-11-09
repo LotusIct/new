@@ -134,3 +134,172 @@
 .menu-column li:hover {
   color: var(--terceira);
 }
+/* ===== MOBILE MENU ===== */
+.mobile-toggle {
+  display: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  position: relative;
+  z-index: 1001; /* sempre acima do menu */
+  transition: transform 0.2s ease;
+}
+
+.mobile-toggle.active {
+  transform: rotate(90deg);
+}
+
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 350px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  padding: 60px 25px;
+  transform: translateX(0);
+  animation: slideIn 0.3s ease;
+  overflow-y: auto;
+  position: relative; /* 🔹 necessário para o botão X */
+}
+
+
+@media (max-width: 968px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 25px;
+    color: #000;
+  }
+
+  .mobile-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 998;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .mobile-menu {
+    position: fixed;
+    top: 90px;
+    right: 0;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background-color: #fff;
+    box-shadow: -4px 0 20px rgba(0, 0, 0, 0.2);
+    z-index: 999;
+    padding: 60px 25px;
+    transform: translateX(0);
+    animation: slideIn 0.3s ease;
+    overflow-y: auto;
+  }
+
+  .mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* 🔹 TÍTULOS PRINCIPAIS (com seta e linha superior) */
+  .mobile-menu li {
+    margin-bottom: 15px;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    padding-top: 15px;
+    position: relative;
+  }
+
+  .mobile-menu li:first-child {
+    border-top: none; /* remove linha do primeiro item */
+  }
+
+  .mobile-menu button {
+    background: none;
+    border: none;
+    color: var(--secondary);
+    font-size: 1.2rem;
+    font-family: "Rubik", sans-serif;
+    width: 100%;
+    text-align: left;
+    cursor: pointer;
+    padding: 10px 0;
+    position: relative;
+  }
+
+  /* 🔸 Setinha à direita */
+  .mobile-menu button::after {
+    content: "›";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transition: transform 0.2s ease;
+    font-size: 1.1rem;
+    color: var(--accent2);
+  }
+
+  /* 🔹 Quando aberto, gira a seta */
+  .mobile-menu button.active::after {
+    transform: translateY(-50%) rotate(-90deg);
+  }
+
+  /* 🔹 SUBMENUS (sem linha superior) */
+/* ===== SUBMENUS ===== */
+.submenu {
+  margin-top: 10px;
+  margin-left: 15px;
+  padding-left: 10px;
+  border: none; /* 🔹 remove a linha contínua à esquerda */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.submenu li {
+  position: relative;
+  padding-left: 10px; /* espaço para a borda individual */
+  margin: 10px;
+  color: var(--complementary1);
+  font-size: 1rem;
+}
+
+/* 🔹 Borda individual em cada item */
+.submenu li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.7em;
+  bottom: 0em;
+  width: 2px;
+  background-color: var(--accent2);
+  border-radius: 2px;
+}
+
+
+  @keyframes slideIn {
+    from {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(0);
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+}

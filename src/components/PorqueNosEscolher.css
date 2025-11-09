@@ -1,6 +1,6 @@
 .porque-nos-escolher {
   background: linear-gradient(135deg, #f9f9f9 0%, #BCAAF3 100%);
-  padding: 10rem 0rem;
+  padding: 10rem 4rem;
   font-family: 'Poppins', sans-serif;
   position: relative;
   overflow: hidden;
@@ -26,7 +26,7 @@
 }
 
 .titulo-secao {
-  font-size: 3.5rem;
+  font-size: 3rem;
   font-weight: 800;
   color: #2B1B52;
   margin-bottom: 1.2rem;
@@ -50,19 +50,19 @@
   justify-items: center;
 }
 
-.letra-fundos {
+.letras-fundos {
   position: absolute;
   top: -175px;
-  left: 7%;
   transform: translateX(-50%);
   font-size: 15rem;
-  color: #BCAAF3;
-  opacity: 0.07;
+  color: #7E6BCC;       /* preto sólido */
+  opacity: 0.6;      /* mais visível (pode testar 0.05 a 0.15) */
   z-index: 0;
   pointer-events: none;
   user-select: none;
   font-weight: 800;
 }
+
 
 .card-feature {
   background: #ffffff;
@@ -100,7 +100,7 @@
 /* ============= RESPONSIVO ATÉ 968px ============= */
 @media (max-width: 968px) {
   .porque-nos-escolher {
-    padding: 6rem 1.5rem;
+    padding: 8rem 1.5rem 4rem;
   }
 
   .titulo-secao {
@@ -114,7 +114,8 @@
 
   .grid-features {
     grid-template-columns: repeat(2, 1fr); /* 2 cards por linha */
-    gap: 2rem;
+    gap: 3rem;
+    padding: 10px;
   }
 
   .card-feature {
@@ -123,7 +124,7 @@
   }
 
   .titulo-card {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .descricao-card {
@@ -135,6 +136,17 @@
     width: 32px;
     height: 32px;
   }
+  .letras-fundos {
+  position: absolute;
+  top: -145px;
+  font-size: 12rem;
+  color: #7E6BCC;       /* preto sólido */
+  opacity: 0.6;      /* mais visível (pode testar 0.05 a 0.15) */
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 800;
+}
 }
 
 /* ============= CELULARES ATÉ 600px ============= */
@@ -151,10 +163,15 @@
     font-size: 0.95rem;
   }
 
-  .letra-fundos {
-    font-size: 10rem;
-    top: -120px;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.letras-fundos {
+  position: absolute;
+  top: -125px;
+  font-size: 10rem;
+  color: #7E6BCC;       /* preto sólido */
+  opacity: 0.6;      /* mais visível (pode testar 0.05 a 0.15) */
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  font-weight: 800;
+}
 }

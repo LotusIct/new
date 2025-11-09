@@ -1,19 +1,20 @@
 .stats-section {
   background-color: var(--neutral);
   display: flex;
-  justify-content: center; /* centraliza horizontalmente */
-  align-items: center;  
+  justify-content: center;
+  align-items: center;
 }
 
 .stats-background {
   background: linear-gradient(135deg, #BCAAF3 0%, #3E2C74 100%);
-  padding: 20px 40px  100px 40px;
+  padding: 20px 40px 100px 40px;
   width: 100%;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza conteúdo interno horizontalmente */
+  align-items: center;
 }
+
 .stats-intro {
   text-align: center;
   margin-bottom: 30px;
@@ -43,14 +44,14 @@
 }
 
 .counter {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.15);
   color: var(--neutral);
   padding: 20px 25px;
   border-radius: 15px;
   min-width: 160px;
-  flex: 1 1 160px;
-  max-width: 200px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  flex: 1 1 200px;
+  max-width: 250px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
   backdrop-filter: blur(6px);
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
@@ -58,8 +59,8 @@
 
 .counter:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.12);
-  background: rgba(255,255,255,0.25);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.25);
 }
 
 .count {
@@ -67,24 +68,49 @@
   font-weight: 700;
   display: block;
   font-family: 'Ailerons', sans-serif;
-  
 }
 
 .label {
   font-size: 0.95rem;
   margin-top: 8px;
   font-weight: 500;
-  
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
+/* ============ Responsivo até 968px (2 por linha) ============ */
+@media (max-width: 968px) {
   .stats-grid {
-    flex-direction: column;
-    gap: 15px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 cards lado a lado */
+    gap: 20px;
   }
 
   .counter {
-    width: 100%;
+    max-width: 100%;
+  }
+
+  .stats-intro h2 {
+    font-size: 2.2rem;
+  }
+
+  .stats-intro p {
+    font-size: 1rem;
+  }
+  .count {
+  font-size: 2rem;
+}
+}
+
+/* ============ Celulares até 600px (1 por linha) ============ */
+@media (max-width: 600px) {
+  .stats-grid {
+    grid-template-columns: 1fr 1fr; /* 1 por linha */
+  }
+
+  .stats-intro h2 {
+    font-size: 2.5rem;
+  }
+
+  .stats-intro p {
+    font-size: 0.95rem;
   }
 }

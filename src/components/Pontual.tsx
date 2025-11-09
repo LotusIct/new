@@ -49,7 +49,7 @@ export default function PorqueNosEscolher() {
   return (
     <section className="porque-nos-escolher" id="porque-nos-escolher">
       <div className="conteudo">
-        <h2 className="titulo-secao">  <span className="letra-fundos">P</span>or que escolher a nossa empresa</h2>
+        <h2 className="titulo-secao">  <span className="letras-fundos">P</span>or que escolher a nossa empresa</h2>
         <p className="subtitulo-secao">
           Atuamos há anos ajudando empresas a crescer e inovar com tecnologia, design e processos eficientes.
         </p>

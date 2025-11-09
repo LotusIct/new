@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Industrias.css";
 
-// Importando imagens
 import i1 from "../assets/in1.png";
 import i2 from "../assets/in2.png";
 import i3 from "../assets/in3.png";
@@ -13,15 +12,13 @@ import i7 from "../assets/in7.png";
 import i8 from "../assets/in8.png";
 import i9 from "../assets/in9.png";
 
-// Tipagem
 interface Industria {
-  id: string; // ✅ id único para rota
+  id: string;
   nome: string;
   descricao: string;
   imagem: string;
 }
 
-// Lista de indústrias
 export const industrias: Industria[] = [
   { id: "saude", nome: "Saúde", descricao: "Tecnologia e soluções digitais para hospitais, clínicas e laboratórios.", imagem: i1 },
   { id: "engenharia", nome: "Engenharia", descricao: "Softwares de planejamento, CAD e monitoramento de projetos de engenharia.", imagem: i2 },
@@ -40,34 +37,47 @@ export default function Industrias() {
   return (
     <section className="industrias-section">
       <h1 className="industrias-title">Indústrias</h1>
+
       <div className="industrias-container">
-       
-        {/* Lado esquerdo: lista */}
-        <div className="industrias-list">
-          {industrias.map((ind, i) => (
-            <div
-              key={ind.id}
-              className={`industria-item ${activeIndex === i ? "active" : ""}`}
-              onMouseEnter={() => setActiveIndex(i)}
-            >
-              {ind.nome}
+        {/* ===== DESKTOP / TABLET ===== */}
+        <div className="industrias-desktop">
+          <div className="industrias-list">
+            {industrias.map((ind, i) => (
+              <div
+                key={ind.id}
+                className={`industria-item ${activeIndex === i ? "active" : ""}`}
+                onMouseEnter={() => setActiveIndex(i)}
+              >
+                {ind.nome}
+              </div>
+            ))}
+          </div>
+
+          <div
+            className="industrias-content"
+            style={{ backgroundImage: `url(${industrias[activeIndex].imagem})` }}
+          >
+            <div className="industrias-text">
+              <h3>{industrias[activeIndex].nome}</h3>
+              <p>{industrias[activeIndex].descricao}</p>
+              <Link to={`/industrias/${industrias[activeIndex].id}`} className="saiba-mais">
+                Saiba Mais
+              </Link>
             </div>
-          ))}
+          </div>
         </div>
 
-        {/* Lado direito: painel de imagem e texto */}
-        <div
-          className="industrias-content"
-          style={{ backgroundImage: `url(${industrias[activeIndex].imagem})` }}
-        >
-          <div className="industrias-text">
-            <h3>{industrias[activeIndex].nome}</h3>
-            <p>{industrias[activeIndex].descricao}</p>
-            {/* ✅ Link para a página individual */}
-            <Link to={`/industrias/${industrias[activeIndex].id}`} className="saiba-mais">
-              Saiba Mais
+        {/* ===== MOBILE ===== */}
+        <div className="industrias-mobile">
+          {industrias.map((ind) => (
+            <Link key={ind.id} to={`/industrias/${ind.id}`} className="industria-card">
+              <img src={ind.imagem} alt={ind.nome} />
+              <div className="industria-card-text">
+                <h3>{ind.nome}</h3>
+                <p>{ind.descricao}</p>
+              </div>
             </Link>
-          </div>
+          ))}
         </div>
       </div>
     </section>

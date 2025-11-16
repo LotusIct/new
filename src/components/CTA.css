@@ -5,10 +5,9 @@
   align-items: center;
   flex-direction: column;
   padding: 40px 20px 60px 20px;
-  background: rgba(10, 10, 25, 0.6); /* fundo escuro translúcido */
+  background: #2B1B52; /* fundo escuro translúcido */
   backdrop-filter: blur(12px) saturate(150%);
   -webkit-backdrop-filter: blur(12px) saturate(150%);
-  border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--neutral);
   text-align: center;
   position: relative;

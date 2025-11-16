@@ -9,6 +9,7 @@ import cu4 from "../assets/cun4.jpg";
 import cu5 from "../assets/cun5.jpg";
 
 interface Caso {
+  id: string;
   title: string;
   problema: string;
   resultado: string;
@@ -17,6 +18,7 @@ interface Caso {
 
 const casos: Caso[] = [
   {
+    id: "otimizacao-logistica-ia",
     title: "Otimização Logística com IA Preditiva",
     problema:
       "Rotas ineficientes e altos custos operacionais prejudicavam a entrega de produtos em tempo hábil.",
@@ -25,22 +27,25 @@ const casos: Caso[] = [
     img: cu1,
   },
   {
+    id: "gestao-armazem-inteligente",
     title: "Sistema de Gestão de Armazém Inteligente",
     problema:
       "A empresa enfrentava falhas no controle de estoque e retrabalho em processos manuais.",
-   resultado:
+    resultado:
       "Precisão de 98% na contagem de estoque e aumento de 40% na produtividade operacional.",
     img: cu2,
   },
   {
+    id: "analise-preditiva-vendas",
     title: "Plataforma de Análise Preditiva de Vendas",
     problema:
       "A equipe comercial não conseguia prever a demanda e ajustar o estoque de forma estratégica.",
-   resultado:
+    resultado:
       "Acurácia de 87% nas previsões e aumento de 20% na margem de lucro trimestral.",
     img: cu3,
   },
   {
+    id: "automacao-processos-logisticos",
     title: "Automação de Processos Logísticos",
     problema:
       "A gestão manual de pedidos e transportes causava atrasos e inconsistências nos relatórios.",
@@ -49,6 +54,7 @@ const casos: Caso[] = [
     img: cu4,
   },
   {
+    id: "monitoramento-tempo-real",
     title: "Infraestrutura de Dados e Monitoramento em Tempo Real",
     problema:
       "A ausência de uma base de dados consolidada dificultava decisões estratégicas e análises de desempenho.",
@@ -57,6 +63,7 @@ const casos: Caso[] = [
     img: cu5,
   },
 ];
+
 export default function CasosDeEstudo() {
   const [index, setIndex] = useState(0);
 
@@ -82,12 +89,6 @@ export default function CasosDeEstudo() {
 
   <div className="casos-carousel-container">
   {/* Só mostra as setas no desktop */}
-  {window.innerWidth > 968 && (
-    <div className="casos-arrows-header-mobile">
-      <button className="casos-arrows" onClick={prevSlide}>‹</button>
-      <button className="casos-arrows" onClick={nextSlide}>›</button>
-    </div>
-  )}
 
   <div
     className="casos-carousel"
@@ -108,9 +109,14 @@ export default function CasosDeEstudo() {
           <h3>{caso.title}</h3>
           <p><strong>Problema:</strong> {caso.problema}</p>
           <p><strong>Resultado:</strong> {caso.resultado}</p>
-          <button className="casos-read-more">
-            Saiba mais <FaArrowRight style={{ marginLeft: "8px" }} />
-          </button>
+
+          <button
+  className="casos-read-more"
+  onClick={() => (window.location.href = `/casos/${caso.id}`)}
+>
+  Saiba mais <FaArrowRight  style={{ marginLeft: "8px" }}/>
+</button>
+
         </div>
       </motion.div>
     ))}

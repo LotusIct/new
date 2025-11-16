@@ -6,6 +6,8 @@ import IA from "./pages/Ia";
 import IndustriaPage from "./pages/IndustriaPage";
 import { industrias } from "./data/industrias";
 import "./styles/global.css";
+import CasePage from "./pages/CaseStudyPage";
+import { casosData } from "./data/casosData";
 
 export default function App() {
   return (
@@ -24,6 +26,10 @@ export default function App() {
             element={<IndustriaPage {...ind} />}
           />
         ))}
+        {/* Rotas dinâmicas dos casos */}
+        <Route path="/casos/:id" element={<CasePage />} />
+
+
       </Routes>
     </Router>
   );

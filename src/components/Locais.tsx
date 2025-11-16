@@ -9,14 +9,14 @@ interface Pais {
 }
 
 const paises: Pais[] = [
-  { nome: "Itália", emoji: "🇮🇹", descricao: "Precisão e tradição artesanal — o ponto de partida da nossa essência criativa.", fundo: "linear-gradient(135deg, #ffffff7c 0%, #cd212aa2 50%, #008c46a9 100%)" },
+  { nome: "Itália", emoji: "🇮🇹", descricao: "Precisão e tradição artesanal — o ponto de partida da nossa essência criativa.", fundo: "linear-gradient(135deg, #ffffff 0%, #cd212a 50%, #008c46 100%)" },
   { nome: "Espanha", emoji: "🇪🇸", descricao: "Energia e ousadia no design — onde a inovação ganhou forma.", fundo: "linear-gradient(135deg, #AA151B, #F1BF00)" },
   { nome: "Portugal", emoji: "🇵🇹", descricao: "Tradição e modernidade lado a lado — harmonia entre arte e tecnologia.", fundo: "linear-gradient(135deg, #007c00ff, #FF0000)" },
   { nome: "Brasil", emoji: "🇧🇷", descricao: "Nosso lar, conectando criatividade e tecnologia para impulsionar o futuro.", fundo: "linear-gradient(135deg, #FFCC29 0%, #002776 50%, #009C3B 100%)" },
 ];
 
 export default function Locais() {
-  const fundoPadrao = "#ffffff"; 
+  const fundoPadrao = "#ffffff";
   const [paisAtivo, setPaisAtivo] = useState<Pais | null>(null);
 
   return (
@@ -26,7 +26,7 @@ export default function Locais() {
         <div className="locais-left" >
           <h2 className="locais-title" style={{ color: paisAtivo ? "white" : "var(--primary)" }}>Nossa Presença Global</h2>
           <p className="locais-intro" style={{ color: paisAtivo ? "#ffffff9c" : "#8a86abff" }}>
-            Nossa jornada começou na <strong>Itália</strong>, berço da arte e do cuidado artesanal. 
+            Nossa jornada começou na <strong>Itália</strong>, berço da arte e do cuidado artesanal.
             Passamos pela <strong>Espanha</strong> e <strong>Portugal</strong>, harmonizando tradição e tecnologia.
           </p>
           <p className="locais-intro" style={{ color: paisAtivo ? "white" : "var(--accent2)" }}>

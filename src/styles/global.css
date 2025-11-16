@@ -11,7 +11,7 @@
 
 /* 🌌 Paleta IMBAS */
 :root {
-  --primary: #2B1B52;        /* Azul violeta profundo - sabedoria e mistério */
+  --primary: #2B1B52;      /* Azul violeta profundo - sabedoria e mistério */
   --secondary: #3E2C74;      /* Roxo cósmico - equilíbrio e tecnologia */
   --terceira: #0C0A14;       /* Preto azulado - fundo sofisticado */
   --complementary1: #BCAAF3; /* Lilás prateado - sabedoria e brilho */
@@ -23,7 +23,7 @@
 
 /* Corpo do site */
 body {
-  background-color: transparent;
+  background-color: white;
   color: var(--complementary1);
   font-family: 'Rubik', sans-serif;
   margin: 0;
@@ -68,10 +68,4 @@ button a{
 button:hover {
   background-color: transparent;
   color: var(--accent1);
-}
-
-/* Fundo cósmico opcional (suave e moderno) */
-body {
-  background: radial-gradient(circle at 20% 20%, #2B1B52, #0C0A14 60%);
-  background-attachment: fixed;
 }

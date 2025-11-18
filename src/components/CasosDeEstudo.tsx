@@ -7,6 +7,7 @@ import cu2 from "../assets/cun2.jpg";
 import cu3 from "../assets/cun3.jpg";
 import cu4 from "../assets/cun4.jpg";
 import cu5 from "../assets/cun5.jpg";
+import { useNavigate } from "react-router-dom";
 
 interface Caso {
   id: string;
@@ -70,6 +71,7 @@ export default function CasosDeEstudo() {
   const prevSlide = () => {
     setIndex(prev => (prev === 0 ? casos.length - 1 : prev - 1));
   };
+const navigate = useNavigate();
 
   const nextSlide = () => {
     setIndex(prev => (prev === casos.length - 1 ? 0 : prev + 1));
@@ -112,10 +114,11 @@ export default function CasosDeEstudo() {
 
           <button
   className="casos-read-more"
-  onClick={() => (window.location.href = `/casos/${caso.id}`)}
+  onClick={() => navigate(`/casos/${caso.id}`)}
 >
-  Saiba mais <FaArrowRight  style={{ marginLeft: "8px" }}/>
+  Saiba mais <FaArrowRight style={{ marginLeft: "20px" }} />
 </button>
+
 
         </div>
       </motion.div>

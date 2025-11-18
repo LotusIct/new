@@ -1,117 +1,638 @@
-:root {
-    --primary: #2B1B52;
-    --secondary: #3E2C74;
-    --dark: #0C0A14;
-    --light: #ffffff;
+/* ============================== */
+/* 🌟 LAYOUT GERAL DO CASE PAGE   */
+/* ============================== */
+
+.case-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  padding-bottom: 60px;
+  background: #ffffff;
+  color: #1d1d1d;
+}
+
+
+/* ============================== */
+/* 🌟 HERO (BACKGROUND + SOBREPOSIÇÃO) */
+/* ============================== */
+
+.case-hero {
+  width: 100%;
+  height: 80vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.case-hero-overlay {
+  width: 100%;
+  height: 100%;
+  backdrop-filter: brightness(0.35) blur(1px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 80px;
+}
+
+.case-hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  color: white;
+  max-width: 800px;
+   margin: 10px 0px;
+}
+.case-hero-titles {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+.case-hero-sub {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+  margin: 0;
+}
+.case-hero-line {
+  width: 50%;
+  height: 3px;
+  border-radius: 4px;
+  background: #CFC7FF;
+  margin: 18px 0 24px;
+}
+
+.case-hero-info {
+  display: flex;
+  gap: 40px;
+  max-width: 900px;
+}
+
+.case-hero-info h3 {
+  color: #CFC7FF;
+  margin-bottom: 5px;
+}
+
+.case-hero-info p {
+  color: white;
+  max-width: 260px;
+  line-height: 1.4;
+  font-size: 15px;
+}
+
+
+/* ============================== */
+/* 🌟 BLOCO 2 — INDÚSTRIA + SOLUÇÃO */
+/* ============================== */
+
+.case-block-2 {
+  display: flex;
+  justify-content: space-around;
+  gap: 10px;
+  padding: 0px 0px 10px 0px;
+  margin-top: -30px;
+  margin-bottom: -20px;
+}
+
+.case-block-2-item h3 {
+  font-size: 20px;
+  color: #3E2C74;
+  margin-bottom: 6px;
+}
+
+.case-block-2-item p {
+  font-size: 16px;
+  color: #493D8C;
+  border: 2px solid #CFC7FF;
+  padding: 5px 15px;
+  border-radius: 20PX;
+}
+
+
+/* ============================== */
+/* 🌟 BLOCO 3 — TEXTO PRINCIPAL */
+/* ============================== */
+
+.case-text-section {
+  padding: 100px 20px 40px 20px;
+  width: 100%;
+  background-color: #493D8C;
+}
+
+.case-text-block {
+  width: 920px;
+  max-width: 100%; /* Segurança para mobile */
+  margin: 0 auto 40px auto; /* Aumentei a margem bottom para separar os blocos */
+  text-align: left;
+  
+  /* Mudança Principal: Flexbox para alinhar ícone e texto */
+  display: flex;
+  gap: 30px; /* Espaço entre ícone e texto */
+  align-items: flex-start;
+}
+
+/* O Container do Ícone - O Destaque Visual */
+.icon-container {
+  flex-shrink: 0; /* Impede o ícone de esmagar */
+  width: 64px;
+  height: 64px;
+  
+  /* Estilo "Glassy" / Destaque */
+  background: rgba(207, 199, 255, 0.1); /* Fundo sutil */
+  border: 1px solid rgba(207, 199, 255, 0.3); /* Borda fina */
+  border-radius: 16px; /* Bordas arredondadas */
+  
+  /* Centralizar o ícone dentro do quadrado */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  /* Cor do ícone */
+  color: #CFC7FF; 
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Sombra para profundidade */
+}
+
+.text-content {
+  flex: 1; /* O texto ocupa o resto do espaço */
+}
+
+.case-text-section h2 {
+  font-size: 2rem;
+  margin-top: 0; /* Remove margem superior para alinhar com o topo do ícone */
+  margin-bottom: 15px;
+  color: #CFC7FF;
+  font-weight: 600;
+}
+
+.case-text-section p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #FFFFFF;
+  opacity: 0.9; /* Leve transparência para suavizar o branco puro */
+}
+
+
+/* ============================== */
+/* 🌟 BLOCO 4 — 4 CARDS DESTACADOS */
+/* ============================== */
+
+/* Container Geral da Seção */
+.case-highlights-section {
+  padding: 60px 10px 100px 10px;
+  background-color: #F4F2FF; /* Um lilás quase branco para conectar com o roxo */
+  width: 100%;
+  margin-top: -60px;
+}
+
+/* Título da Seção */
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #493D8C; /* Mesma cor do fundo da seção anterior */
+  margin-bottom: 50px;
+}
+
+.case-cards {
+  display: grid;
+  /* Cria colunas responsivas automaticamente (mínimo de 240px) */
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.case-card {
+  background: white;
+  border-radius: 8px; /* Bordas um pouco mais suaves */
+  padding: 30px 25px;
+  box-shadow: 0 10px 30px rgba(73, 61, 140, 0.205); /* Sombra levemente roxa */
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* Detalhe decorativo no topo do card */
+.card-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #493D8C, #493D8C);
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.case-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(73, 61, 140, 0.12);
+}
+
+.case-card:hover .card-accent {
+  opacity: 1; /* Mostra a barrinha colorida ao passar o mouse */
+}
+
+.case-card h3 {
+  color: #493D8C; /* Usando o Roxo da marca ao invés do azul genérico */
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  font-size: 0.9rem;
+ font-family: 'Rubik', sans-serif;
+}
+
+.case-card p {
+  color: #666;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* ============================== */
+/* 🌟 BLOCO 5 — BOTÕES DE SEÇÕES */
+/* ============================== */
+/* Certifique-se de que as variáveis estão acessíveis ou substitua pelos hexadecimais */
+
+.case-section-buttons {
+  max-width: 900px;
+  margin: 0px auto 20px auto; /* Mais respiro vertical */
+  padding: 0 20px;
+  text-align: center;
+}
+
+.case-section-buttons h3 {
+  font-size: 1.2rem;
+  text-transform: uppercase; /* Deixa mais técnico/moderno */
+  letter-spacing: 2px;       /* Espaçamento elegante */
+  color: var(--secondary);   /* #3E2C74 */
+  margin-bottom: 30px;
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.case-btn-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Importante para mobile: deixa os botões descerem */
+  gap: 15px;       /* Espaço consistente */
+}
+
+.case-btn {
+  /* Forma e Estrutura */
+  display: inline-block;
+  padding: 10px 30px;
+  border-radius: 20px; /* Formato de pílula (moderno) */
+  text-decoration: none; /* Remove o sublinhado padrão do link */
+  font-size: 15px;
+  font-weight: 500;
+  
+  /* Cores e Acabamento */
+  background: transparent;
+  color: var(--secondary);   /* #3E2C74 */
+  border: 2px solid var(--secondary); /* Borda fina e elegante */
+  
+  /* Transições suaves */
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Efeito Hover - O "Pulo do Gato" */
+.case-btn:hover {
+  background: var(--secondary); /* Preenche com a cor roxa */
+  color: var(--neutral);        /* Texto fica branco #FFFFFF */
+  transform: translateY(-3px);  /* Leve flutuação */
+  box-shadow: 0 10px 20px rgba(62, 44, 116, 0.2); /* Sombra colorida */
+  border-color: var(--secondary);
+}
+
+/* Estado Ativo ou "Primary" (se quiser destacar um botão específico) */
+.case-btn.primary {
+  background: var(--primary); /* #2B1B52 */
+  border-color: var(--primary);
+  color: var(--neutral);
+  box-shadow: 0 4px 15px rgba(43, 27, 82, 0.3);
+}
+
+.case-btn.primary:hover {
+  background: var(--accent2); /* #493D8C - Fica um pouco mais claro no hover */
+  border-color: var(--accent2);
+  box-shadow: 0 8px 25px rgba(73, 61, 140, 0.4);
+}
+
+/* Ajuste Mobile */
+@media (max-width: 600px) {
+  .case-btn {
+    width: 100%; /* Botões ocupam largura total no celular */
+    padding: 14px;
+  }
+}
+
+
+/*seção direionada*/
+/* Container da Seção individual */
+.case-nav-section {
+  display: flex;
+  align-items: center; /* Centraliza verticalmente */
+  justify-content: space-between;
+  gap: 60px; /* Espaço generoso entre texto e imagem */
+  padding: 40px 20px; /* Respiro vertical grande */
+  max-width: 1000px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(62, 44, 116, 0.1); /* Divisória sutil */
+}
+
+/* Remove a borda do último item */
+.case-nav-section:last-child {
+  border-bottom: none;
+}
+
+/* --- Lógica do Zig-Zag --- */
+/* Todo item PAR (2, 4, 6...) inverte a ordem: Imagem na esq, Texto na dir */
+.case-nav-section:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+/* --- Estilo do Texto --- */
+.nav-text-content {
+  flex: 1; /* Ocupa 50% do espaço */
+}
+
+.nav-text-content h2 {
+  font-size: 2.5rem;
+  line-height: 1.2;
+  color: var(--primary); /* #2B1B52 */
+  margin-bottom: 24px;
+  position: relative;
+}
+
+/* Detalhe decorativo abaixo do título */
+.nav-text-content h2::after {
+  content: '';
+  display: block;
+  width: 20%;
+  height: 4px;
+  background: var(--complementary1); /* #BCAAF3 */
+  margin-top: 10px;
+  border-radius: 2px;
+}
+
+.nav-text-content p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #493D8C; /* Cinza escuro para leitura confortável */
+  font-weight: 400;
+}
+
+/* --- Estilo da Imagem --- */
+.nav-image-wrapper {
+  flex: 1; /* Ocupa os outros 50% */
+  display: flex;
+  justify-content: center;
+  position: relative; /* Necessário para efeitos decorativos */
+}
+
+.nav-image-wrapper img {
+  width: 100%;
+  max-width: 450px; /* Limite para não estourar */
+  height: auto;
+  border-radius: 20px; /* Bordas bem arredondadas */
+  
+  /* Sombra suave e moderna */
+  box-shadow: 0 20px 40px rgba(43, 27, 82, 0.15);
+  
+  /* Borda fina para acabamento */
+  border: 1px solid rgba(62, 44, 116, 0.1);
+  
+  transition: transform 0.3s ease;
+}
+
+/* Efeito de hover na imagem */
+.nav-image-wrapper img:hover {
+  transform: scale(1.02); /* Leve zoom */
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 900px) {
+  .case-nav-section {
+    flex-direction: column; /* Empilha tudo */
+    text-align: center;
+    padding: 60px 20px;
+    gap: 40px;
   }
 
-  /* HERO */
-  .case-hero {
-    height: 70vh;
-    background-size: cover;
-    background-position: center;
+  /* No mobile, ignoramos o row-reverse para manter consistência */
+  .case-nav-section:nth-child(even) {
+    flex-direction: column;
+  }
+
+  .nav-text-content h2::after {
+    margin: 10px auto; /* Centraliza o tracinho decorativo */
+  }
+  
+  .nav-text-content h2 {
+    font-size: 28px;
+  }
+}
+/* ============================== */
+/* 🌟 BLOCO 6 — SEÇÃO FINAL (2 COLUNAS) */
+/* ============================== */
+
+/* Container Fundo Total */
+.case-final-section {
+  width: 100%;
+  padding: 100px 20px;
+  margin-bottom: -60px;
+  /* Gradiente profundo: do Preto Azulado para o Azul Violeta */
+  background: linear-gradient(135deg, var(--accent2) 0%, var(--complementary2) 100%);
+  color: var(--neutral);
+  display: flex;
+  justify-content: center;
+}
+
+/* O Card Centralizado */
+.casos-contatos {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Divisão meio a meio */
+  gap: 60px; /* Espaço generoso */
+  max-width: 1000px;
+  width: 100%;
+  align-items: center; /* Centraliza verticalmente o conteúdo das colunas */
+}
+
+/* --- Coluna da Esquerda (Principal) --- */
+.case-final-left {
+  text-align: left;
+  padding-right: 60px;
+  /* Borda sutil e translúcida em vez de preta sólida */
+  border-right: 1px solid rgb(188, 170, 243); /* Usando tom Lilás com transparência */
+}
+
+.case-final-left h3 {
+  font-size: 1.8rem; /* Título grande e impactante */
+  font-weight: 400;
+  color: var(--neutral); /* Branco */
+  margin-bottom:50px;
+  line-height: 1.2;
+}
+
+.case-final-left p {
+  color: var(--complementary1); /* Lilás prateado para texto de apoio */
+  margin-bottom: 30px;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Botão de Ação Principal (Destaque) */
+.case-btn.primary-cta {
+  display: inline-block;
+  background-color: transparent; /* Azul Elétrico Escuro */
+  color: white;
+  padding: 16px 40px;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.185);
+  border: 1px solid rgb(255, 255, 255);
+}
+
+.case-btn.primary-cta:hover {
+  background-color: var(--secondary); /* Roxo Cósmico */
+  transform: translateY(-3px);
+    color: var(--complementary1);
+  border: none;
+  box-shadow: 0 10px 25px rgba(126, 107, 204, 0.219); /* Brilho Roxo */
+}
+
+/* --- Coluna da Direita (Links) --- */
+.case-final-right {
+  padding-left: 20px;
+}
+
+.case-final-right h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent1); /* Lilás discreto */
+  margin-bottom: 25px;
+  font-weight: 400;
+}
+
+.case-btn-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start; /* Alinha botões à esquerda */
+}
+
+/* Botões Secundários (Links discretos) */
+.case-btn.secondary-link {
+  color: var(--neutral);
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: 0.2s;
+  padding: 10px 30px;
+  border-radius: 20px;
+  display: inline-flex;
+  align-items: left;
+  text-align: left;
+  opacity: 0.8;
+  border: 1px solid white;
+}
+
+/* Efeito de seta surgindo no hover */
+.case-btn.secondary-link::after {
+  content: '→';
+  opacity: 0;
+  margin-left: -10px;
+  transition: 0.2s;
+  color: var(--complementary1);
+}
+
+.case-btn.secondary-link:hover {
+  opacity: 1;
+  color: var(--complementary1);
+  transform: translateX(5px);
+   border: none;
+}
+
+.case-btn.secondary-link:hover::after {
+  opacity: 1;
+  margin-left: 10px;
+}
+
+/* --- Responsividade (Mobile) --- */
+@media (max-width: 850px) {
+  .casos-contatos {
+    grid-template-columns: 1fr; /* Empilha tudo */
+    gap: 50px;
+    text-align: center;
+  }
+
+  .case-final-left {
+    padding-right: 0;
+    border-right: none; /* Remove a borda lateral no mobile */
+    border-bottom: 1px solid rgba(188, 170, 243, 0.2); /* Adiciona borda embaixo */
+    padding-bottom: 50px;
+    text-align: center;
+  }
+
+  .case-final-right {
+    padding-left: 0;
     display: flex;
-    align-items: flex-end;
-    position: relative;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .case-btn-group-vertical {
+    align-items: center; /* Centraliza links no mobile */
+  }
+}
+
+/* ============================== */
+/* 📱 RESPONSIVIDADE */
+/* ============================== */
+
+@media (max-width: 960px) {
+  .case-hero {
+    height: 350px;
   }
 
   .case-hero-overlay {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
-    padding: 4rem;
-    width: 100%;
-    color: var(--light);
+    padding-left: 35px;
   }
 
-  .case-hero-overlay h1 {
-    font-size: 4rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+  .case-hero-info {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .case-hero-overlay p {
-    max-width: 600px;
-    font-size: 1.3rem;
-    opacity: 0.9;
-  }
-
-  /* TEXTO PRINCIPAL */
-  .case-text-section {
-    padding: 4rem 5%;
-  }
-
-  .case-text-section h2 {
-    font-size: 2.6rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-
-  .case-text-section p {
-    font-size: 1.2rem;
-    opacity: 0.85;
-    max-width: 900px;
-  }
-
-  /* CARDS */
   .case-cards {
-    padding: 4rem 5%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .case-hero-title {
+    font-size: 30px;
   }
 
-  .case-card {
-    padding: 2rem;
-    border-radius: 14px;
-    backdrop-filter: blur(6px);
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  }
-
-  .case-card h3 {
-    font-size: 1.4rem;
-    color: var(--primary);
-    margin-bottom: 0.8rem;
-  }
-
-  .case-card p {
-    font-size: 1rem;
-    opacity: 0.9;
-  }
-
-  /* CONTATO FINAL */
-  .case-final-section {
-    padding: 5rem 5%;
-    display: flex;
-    gap: 4rem;
-    background: var(--dark);
-    color: var(--light);
-    margin-top: 4rem;
-  }
-
-  .case-final-left,
-  .case-final-right {
-    flex: 1;
-  }
-
-  .case-final-right h3 {
-    margin-bottom: 1rem;
-  }
-
-  .case-btn {
-    display: block;
-    margin-bottom: 1rem;
-    padding: 1rem 1.4rem;
-    background: var(--primary);
-    color: var(--light);
-    border-radius: 12px;
-    text-decoration: none;
-    transition: 0.3s;
+  .case-block-2 {
+    flex-direction: column;
+    gap: 20px;
     text-align: center;
-    font-weight: 600;
   }
 
-  .case-btn:hover {
-    background: var(--secondary);
-    transform: translateY(-3px);
+  .case-cards {
+    grid-template-columns: 1fr;
   }
+
+  .case-final-section {
+    grid-template-columns: 1fr;
+  }
+}

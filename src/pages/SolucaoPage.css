@@ -1,0 +1,646 @@
+/* ============================== */
+/* 🎨 PALETA GLOBAL */
+/* ============================== */
+:root {
+  --primary: #2B1B52;
+  --secondary: #3E2C74;
+  --terceira: #0C0A14;
+  --complementary1: #BCAAF3;
+  --complementary2: #7E6BCC;
+  --accent1: #CFC7FF;
+  --accent2: #493D8C;
+  --neutral: #FFFFFF;
+}
+
+/* ============================== */
+/* 🌟 LAYOUT GERAL DA PÁGINA DE SOLUÇÕES */
+/* ============================== */
+.solucao-page {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+  padding-bottom: 60px;
+  background: var(--terceira);
+  color: var(--neutral);
+}
+
+/* ============================== */
+/* 🌟 HERO — TÍTULO DA PÁGINA */
+/* ============================== */
+.solucao-hero {
+  display: flex;
+  align-items: left;
+  justify-content: left;
+  color: white;
+  position: relative;
+
+  /* Imagem de fundo */
+  background-image: url('/assets/ai1.png'); /* coloque o caminho correto */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 500px; /* ajuste a altura conforme desejar */
+  
+  /* Overlay escuro usando linear-gradient */
+  /* Isso deixa a imagem mais escura e o texto mais legível */
+  background-blend-mode: overlay;
+  background-color: rgba(0, 0, 0, 0.5); /* 50% de escuro */
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 50%;
+  left: 5%;
+  transform: translate(0%, -50%);
+  text-align: left;
+}
+.hero-line{
+    height: 2px;
+    width: 100%;
+    color: white;
+    background-color: white;
+}
+.hero-title-small{
+      font-size: 1.1rem;
+  color: var(--neutral);
+  max-width: 600px;
+  opacity: 0.9;
+}
+.hero-title {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--accent1);
+  max-width: 700px;
+  margin-bottom: 30px;
+}
+
+.hero-subtitulo {
+  font-size: 1rem;
+  color: var(--neutral);
+  max-width: 600px;
+  opacity: 1;
+}
+
+/* ============================== */
+/* 🌟 BLOCO 2 — TÍTULO + CONTEÚDO EM COLUNA */
+/* ============================== */
+.bloco-2 {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0px 20px
+  60px 20px;
+  text-align: center;
+  border-bottom: 2px solid white;
+}
+
+.bloco-2 h2 {
+  color: var(--accent1);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.bloco-2 p {
+  color: var(--neutral);
+  line-height: 1.7;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ============================== */
+/* 🌟 BLOCO 3 — TÍTULO + TEXTO + IMAGEM */
+/* ============================== */
+.bloco-3 {
+  width: 100%;
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.bloco-3 h2 {
+  color: var(--accent1);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  margin-top: -2px;
+}
+
+.bloco-3 p {
+  color: var(--neutral);
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+.bloco-3-img-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+
+.bloco-3-img-wrapper .row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.bloco-3-img-wrapper .img-lado {
+  width: calc(50% - 10px); /* duas lado a lado */
+  border-radius: 12px;
+}
+
+.bloco-3-img-wrapper .img-baixo {
+  width: 50%; /* imagem embaixo centralizada */
+  border-radius: 12px;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .bloco-3-img-wrapper .img-lado,
+  .bloco-3-img-wrapper .img-baixo {
+    width: 100%;
+  }
+}
+
+/* ============================== */
+/* 🌟 BLOCO 4 — LISTA DESTAQUES EXPANDÍVEL */
+/* ============================== */
+.bloco4destaque{
+    background-color: #7E6BCC;
+    padding: 60px 40px;
+   
+}
+
+.bloco4title{
+    font-size: 2rem;
+    text-align: left;
+    max-width: 950px;
+    padding: 10px 0px 60px 0px;
+    margin: 0 auto;
+      color: var(--neutral);
+}
+
+
+.bloco-4 {
+  max-width: 900px;
+  margin: 0 auto;
+  color: var(--neutral);
+}
+
+/* Linha de títulos — na horizontal */
+.titulos-horizontais {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  align-items: flex-start;
+}
+
+/* Wrapper que contém TÍTULO + CONTEÚDO */
+.titulo-wrapper {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+/* TÍTULO ESCRITO NA VERTICAL */
+.titulo-vertical {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  font-family: "Ailerons", sans-serif;
+  font-size: 1.8rem;
+  color: var(--accent1);
+  cursor: pointer;
+  user-select: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-left: 2px solid transparent;
+  padding: 5px 0;
+  transition: 0.3s;
+}
+
+.titulo-vertical:hover,
+.titulo-vertical.active {
+  color: var(--neutral);
+  border-color: var(--accent1);
+}
+
+.icon {
+  transition: 0.3s;
+  transform: rotate(90deg);
+}
+
+.icon.open {
+  transform: rotate(270deg);
+}
+
+/* CONTEÚDO APARECE AO LADO DO TÍTULO */
+.conteudo-ao-lado {
+  background: rgb(255, 255, 255);
+  padding: 25px;
+  border-radius: 12px;
+  min-width: 400px;
+  max-width: 450px;
+  height: 350PX;
+}
+.conteudo-ao-lado h3{
+  color: #3E2C74;
+  font-size: 1.3rem;
+}
+.conteudo-ao-lado P{
+  color: #0C0A14;
+  font-size: 0.9rem;
+}
+.conteudo-img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 15px 0;
+}
+
+
+/* ============================== */
+/* 🌟 BLOCO 5 — ESQUERDA / DIREITA */
+/* ============================== */
+
+.bloco-5 {
+  display: flex;
+  gap: 40px; /* Espaço entre os lados */
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 40px 0;
+  width: 950px;
+  margin: 0 auto;
+
+}
+
+/* LADO ESQUERDO */
+.bloco5-esq {
+  flex: 1;
+  
+  min-width: 300px; /* Ajuste mínimo */
+}
+.bloco5-esq h2{
+  font-size: 2rem;
+}
+.conteudo-com-seta {
+  position: relative;
+  padding-left: 25px; /* espaço para a seta */
+  margin-bottom: 10px;
+}
+
+.conteudo-com-seta::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 30%;
+  transform: translateY(-50%);
+  width: 15px;  /* comprimento da seta */
+  height: 2px;  /* espessura */
+  background-color: var(--accent1); /* cor da seta */
+}
+
+.conteudo-com-seta::after {
+  content: '';
+  position: absolute;
+  left: 8px; /* posição da ponta da seta */
+  top: 30%;
+  transform: translateY(-50%) rotate(45deg);
+  width: 6px;
+  height: 6px;
+  border-top: 2px solid var(--accent1);
+  border-right: 2px solid var(--accent1);
+}
+
+/* LADO DIREITO — CÍRCULO */
+.bloco5-recharts-container {
+  flex: 1;
+  min-width: 300px; /* Ajuste mínimo */
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position: relative;
+  margin: 0 auto;
+}
+
+.bloco5-recharts-container {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  position: relative;
+}
+
+.circle-title {
+  margin-bottom: 20px;
+  text-align: left;
+  font-size: 2rem;
+  color: var(--accent1);
+}
+
+.circle-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 15px;
+  border-radius: 10px;
+  width: 200px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  text-align: center;
+  pointer-events: none; /* não interfere com o mouse */
+  z-index: 10;
+}
+.circle-card h3{
+  color: #493D8C;
+}
+.circle-card p{
+  color: #3E2C74;
+  font-size: 0.85rem;
+}
+
+.circle-card img {
+  width: 80px;
+  margin: 8px 0;
+  border-radius: 6px;
+}
+
+
+
+/* ============================== */
+/* 🌟 BLOCO 6 — TÍTULO E TEXTO SIMPLES */
+/* ============================== */
+.bloco-6 {
+  flex: 1;
+  min-width: 300px; /* Ajuste mínimo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding-left: 60px;
+  border-left: 2px solid white;
+}
+
+.bloco-6 h2 {
+  color: var(--accent1);
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.bloco-6 p {
+  color: var(--neutral);
+  line-height: 1.6;
+  font-size: 1rem;
+}
+
+/* ============================== */
+/* 🌟 BLOCO 7 E 8 — TEXTO + PDF + IMAGEM */
+/* ============================== */
+
+.bloco-7-8-container {
+  display: flex;
+  gap: 20px;
+  max-width: 950px;
+  margin: 0 auto;
+  margin-top: -150px !important;
+  flex-wrap: wrap; /* garante responsividade em telas pequenas */
+}
+
+.bloco-7,
+.bloco-8 {
+  display: flex;
+  gap: 40px;
+  flex: 1 1 250px; /* cada bloco ocupa metade aproximadamente */
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  box-sizing: border-box; /* evita estouro de largura */
+}
+
+.bloco7-text {
+  flex: 1 1 250px;
+}
+.bloco7-text h2{
+    font-size: 2rem;
+}
+.bloco7-text p{
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+.bloco7-img {
+  flex: 1 1 250px;
+}
+
+.bloco7-text h2 {
+  color: var(--accent1);
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.bloco7-text p {
+  color: var(--neutral);
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.btn-pdf {
+  display: inline-block;
+  padding: 12px 30px 12px 0px;
+  background: transparent;
+  color: var(--neutral);
+  border-bottom: 2px solid white;
+  text-decoration: none;
+  font-weight: 600;
+}
+.btn-arrow {
+  display: inline-flex;
+  align-items: center;
+ 
+  text-decoration: none;
+  font-weight: 600;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.btn-arrow .arrow {
+  display: inline-block;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.btn-arrow:hover .arrow {
+  transform: translateX(5px); /* seta "anda" para a direita */
+}
+
+.btn-pdf:hover{
+  display: inline-block;
+  padding: 12px 30px 12px 0px;
+  background: transparent;
+  color: var(--complementary1);
+  border-bottom: 2px solid #BCAAF3;
+  text-decoration: none;
+  font-weight: 600;
+}
+.bloco7-img img {
+  width: 100%;
+  height: 300px;
+  border-radius: 5px;
+}
+.bloco-7-8-titulo {
+  width: 100%;
+  text-align: left;
+  font-size: 1.5rem;
+  padding: 0PX 20PX;
+  color: var(--accent1);
+  margin-bottom: -80px; /* espaço entre o título e os blocos */
+}
+
+/* ============================== */
+/* 🌟 BLOCO FINAL — CTA 2 COLUNAS */
+/* ============================== */
+.solucao-final {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin: 0 auto;
+  padding: 80px 10%;
+  background-color: #7E6BCC;
+  color: var(--neutral);
+}
+
+/* Coluna esquerda */
+.final-left {
+  padding-right: 40px;
+  position: relative;
+}
+
+.final-left::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 0%;
+  bottom: 0%;
+  width: 2px;
+  background-color: white;
+}
+
+.final-left h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: var(--neutral);
+  margin-bottom: 30px;
+}
+
+/* Botão principal com seta */
+.cta-btn.primary-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 30px;
+  color: var(--neutral);
+  background: transparent;
+  border: 1px solid white;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-btn.primary-cta:hover {
+  background: var(--secondary);
+  color: var(--complementary1);
+  transform: translateY(-3px);
+  border: none;
+}
+
+/* Coluna direita */
+.final-right {
+  padding-left: 20px;
+}
+
+.final-right h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent1);
+  margin-bottom: 20px;
+  font-weight: 400;
+}
+
+.link-btn-group-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  align-items: flex-start;
+}
+
+.link-btn.secondary-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--neutral);
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 20px;
+  border-radius: 20px;
+  border: 1px solid white;
+  transition: all 0.3s ease;
+  opacity: 0.8;
+}
+
+.link-btn.secondary-link .arrow {
+  display: inline-block;
+  transition: margin-left 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+  margin-left: -10px;
+}
+
+.link-btn.secondary-link:hover {
+  opacity: 1;
+  color: var(--complementary1);
+}
+
+.link-btn.secondary-link:hover .arrow {
+  opacity: 1;
+  margin-left: 10px;
+}
+
+/* Seta também no botão principal */
+.btn-arrow .arrow {
+  display: inline-block;
+  transition: margin-left 0.2s ease;
+}
+
+.btn-arrow:hover .arrow {
+  margin-left: 6px;
+}
+
+
+/* ============================== */
+/* 📱 RESPONSIVIDADE */
+/* ============================== */
+@media (max-width: 900px) {
+  .hero-overlay {
+    padding-left: 30px;
+  }
+
+  .bloco-5,
+  .bloco-7,
+  .bloco-8,
+  .solucao-final {
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+
+  .bloco-5,
+  .bloco-7,
+  .bloco-8,
+  .solucao-final {
+    gap: 20px;
+  }
+}

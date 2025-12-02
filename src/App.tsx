@@ -8,17 +8,22 @@ import { industrias } from "./data/industrias";
 import "./styles/global.css";
 import CasePage from "./pages/CaseStudyPage";
 import { casosData } from "./data/casosData";
+import SolucaoPage from "./pages/SolucaoPage";
+import { solucoesData } from "./data/solucoesData";
+import AtuacaoPage from "./pages/AtuacaoPage";
 
 export default function App() {
   return (
     <Router>
       <Routes>
+
+        {/* PÁGINAS FIXAS */}
         <Route path="/" element={<Home />} />
         <Route path="/carreiras" element={<Carreiras />} />
         <Route path="/contato" element={<Contato />} />
         <Route path="/ia" element={<IA />} />
 
-        {/* Rotas dinâmicas das indústrias */}
+        {/* ROTAS DINÂMICAS — INDÚSTRIAS */}
         {industrias.map((ind) => (
           <Route
             key={ind.id}
@@ -26,8 +31,15 @@ export default function App() {
             element={<IndustriaPage {...ind} />}
           />
         ))}
-        {/* Rotas dinâmicas dos casos */}
+
+        {/* ROTAS DINÂMICAS — CASOS */}
         <Route path="/casos/:id" element={<CasePage />} />
+
+       <Route path="/solucoes/:id" element={<SolucaoPage />} />
+
+
+<Route path="/atuacao/:id" element={<AtuacaoPage />} />
+
 
 
       </Routes>

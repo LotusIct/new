@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import "./Solucoes.css";
 import { FaArrowRight } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 // Imagens
 import ss1 from "../assets/ssn1.jpg";
@@ -10,6 +11,7 @@ import ss3 from "../assets/ssn2.jpg";
 import ss4 from "../assets/ssn4.jpg";
 
 interface Solucao {
+  id: string;
   nome: string;
   descricao: string;
   imagem: string;
@@ -17,21 +19,25 @@ interface Solucao {
 
 const solucoes: Solucao[] = [
   {
+    id: "erp-integrado",
     nome: "ERP Integrado",
     descricao: "Gerencie finanças, estoque e operações facilmente.",
     imagem: ss1,
   },
   {
+    id: "crm-inteligente",
     nome: "CRM Inteligente",
     descricao: "Acompanhe leads e decisões estratégicas com dados.",
     imagem: ss2,
   },
   {
+    id: "dashboard-analitico",
     nome: "Dashboard Analítico",
     descricao: "Visualize KPIs em tempo real para decisões rápidas.",
     imagem: ss3,
   },
   {
+    id: "automacao-processos",
     nome: "Automação de Processos",
     descricao: "Automatize tarefas repetitivas e ganhe produtividade.",
     imagem: ss4,
@@ -75,9 +81,9 @@ export default function Solucoes() {
             <div className="card-overlay">
               <h3>{solucao.nome}</h3>
               <p>{solucao.descricao}</p>
-              <button className="read-more">
-                Saiba Mais <FaArrowRight style={{ marginLeft: "8px" }} />
-              </button>
+             <Link to={`/solucoes/${solucao.id}`} className="read-more">
+  Saiba Mais <FaArrowRight style={{ marginLeft: "8px" }} />
+</Link>
             </div>
           </motion.div>
         ))}

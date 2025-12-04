@@ -1,10 +1,21 @@
 /* Reset e tipografia */
-.atuacao-page section {
-  padding: 80px 20px;
+.atuacao-page {
   margin: 0 auto;
-  color: black;
+  color: black !important;
   width: 100%;
    font-family: 'Rubik', sans-serif;
+}
+.bloco-1,
+.bloco-2,
+.bloco-3,
+.bloco-4,
+.bloco-5,
+.bloco-6,
+.bloco-7,
+.bloco-8 {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* BLOCO 1 */
@@ -45,7 +56,7 @@
 }
 .bloco-2{
     text-align: left;
-    width: 1200px;
+    padding: 50px 20px 120px 10%;
     margin: 0 auto;
 }
 .bloco-2 h2{
@@ -67,11 +78,17 @@ color: #7E6BCC;
 /* BLOCO 3,5 */
 .bloco-3 {
     margin-top: -60px !important;
-    background-color: #7E6BCC;
+    background-color: #BCAAF3;
     width: 100% !important;
+    padding: 80px 10% 50px 10%;
 }
 .bloco-3 p{
-
+color: var(--neutral);
+font-size: 1.1REM;
+}
+.bloco-3 h2{
+ color: #493D8C;
+ font-size: 2.5rem;
 }
 .bloco-3 p,
 .bloco-5 p {
@@ -79,81 +96,332 @@ color: #7E6BCC;
 }
 
 /* BLOCO 4 */
-.bloco-4 blockquote {
-  font-style: italic;
-  font-size: 1.4rem;
-  border-left: 4px solid #7E6BCC;
-  padding-left: 20px;
+/* Container */
+.bloco-4 {
+  display: flex;
+  min-height: 400px;
+  position: relative;
+  overflow: hidden;
+    background: #CFC7FF;
 }
 
-.bloco-4 footer {
-  margin-top: 10px;
+/* TEXTO */
+.bloco4-texto {
+  flex: 1;
+  padding: 40px 0% 40px 0%;
+  background: #CFC7FF;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+}
+
+/* Estilização do texto */
+.bloco4-texto blockquote {
+  font-style: italic;
+  font-size: 2rem;
+  color: #3E2C74;
+  font-family: 'Ailerons', sans-serif;
+}
+
+.bloco4-texto footer {
+  margin-top: 20px;
   font-weight: 600;
   font-size: 1rem;
+  font-family: 'Rubik', sans-serif;
 }
+
+/* IMAGEM com recorte diagonal */
+.bloco4-imagem {
+  flex: 1;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  z-index: 1;
+
+  /* AQUI A MÁGICA — recorte em 135º */
+  clip-path: polygon(
+    35% 0,
+    100% 0,
+    100% 100%,
+    0 100%
+  );
+}
+
+
+.bloco-5 p{
+color: var(--secondary);
+font-size: 1.1REM;
+padding: 40px;
+}
+.bloco-5 {
+  display: flex;
+  justify-content: center;   /* Centraliza na horizontal */
+  align-items: center;       /* Centraliza na vertical */
+  text-align: center;        /* Garante que o texto fique centralizado */
+  padding: 50px ;             /* Ajuste seu padding se quiser mais espaço */
+}
+
+.bloco-5 h2 {
+  color: #493D8C;
+  font-size: 2.5rem;
+  padding: 40px;
+  margin-top: -10px;
+}
+
+.bloco-3 p,
+.bloco-5 p {
+  line-height: 1.8;
+}
+
 
 /* BLOCO 6 */
 .bloco-6 {
   display: flex;
+  width: 100%;
+  padding: 0px 10%;
   gap: 40px;
-  flex-wrap: wrap;
 }
 
 .bloco-6-text,
 .bloco-6-video {
-  flex: 1 1 400px;
+  width: 100%;
 }
 
+/* Texto */
+.bloco-6-text h2 {
+  color: #493D8C;
+  font-size: 2.5rem;
+}
+
+.bloco-6-text p {
+  color: #3E2C74;
+  font-size: 1.1rem;
+}
+
+/* Vídeo */
 .bloco-6-video iframe {
   width: 100%;
-  height: 315px;
+  height: 350px;
   border-radius: 12px;
+  display: block;
 }
+
+
+
 
 /* BLOCO 7 */
-.bloco-7-itens {
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-}
-
-.bloco-7-item {
-  flex: 1 1 200px;
+.bloco-7 {
+  width: 100%;
+  padding: 60px 10%;
   text-align: center;
 }
 
+/* Título */
+.bloco-7 h2 {
+  color: #493D8C;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+}
+
+/* Container dos itens */
+.bloco-7-itens {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; /* permite quebrar em telas menores */
+}
+
+/* Cada item */
+.bloco-7-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 180px;
+  padding: 25px 20px;
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #BCAAF3;
+  border-radius: 14px;
+
+  transition: all 0.25s ease-out;
+  cursor: pointer;
+
+  box-shadow: 0px 3px 12px rgba(0, 0, 0, 0.05);
+}
+
+/* Hover moderno */
+.bloco-7-item:hover {
+  border-color: #3E2C74;
+  transform: translateY(-4px);
+
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+/* Ícone */
 .bloco-7-item img {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
   margin-bottom: 15px;
 }
 
+/* Texto */
+.bloco-7-item p {
+  font-size: 1.1rem;
+  color: #3E2C74;
+}
+
 /* BLOCO 8 */
-.bloco-8-pontos {
+.bloco-8 {
+  padding: 0px 10%;
+  text-align: center;
+}
+
+.bloco-8 h2 {
+  font-size: 2.5rem;
+  color: #3E2C74;
+  margin-bottom: -30px;
+}
+
+.bloco-8 p {
+  font-size: 1.1rem;
+  color: #3E2C74;
+}
+
+/* ====== CARROSSEL ====== */
+.carousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.carousel {
+  display: flex;
+  gap: 40px;
+  margin-top: -40px;
+  scroll-behavior: smooth;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0px 30px;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-item {
+  min-width: calc(50% - 70px);
+  background: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  transition: transform .3s ease;
+  text-align: left;
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  align-items: flex-start;
+
+  /* ⭐ BOX SHADOW PREMIUM */
+  box-shadow: 
+    0 6px 18px rgba(0, 0, 0, 0.06),
+    0 3px 8px rgba(0, 0, 0, 0.04);
 }
 
-.bloco-8-ponto img {
+
+.carousel-item:hover {
+  transform: translateY(-6px);
+}
+
+/* TITULO E TEXTO */
+.carousel-item h3 {
+  color: var(--primary);
+  font-size: 1.5rem;
+  margin-bottom: 10px;
   width: 100%;
-  border-radius: 12px;
-  margin: 20px 0;
+  height: 50px;
 }
 
-.btn-download {
-  display: inline-block;
-  padding: 12px 25px;
+.carousel-item ul {
+  color: var(--complementary2);
+  margin-bottom: 20px;
+  width: 100%;
+  margin-left: -20px;
+}
+.carousel-item p {
+   color: var(--accent2);
+  font-size: 1rem;
+  margin-bottom: 10px;
+  width:  400px;
+}
+.btn-download{
+  text-decoration: none;
+  color: #493D8C;
+  width: 60%;
+  max-width: 120px;
+  border: 2px solid #3E2C74;
+  padding: 10px 20px;
+  text-align: center;
+  border-radius: 5px;
+}
+.btn-download:hover{
+  color: #2B1B52;
+  border: 2px solid #493D8C;
+}
+/* IMAGEM MENOR E CENTRALIZADA */
+.carousel-item img {
+  width: 100%;      /* 🔥 imagem agora fica menor */
+  max-width: 400px;
+  border-radius: 12px;
+  margin: 20px auto;
+  display: block;
+  margin-left: 0px;
+}
+/* ====== SETAS ====== */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  
   background: #7E6BCC;
   color: #fff;
+  font-size: 1.8rem;
+
+  width: 48px;
+  height: 48px;
+  border: none;
   border-radius: 8px;
-  text-decoration: none;
-  margin-top: 10px;
-  transition: 0.3s;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: .3s ease;
+  z-index: 999;
 }
 
-.btn-download:hover {
-  background: #5c49a5;
+.carousel-btn:hover {
+  background: #2B1B52;
+  transform: translateY(-50%) scale(1.03);
+}
+
+/* Ajuste para não ficar em cima do card */
+.prev {
+  left: 0px;   /* agora não sobrepõe nada */
+}
+
+.next {
+  right: 0px;  /* idem */
+}
+
+
+/* Responsivo */
+@media (max-width: 900px) {
+  .carousel-item {
+    min-width: 100%; /* 1 por vez no mobile */
+  }
 }
 
 /* Responsividade mínima */

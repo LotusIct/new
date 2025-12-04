@@ -1,6 +1,7 @@
 /* Container geral */
 .wc-section {
-  padding: 4rem 0rem;
+  padding: 2rem 2rem 0rem 2rem;
+  margin-bottom: -250px;
   background: linear-gradient(180deg, #fbfbfe 0%, #f1eaff 100%);
   color: #111;
   font-family: 'Poppins', system-ui, sans-serif;
@@ -13,8 +14,7 @@
 }
 
 .wc-title {
-  font-size: 3.5
-  rem;
+  font-size: 3.5rem;
   margin-bottom: 0.25rem;
   color: #0C0A14;
   font-weight: 500;
@@ -55,7 +55,7 @@
   background: transparent;
   color: #4a2fa6;
   font-weight: 300;
-  font-size: 3rem;
+  font-size: 2rem;
   letter-spacing: 0.02em;
    font-family: 'Ailerons', sans-serif;
   transition: transform 0.18s ease, background 0.18s, color 0.18s;
@@ -92,7 +92,7 @@
   pointer-events: none;
   box-shadow: 0 10px 30px rgba(20, 10, 60, 0.45);
   transition: opacity 0.26s ease, transform 0.26s ease;
-  font-size: 0.95rem;
+  font-size: 0.7rem;
   line-height: 1.35;
   text-align: left;
   z-index: 20;
@@ -111,7 +111,7 @@
 }
 .wc-tooltip-title{
        font-family: 'Ailerons', sans-serif;
-       font-size: 2rem;
+       font-size: 1.4rem;
 }
 /* Mostrar tooltip no hover/focus/active */
 .wc-word:hover .wc-tooltip,
@@ -163,7 +163,7 @@
   }
 
   .wc-word-label {
-    font-size: 1.4rem;
+    font-size: 1rem ;
     padding: 4px 6px;
   }
 

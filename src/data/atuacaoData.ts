@@ -13,16 +13,17 @@ export const atuacoes = [
     },
     bloco3: {
       titulo: "Nossa Abordagem",
-      texto: "Criamos estratégias digitais personalizadas para impulsionar a presença online e gerar leads qualificados.",
+      texto: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     bloco4: {
       frase: "Marketing é a arte de conectar marcas com pessoas.",
       autor: "Philip Kotler",
       cargo: "Especialista em Marketing",
+      imagem: s3
     },
     bloco5: {
       titulo: "Nosso Diferencial",
-      texto: "Integramos dados e criatividade para campanhas mais efetivas e resultados mensuráveis.",
+      texto: "Integramos dados e criatividade para campanhas mais efetivas e resultados mensuráveis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
     },
     bloco6: {
       titulo: "Como Atuamos",
@@ -47,7 +48,7 @@ export const atuacoes = [
           lista: ["Análise de concorrentes", "Segmentação de público", "Tendências do setor"],
           botaoTexto: "Baixar Relatório",
           botaoDownload: "/downloads/marketing_pesquisa.pdf",
-          imagem: "/images/marketing1.jpg",
+          imagem: s3,
           descricao: "Coletamos dados essenciais para entender o mercado e o público-alvo.",
         },
         {
@@ -55,7 +56,7 @@ export const atuacoes = [
           lista: ["Definição de objetivos", "Planejamento de mídia", "Alinhamento com clientes"],
           botaoTexto: "Baixar Plano",
           botaoDownload: "/downloads/marketing_plano.pdf",
-          imagem: "/images/marketing2.jpg",
+          imagem: s3,
           descricao: "Estruturamos todas as etapas da campanha para garantir o sucesso.",
         },
         {
@@ -63,7 +64,7 @@ export const atuacoes = [
           lista: ["Implementação das campanhas", "Monitoramento de KPIs", "Ajustes estratégicos"],
           botaoTexto: "Baixar Relatório",
           botaoDownload: "/downloads/marketing_execucao.pdf",
-          imagem: "/images/marketing3.jpg",
+          imagem: s3,
           descricao: "Acompanhamos resultados e ajustamos as estratégias continuamente.",
         },
       ],

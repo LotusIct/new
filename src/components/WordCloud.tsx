@@ -12,14 +12,14 @@ type WordItem = {
 const WORDS: WordItem[] = [
   { id: 1, word: "Inovação", left: "15%",  top: "10%", description: "Criamos soluções novas que trazem vantagem competitiva." },
   { id: 2, word: "Dados",     left: "55%", top: "6%",  description: "Extraímos insights acionáveis a partir dos seus dados." },
-  { id: 3, word: "Nuvem",     left: "88%", top: "35%", description: "Arquiteturas escaláveis e seguras na nuvem pública e privada." },
-  { id: 4, word: "Automação", left: "80%", top: "62%", description: "Automatizamos processos para reduzir custo e erro humano." },
-  { id: 5, word: "Design",    left: "55%", top: "50%", description: "UX/UI que transforma a experiência do usuário." },
-  { id: 6, word: "Segurança", left: "12%", top: "55%", description: "Práticas e ferramentas para proteger seus ativos digitais." },
-  { id: 7, word: "Integração",left: "35%", top: "30%", description: "APIs e integrações que conectam todos os seus sistemas." },
-  { id: 8, word: "Escala",    left: "60%", top: "80%", description: "Projetos pensados para crescer sem perda de performance." },
+  { id: 3, word: "Nuvem",     left: "88%", top: "25%", description: "Arquiteturas escaláveis e seguras na nuvem pública e privada." },
+  { id: 4, word: "Automação", left: "80%", top: "42%", description: "Automatizamos processos para reduzir custo e erro humano." },
+  { id: 5, word: "Design",    left: "55%", top: "30%", description: "UX/UI que transforma a experiência do usuário." },
+  { id: 6, word: "Segurança", left: "12%", top: "35%", description: "Práticas e ferramentas para proteger seus ativos digitais." },
+  { id: 7, word: "Integração",left: "35%", top: "20%", description: "APIs e integrações que conectam todos os seus sistemas." },
+  { id: 8, word: "Escala",    left: "60%", top: "60%", description: "Projetos pensados para crescer sem perda de performance." },
   { id: 9, word: "Treinamento",left: "85%", top: "8%",  description: "Capacitação para equipes internalizarem as soluções." },
-  { id:10, word: "Sustentável",left: "25%",  top: "78%", description: "Foco em processos com menor impacto ambiental e custos." },
+  { id:10, word: "Sustentável",left: "25%",  top: "53%", description: "Foco em processos com menor impacto ambiental e custos." },
 ];
 
 export default function WordCloud(): React.ReactElement {

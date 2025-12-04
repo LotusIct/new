@@ -51,19 +51,7 @@ h1, h2, h3, .logo-text {
 }
 
 /* Botões */
-button a{
-  font-family: 'Ailerons', sans-serif;
-  font-weight: 400;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  background-color: var(--secondary);
-  color: var(--neutral);
-  border: none;
-  padding: 12px 28px;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
+
 
 button:hover {
   background-color: transparent;

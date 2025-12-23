@@ -1,0 +1,290 @@
+/* ===============================
+   MOVIMENTO PAGE
+================================ */
+
+.movimento-page {
+  width: 100%;
+}
+
+/* ===============================
+   BLOCO 1
+================================ */
+
+.bloco-movimento-1 {
+  text-align: left;
+}
+
+.bloco-movimento-1 h1 {
+  font-size: 4.5rem;
+  background-color: #CFC7FF;
+  margin-left: 5%;
+  margin-top: 10%;
+  color: #2B1B52;
+}
+
+/* ===============================
+   BLOCO 2
+================================ */
+
+.bloco-movimento-2 {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  text-align: left;
+}
+
+.bloco-movimento-2 .subtitulo {
+  font-size: 1rem;
+  color: #000;
+  margin-bottom: 40px;
+  max-width: 720px;
+}
+
+/* Lista com linha lateral */
+.bloco-movimento-2 ul {
+  list-style: none;
+  padding-left: 12px;
+  border-left: 2px solid #7E6BCC;
+}
+
+.bloco-movimento-2 li {
+  font-size: 1rem;
+  margin-bottom: 16px;
+  padding-left: 12px;
+  color: #2B1B52;
+}
+
+/* ===============================
+   BLOCO 3 – SLIDER
+================================ */
+
+.bloco-movimento-3 {
+  width: 100%;
+  padding: 0;
+}
+
+/* Header do slider */
+.slider-header {
+  position: relative;
+  z-index: 30;
+  padding-top:5%;
+}
+
+.slider-header h2 {
+  color: #CFC7FF;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.58);
+  margin: 0;
+  padding: 8px 16px;
+  width: fit-content;
+}
+
+/* Container do slider */
+.slider-movimento {
+  position: relative;
+  height: 80vh;
+  overflow: hidden;
+  padding: 20px;
+}
+
+/* Slides */
+.slide-movimento {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.05);
+  transition: opacity 0.8s ease, transform 1.2s ease;
+  pointer-events: none;
+}
+
+.slide-movimento.active {
+  opacity: 1;
+  transform: scale(1);
+  z-index: 1;
+}
+
+/* Overlay do conteúdo */
+.slide-overlay {
+  position: absolute;
+  bottom: 15%;
+  left: 8%;
+  max-width: 520px;
+  color: #FFFFFF;
+}
+
+.slide-overlay h3 {
+  font-size: 42px;
+  margin-bottom: 16px;
+}
+
+.slide-overlay p {
+  font-size: 18px;
+  line-height: 1.6;
+  opacity: 0.9;
+}
+
+/* ===============================
+   CONTROLES
+================================ */
+
+.slider-controls {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 12px;
+  z-index: 25;
+}
+
+.slider-controls button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(4, 8, 223, 0.4);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.slider-controls button.active {
+  background: #0C0A14;
+  transform: scale(1.2);
+}
+
+/* ===============================
+   SETAS
+================================ */
+
+.slider-arrow {
+  position: absolute;
+  top: 12%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.45);
+  color: #fff;
+  font-size: 32px;
+  cursor: pointer;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.slider-arrow:hover {
+  background: rgba(0, 0, 0, 0.65);
+  transform: scale(1.05);
+}
+
+.slider-arrow.left {
+  right: 100px;
+}
+
+.slider-arrow.right {
+  right: 30px;
+}
+
+/* ===============================
+   BLOCO 4
+================================ */
+/* ===============================
+   BLOCO 4 – TEXTO E IMAGEM LADO A LADO
+================================ */
+
+.bloco-movimento-4 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px; /* espaço entre texto e imagem */
+  max-width: 1200px;
+  margin: 60px auto; /* centralizado na página */
+  padding: 0 20px;
+}
+
+.bloco-4-texto {
+  flex: 1;
+}
+
+.bloco-4-texto h2 {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  color: #2B1B52;
+  line-height: 1.2;
+}
+
+.bloco-4-texto p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #4B3B7B;
+}
+
+/* Imagem */
+.bloco-movimento-4-imagem {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.bloco-movimento-4-imagem img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 15px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s;
+}
+
+.bloco-movimento-4-imagem img:hover {
+  transform: scale(1.03);
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .bloco-movimento-4 {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .bloco-4-texto h2 {
+    font-size: 2.2rem;
+    color: #2B1B52;
+  }
+
+  .bloco-4-texto p {
+    font-size: 1rem !important;
+    color: #0C0A14;
+  }
+
+  .bloco-movimento-4-imagem img {
+    max-width: 90%;
+  }
+}
+
+/* ===============================
+   RESPONSIVO
+================================ */
+
+@media (max-width: 900px) {
+  .bloco-movimento-4 {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide-overlay {
+    left: 5%;
+    right: 5%;
+  }
+
+  .slider-arrow.left {
+    right: 80px;
+  }
+
+  .slider-arrow.right {
+    right: 20px;
+  }
+}

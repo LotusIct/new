@@ -1,0 +1,219 @@
+/* inovationPage.css */
+
+/* BLOCO 1 */
+.bloco1 {
+  position: relative;       /* necessário para posicionar o texto sobre o vídeo */
+  width: 100%;
+  height: 100vh;            /* altura total da tela */
+  overflow: hidden;
+}
+
+.bloco1-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* garante que o vídeo cubra toda a área */
+  z-index: 1;               /* vídeo fica atrás do texto */
+}
+
+.bloco1-texto {
+  position: relative;
+  z-index: 2;               /* texto fica na frente do vídeo */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  height: 100%;
+  width: 100%;
+  color: white;             /* cor do texto */
+  text-align: left;
+  padding: 0 20px;          /* evita que o texto encoste nas bordas */
+  background: rgba(0,0,0,0.3); /* opcional: leve sombra para melhorar legibilidade */
+}
+
+.bloco1-texto h1 {
+  font-size: 3.5rem;
+  margin-bottom: 25px;
+  max-width: 1000px;
+    color: #CFC7FF;
+}
+
+.bloco1-texto p {
+  font-size: 1.1rem;
+  text-align: left;
+    max-width: 750px;
+}
+/* BLOCO 2 */
+.bloco2 {
+  display: flex;
+  flex-direction: row;       /* texto e vídeo lado a lado */
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: space-between;
+  width: 100%;
+  padding: 60px 20px;
+  gap: 40px;                 /* espaço entre texto e vídeo */
+  box-sizing: border-box;
+}
+
+.bloco2-textos {
+  flex: 1;                   /* ocupa metade do espaço disponível */
+  color: #0C0A14;
+  padding: 10px 80px;
+}
+
+.bloco2-textos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #3E2C74;
+}
+
+.bloco2-textos p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.bloco2-video {
+  flex: 1;                   /* ocupa a outra metade do espaço */
+  width: 100%;
+  max-width: 400px;      /* opcional, deixa o vídeo com cantos arredondados */
+  object-fit: cover;
+  padding: 10px 80px 10px 0px;
+}
+
+
+/* BLOCO 3 */
+.bloco3 {
+  background-color: #2B1B52; /* cor de fundo da seção */
+  padding: 80px 20px 100px 20px;
+  text-align: center;        /* centraliza o título */
+}
+
+.bloco3 h2 {
+  font-size: 2.5rem;
+  margin-bottom: 60px;
+}
+
+.bloco3-itens {
+  display: flex;
+  justify-content: center;    /* centraliza os itens horizontalmente */
+  gap: 40px;                  /* espaço entre os itens */
+  flex-wrap: wrap;            /* quebra linha em telas pequenas */
+}
+
+.bloco3-item {
+  display: flex;
+  flex-direction: column;     /* ícone em cima, texto embaixo */
+  align-items: center;
+  max-width: 180px;
+  text-align: center;
+}
+
+.bloco3-item p {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #FFFFFF;
+}
+/* BLOCO 4 */
+.bloco4 {
+  display: flex;
+  flex-direction: row;       /* imagem e texto lado a lado */
+  align-items: center;       /* centraliza verticalmente */
+  justify-content: space-between;
+  padding: 60px 20px;
+  gap: 40px;                 /* espaço entre imagem e texto */
+  box-sizing: border-box;
+}
+
+.bloco4-img {
+  flex: 1;                   /* ocupa metade do espaço disponível */
+  width: 100%;
+  max-width: 600px;
+  border-radius: 10px;       /* opcional: cantos arredondados */
+  object-fit: cover;
+}
+
+.bloco4-textos {
+    justify-content: left;
+    text-align: left;
+  flex: 1;     
+  padding: 10px 60px;
+}
+
+.bloco4-textos h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  color: #3E2C74;
+}
+
+.bloco4-textos h3 {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: #7E6BCC;
+}
+
+.bloco4-textos p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #0C0A14;
+}
+/* BLOCO 5 */
+/* BLOCO 5 */
+.bloco5 {
+  display: flex;
+  flex-direction: row;       
+  align-items: center;       
+  justify-content: flex-start;
+  padding: 60px 20px;
+  gap: 40px;                 
+  box-sizing: border-box;
+  background-color: #fafafa; 
+}
+
+.bloco5-img {
+  flex: 1;                   
+  max-width: 400px;          
+  width: 100%;
+  padding: 10px 60px 10px 10px;      
+  object-fit: cover;
+}
+
+.bloco5-citacao {
+  flex: 2;                   
+  color: #2B1B52;
+  font-family: 'Roboto', sans-serif; /* sua fonte normal */
+  position: relative;
+  padding: 10px 60px;
+}
+
+/* Bloco de citação com aspas arredondadas da Georgina */
+.bloco5-citacao blockquote {
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-style: italic;    
+  padding:10px 40px ;
+  margin: 0;
+  position: relative;
+}
+
+/* Aspas curvas na frente e atrás do texto */
+.bloco5-citacao blockquote::before {
+  content: "“";
+  font-family: 'Georgina', serif; 
+  font-size: 9rem;
+  color: #7e6bcc81;
+  position: absolute;
+  left: -30px;
+  top: -80px;
+}
+
+.bloco5-citacao blockquote::after {
+  content: "”";
+  font-family: 'Georgina', serif; 
+  font-size: 9rem;
+  color: #7e6bcc81;
+  position: absolute;
+  right: 0px;
+  bottom: -120px;
+}

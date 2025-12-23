@@ -1,0 +1,125 @@
+.relatorios-page {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ============================
+   BANNER COM VÍDEO DE FUNDO
+============================ */
+.banner-video-bg {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Vídeo full background */
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay escuro */
+.bg-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.582);
+  backdrop-filter: blur(2px);
+}
+
+/* Conteúdo por cima do vídeo */
+.banner-content-overlay {
+  position: relative;
+  color: #fff;
+  text-align: left;
+  padding: 0 20px;
+  z-index: 10;
+}
+
+.banner-content-overlay h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  max-width: 600px;
+  color: #CFC7FF;
+}
+
+/* Linha decorativa abaixo do título */
+.line {
+  max-width: 300px;
+  height: 4px;
+  margin: 10px 0 20px 0;
+  background: #FFFFFF;
+  border-radius: 2px;
+}
+
+.banner-content-overlay h3 {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: #BCAAF3;
+}
+
+.banner-content-overlay p {
+  font-size: 1rem;
+  line-height: 1.6;
+max-width: 900px;
+}
+
+/* ============================
+   BLOCOS DE TEXTO
+============================ */
+.texto-bloco {
+  width: 80%;
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 25px;
+  border-radius: 12px;
+  border: 1px solid #CFC7FF;
+}
+
+.texto-bloco h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+  color: #7E6BCC;
+}
+
+.line-small {
+  width: 30%;
+  height: 3px;
+  background: #BCAAF3;
+  margin-bottom: 18px;
+  border-radius: 2px;
+}
+
+.texto-bloco p {
+  color: #0C0A14;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* =============================
+   RESPONSIVO
+============================= */
+@media screen and (max-width: 768px) {
+  .banner-content-overlay h1 {
+    font-size: 28px;
+  }
+
+  .banner-content-overlay h3 {
+    font-size: 18px;
+  }
+
+  .banner-content-overlay p {
+    font-size: 16px;
+  }
+}

@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { X, Menu } from "lucide-react"; // ícones modernos
 import "./Header.css";
 import logo from "../assets/logon.png";
-
+import { Link } from "react-router-dom";
 export default function Header() {
   const [openMenu, setOpenMenu] = useState<string | null>(null);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -129,34 +129,65 @@ export default function Header() {
                 <div className="mega-columns">
                   <div className="menu-column">
                     <h4>Inovação & Tendências</h4>
-                    <ul>
-                      <li>O futuro da Inteligência Artificial</li>
-                      <li>Empresas orientadas por dados</li>
-                      <li>Sustentabilidade tecnológica</li>
-                      <li>O impacto da automação</li>
-                      <li>Cloud como diferencial competitivo</li>
+                     <ul>
+                      <li><a href="/inovacao/ia-futuro">O futuro da Inteligência Artificial</a></li>
+                      <li><a href="/inovacao/data-driven">Empresas orientadas por dados</a></li>
+                      <li><a href="/inovacao/sustentabilidade-tech">Sustentabilidade tecnológica</a></li>
+                      <li><a href="/inovacao/automacao-impacto">O impacto da automação</a></li>
+                      <li><a href="/inovacao/cloud-vantagem">Cloud como diferencial competitivo</a></li>
                     </ul>
                   </div>
-                  <div className="menu-column">
-                    <h4>Insights & Artigos</h4>
-                    <ul>
-                      <li>Relatórios de mercado</li>
-                      <li>Casos de sucesso</li>
-                      <li>Entrevistas com especialistas</li>
-                      <li>Guia de transformação digital</li>
-                      <li>Tecnologia e propósito</li>
-                    </ul>
-                  </div>
-                  <div className="menu-column">
-                    <h4>O Futuro em Movimento</h4>
-                    <ul>
-                      <li>Tecnologias Emergentes</li>
-                      <li>Soluções Sustentáveis</li>
-                      <li>Inovação Aberta & Startups</li>
-                      <li>Transformação da Indústria</li>
-                      <li>Digitalização e Eficiência</li>
-                    </ul>
-                  </div>
+         <div className="menu-column">
+            <h4>Insights & Artigos</h4>
+              <ul>
+                <li>
+                  <Link to="/insights/relatorios-de-mercado">Relatórios de mercado</Link>
+                </li>
+
+                <li>
+                  <a href="/insights/casos-de-sucesso">Casos de sucesso</a>
+                </li>
+                <li>
+                  <a href="/insights/entrevistas-especialistas">Entrevistas com especialistas</a>
+                </li>
+                <li>
+                  <a href="/insights/guia-transformacao-digital">Guia de transformação digital</a>
+                </li>
+                <li>
+                  <a href="/insights/tecnologia-proposito">Tecnologia e propósito</a>
+                </li>
+              </ul>
+          </div>
+                   <div className="menu-column">
+        <h4>O Futuro em Movimento</h4>
+        <ul>
+          <li>
+            <Link to="/movimento/tecnologias-emergentes">
+              Tecnologias Emergentes
+            </Link>
+          </li>
+          <li>
+            <Link to="/movimento/solucoes-sustentaveis">
+              Soluções Sustentáveis
+            </Link>
+          </li>
+          <li>
+            <Link to="/movimento/inovacao-aberta">
+              Inovação Aberta & Startups
+            </Link>
+          </li>
+          <li>
+            <Link to="/movimento/transformacao-industrial">
+              Transformação da Indústria
+            </Link>
+          </li>
+          <li>
+            <Link to="/movimento/digitalizacao-eficiencia">
+              Digitalização e Eficiência
+            </Link>
+          </li>
+        </ul>
+      </div>
                 </div>
               </>
             )}
@@ -170,19 +201,19 @@ export default function Header() {
                   <div className="menu-column">
                     <h4>Sobre a Empresa</h4>
                     <ul>
-                      <li>Nossa História</li>
-                      <li>Missão, Visão e Valores</li>
-                      <li>Nosso Propósito</li>
-                      <li>Compromisso ESG</li>
+                      <li><Link to="/historia">Nossa História</Link></li>
+                      <li><Link to="/missao">Missão, Visão e Valores</Link></li>
+                      <li><Link to="/proposito">Nosso Propósito</Link></li>
+                      <li><Link to="/esg">Compromisso ESG</Link></li>
                     </ul>
                   </div>
                   <div className="menu-column">
                     <h4>Nosso Legado</h4>
                     <ul>
-                      <li>Ontem</li>
-                      <li>Hoje</li>
-                      <li>Amanhã</li>
-                    </ul>
+  <li><Link to="/ontem">Ontem</Link></li>
+  <li><Link to="/hoje">Hoje</Link></li>
+  <li><Link to="/amanha">Amanhã</Link></li>
+</ul>
                   </div>
                 </div>
               </>
